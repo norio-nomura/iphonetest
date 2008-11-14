@@ -14,6 +14,69 @@
 		6C64DE7B0ECBFE3D003A3DF2 /* ClassTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */; };
 		6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */; };
 		6CA317CF0ECD874100B4CDEC /* ClassDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA317CE0ECD874100B4CDEC /* ClassDataSource.m */; };
+		6CA31A050ECDA5C900B4CDEC /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319C50ECDA5C900B4CDEC /* Accelerate.framework */; };
+		6CA31A060ECDA5C900B4CDEC /* AccountSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319C60ECDA5C900B4CDEC /* AccountSettings.framework */; };
+		6CA31A070ECDA5C900B4CDEC /* AOSNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319C70ECDA5C900B4CDEC /* AOSNotification.framework */; };
+		6CA31A080ECDA5C900B4CDEC /* Apple80211.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319C80ECDA5C900B4CDEC /* Apple80211.framework */; };
+		6CA31A090ECDA5C900B4CDEC /* AppleJPEG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319C90ECDA5C900B4CDEC /* AppleJPEG.framework */; };
+		6CA31A0A0ECDA5C900B4CDEC /* AppSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319CA0ECDA5C900B4CDEC /* AppSupport.framework */; };
+		6CA31A0B0ECDA5C900B4CDEC /* ArtworkCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319CB0ECDA5C900B4CDEC /* ArtworkCache.framework */; };
+		6CA31A0C0ECDA5C900B4CDEC /* BluetoothManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319CC0ECDA5C900B4CDEC /* BluetoothManager.framework */; };
+		6CA31A0D0ECDA5C900B4CDEC /* Bom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319CD0ECDA5C900B4CDEC /* Bom.framework */; };
+		6CA31A0E0ECDA5C900B4CDEC /* Calculate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319CE0ECDA5C900B4CDEC /* Calculate.framework */; };
+		6CA31A0F0ECDA5C900B4CDEC /* Calendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319CF0ECDA5C900B4CDEC /* Calendar.framework */; };
+		6CA31A100ECDA5C900B4CDEC /* CalendarUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319D00ECDA5C900B4CDEC /* CalendarUI.framework */; };
+		6CA31A110ECDA5C900B4CDEC /* Camera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319D10ECDA5C900B4CDEC /* Camera.framework */; };
+		6CA31A120ECDA5C900B4CDEC /* Celestial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319D20ECDA5C900B4CDEC /* Celestial.framework */; };
+		6CA31A130ECDA5C900B4CDEC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319D30ECDA5C900B4CDEC /* CoreMedia.framework */; };
+		6CA31A140ECDA5C900B4CDEC /* CoreSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319D40ECDA5C900B4CDEC /* CoreSurface.framework */; };
+		6CA31A150ECDA5C900B4CDEC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319D50ECDA5C900B4CDEC /* CoreTelephony.framework */; };
+		6CA31A160ECDA5C900B4CDEC /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319D60ECDA5C900B4CDEC /* CoreVideo.framework */; };
+		6CA31A170ECDA5C900B4CDEC /* CrashReporterSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319D70ECDA5C900B4CDEC /* CrashReporterSupport.framework */; };
+		6CA31A180ECDA5C900B4CDEC /* DataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319D80ECDA5C900B4CDEC /* DataAccess.framework */; };
+		6CA31A190ECDA5C900B4CDEC /* DataAccessExpress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319D90ECDA5C900B4CDEC /* DataAccessExpress.framework */; };
+		6CA31A1A0ECDA5C900B4CDEC /* DataMigration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319DA0ECDA5C900B4CDEC /* DataMigration.framework */; };
+		6CA31A1B0ECDA5C900B4CDEC /* EAP8021X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319DB0ECDA5C900B4CDEC /* EAP8021X.framework */; };
+		6CA31A1C0ECDA5C900B4CDEC /* GMM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319DC0ECDA5C900B4CDEC /* GMM.framework */; };
+		6CA31A1D0ECDA5C900B4CDEC /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319DD0ECDA5C900B4CDEC /* GraphicsServices.framework */; };
+		6CA31A1E0ECDA5C900B4CDEC /* IAP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319DE0ECDA5C900B4CDEC /* IAP.framework */; };
+		6CA31A1F0ECDA5C900B4CDEC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319DF0ECDA5C900B4CDEC /* ImageIO.framework */; };
+		6CA31A200ECDA5C900B4CDEC /* IOMobileFramebuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319E00ECDA5C900B4CDEC /* IOMobileFramebuffer.framework */; };
+		6CA31A210ECDA5C900B4CDEC /* ITSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319E10ECDA5C900B4CDEC /* ITSync.framework */; };
+		6CA31A220ECDA5C900B4CDEC /* iTunesStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319E20ECDA5C900B4CDEC /* iTunesStore.framework */; };
+		6CA31A230ECDA5C900B4CDEC /* iTunesStoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319E30ECDA5C900B4CDEC /* iTunesStoreUI.framework */; };
+		6CA31A240ECDA5C900B4CDEC /* iWorkImport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319E40ECDA5C900B4CDEC /* iWorkImport.framework */; };
+		6CA31A250ECDA5C900B4CDEC /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319E50ECDA5C900B4CDEC /* JavaScriptCore.framework */; };
+		6CA31A260ECDA5C900B4CDEC /* ManagedConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319E60ECDA5C900B4CDEC /* ManagedConfiguration.framework */; };
+		6CA31A270ECDA5C900B4CDEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319E70ECDA5C900B4CDEC /* MapKit.framework */; };
+		6CA31A280ECDA5C900B4CDEC /* MBX2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319E80ECDA5C900B4CDEC /* MBX2D.framework */; };
+		6CA31A290ECDA5C900B4CDEC /* MBXConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319E90ECDA5C900B4CDEC /* MBXConnect.framework */; };
+		6CA31A2A0ECDA5C900B4CDEC /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319EA0ECDA5C900B4CDEC /* MediaToolbox.framework */; };
+		6CA31A2B0ECDA5C900B4CDEC /* Message.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319EB0ECDA5C900B4CDEC /* Message.framework */; };
+		6CA31A2C0ECDA5C900B4CDEC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319EC0ECDA5C900B4CDEC /* MessageUI.framework */; };
+		6CA31A2E0ECDA5C900B4CDEC /* MobileBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319EE0ECDA5C900B4CDEC /* MobileBluetooth.framework */; };
+		6CA31A2F0ECDA5C900B4CDEC /* MobileDeviceLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319EF0ECDA5C900B4CDEC /* MobileDeviceLink.framework */; };
+		6CA31A300ECDA5C900B4CDEC /* MobileInstallation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319F00ECDA5C900B4CDEC /* MobileInstallation.framework */; };
+		6CA31A310ECDA5C900B4CDEC /* MobileMusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319F10ECDA5C900B4CDEC /* MobileMusicPlayer.framework */; };
+		6CA31A320ECDA5C900B4CDEC /* MobileSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319F20ECDA5C900B4CDEC /* MobileSync.framework */; };
+		6CA31A330ECDA5C900B4CDEC /* MobileWirelessSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319F30ECDA5C900B4CDEC /* MobileWirelessSync.framework */; };
+		6CA31A340ECDA5C900B4CDEC /* MultitouchSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319F40ECDA5C900B4CDEC /* MultitouchSupport.framework */; };
+		6CA31A350ECDA5C900B4CDEC /* MusicLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319F50ECDA5C900B4CDEC /* MusicLibrary.framework */; };
+		6CA31A360ECDA5C900B4CDEC /* OfficeImport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319F60ECDA5C900B4CDEC /* OfficeImport.framework */; };
+		6CA31A370ECDA5C900B4CDEC /* PersistentConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319F70ECDA5C900B4CDEC /* PersistentConnection.framework */; };
+		6CA31A380ECDA5C900B4CDEC /* PhotoLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319F80ECDA5C900B4CDEC /* PhotoLibrary.framework */; };
+		6CA31A390ECDA5C900B4CDEC /* Preferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319F90ECDA5C900B4CDEC /* Preferences.framework */; };
+		6CA31A3A0ECDA5C900B4CDEC /* SpringBoardServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319FA0ECDA5C900B4CDEC /* SpringBoardServices.framework */; };
+		6CA31A3B0ECDA5C900B4CDEC /* SpringBoardUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319FB0ECDA5C900B4CDEC /* SpringBoardUI.framework */; };
+		6CA31A3C0ECDA5C900B4CDEC /* Symbolication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319FC0ECDA5C900B4CDEC /* Symbolication.framework */; };
+		6CA31A3D0ECDA5C900B4CDEC /* TelephonyUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319FD0ECDA5C900B4CDEC /* TelephonyUI.framework */; };
+		6CA31A3E0ECDA5C900B4CDEC /* URLify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319FE0ECDA5C900B4CDEC /* URLify.framework */; };
+		6CA31A3F0ECDA5C900B4CDEC /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA319FF0ECDA5C900B4CDEC /* VideoToolbox.framework */; };
+		6CA31A400ECDA5C900B4CDEC /* VisualVoicemail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31A000ECDA5C900B4CDEC /* VisualVoicemail.framework */; };
+		6CA31A410ECDA5C900B4CDEC /* WebCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31A010ECDA5C900B4CDEC /* WebCore.framework */; };
+		6CA31A420ECDA5C900B4CDEC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31A020ECDA5C900B4CDEC /* WebKit.framework */; };
+		6CA31A430ECDA5C900B4CDEC /* XMPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31A030ECDA5C900B4CDEC /* XMPP.framework */; };
+		6CA31A440ECDA5C900B4CDEC /* YouTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31A040ECDA5C900B4CDEC /* YouTube.framework */; };
 		6CFBCC580ECB00110055DB85 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFBCC460ECB00110055DB85 /* AddressBook.framework */; };
 		6CFBCC590ECB00110055DB85 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFBCC470ECB00110055DB85 /* AddressBookUI.framework */; };
 		6CFBCC5A0ECB00110055DB85 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFBCC480ECB00110055DB85 /* AudioToolbox.framework */; };
@@ -46,6 +109,69 @@
 		6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBrowserViewController.xib; sourceTree = "<group>"; };
 		6CA317CD0ECD874100B4CDEC /* ClassDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassDataSource.h; sourceTree = "<group>"; };
 		6CA317CE0ECD874100B4CDEC /* ClassDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDataSource.m; sourceTree = "<group>"; };
+		6CA319C50ECDA5C900B4CDEC /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/PrivateFrameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		6CA319C60ECDA5C900B4CDEC /* AccountSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AccountSettings.framework; path = System/Library/PrivateFrameworks/AccountSettings.framework; sourceTree = SDKROOT; };
+		6CA319C70ECDA5C900B4CDEC /* AOSNotification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AOSNotification.framework; path = System/Library/PrivateFrameworks/AOSNotification.framework; sourceTree = SDKROOT; };
+		6CA319C80ECDA5C900B4CDEC /* Apple80211.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apple80211.framework; path = System/Library/PrivateFrameworks/Apple80211.framework; sourceTree = SDKROOT; };
+		6CA319C90ECDA5C900B4CDEC /* AppleJPEG.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleJPEG.framework; path = System/Library/PrivateFrameworks/AppleJPEG.framework; sourceTree = SDKROOT; };
+		6CA319CA0ECDA5C900B4CDEC /* AppSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppSupport.framework; path = System/Library/PrivateFrameworks/AppSupport.framework; sourceTree = SDKROOT; };
+		6CA319CB0ECDA5C900B4CDEC /* ArtworkCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArtworkCache.framework; path = System/Library/PrivateFrameworks/ArtworkCache.framework; sourceTree = SDKROOT; };
+		6CA319CC0ECDA5C900B4CDEC /* BluetoothManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BluetoothManager.framework; path = System/Library/PrivateFrameworks/BluetoothManager.framework; sourceTree = SDKROOT; };
+		6CA319CD0ECDA5C900B4CDEC /* Bom.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bom.framework; path = System/Library/PrivateFrameworks/Bom.framework; sourceTree = SDKROOT; };
+		6CA319CE0ECDA5C900B4CDEC /* Calculate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Calculate.framework; path = System/Library/PrivateFrameworks/Calculate.framework; sourceTree = SDKROOT; };
+		6CA319CF0ECDA5C900B4CDEC /* Calendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Calendar.framework; path = System/Library/PrivateFrameworks/Calendar.framework; sourceTree = SDKROOT; };
+		6CA319D00ECDA5C900B4CDEC /* CalendarUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarUI.framework; path = System/Library/PrivateFrameworks/CalendarUI.framework; sourceTree = SDKROOT; };
+		6CA319D10ECDA5C900B4CDEC /* Camera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Camera.framework; path = System/Library/PrivateFrameworks/Camera.framework; sourceTree = SDKROOT; };
+		6CA319D20ECDA5C900B4CDEC /* Celestial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Celestial.framework; path = System/Library/PrivateFrameworks/Celestial.framework; sourceTree = SDKROOT; };
+		6CA319D30ECDA5C900B4CDEC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/PrivateFrameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		6CA319D40ECDA5C900B4CDEC /* CoreSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSurface.framework; path = System/Library/PrivateFrameworks/CoreSurface.framework; sourceTree = SDKROOT; };
+		6CA319D50ECDA5C900B4CDEC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/PrivateFrameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		6CA319D60ECDA5C900B4CDEC /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/PrivateFrameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		6CA319D70ECDA5C900B4CDEC /* CrashReporterSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporterSupport.framework; path = System/Library/PrivateFrameworks/CrashReporterSupport.framework; sourceTree = SDKROOT; };
+		6CA319D80ECDA5C900B4CDEC /* DataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DataAccess.framework; path = System/Library/PrivateFrameworks/DataAccess.framework; sourceTree = SDKROOT; };
+		6CA319D90ECDA5C900B4CDEC /* DataAccessExpress.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DataAccessExpress.framework; path = System/Library/PrivateFrameworks/DataAccessExpress.framework; sourceTree = SDKROOT; };
+		6CA319DA0ECDA5C900B4CDEC /* DataMigration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DataMigration.framework; path = System/Library/PrivateFrameworks/DataMigration.framework; sourceTree = SDKROOT; };
+		6CA319DB0ECDA5C900B4CDEC /* EAP8021X.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EAP8021X.framework; path = System/Library/PrivateFrameworks/EAP8021X.framework; sourceTree = SDKROOT; };
+		6CA319DC0ECDA5C900B4CDEC /* GMM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GMM.framework; path = System/Library/PrivateFrameworks/GMM.framework; sourceTree = SDKROOT; };
+		6CA319DD0ECDA5C900B4CDEC /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsServices.framework; path = System/Library/PrivateFrameworks/GraphicsServices.framework; sourceTree = SDKROOT; };
+		6CA319DE0ECDA5C900B4CDEC /* IAP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IAP.framework; path = System/Library/PrivateFrameworks/IAP.framework; sourceTree = SDKROOT; };
+		6CA319DF0ECDA5C900B4CDEC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/PrivateFrameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		6CA319E00ECDA5C900B4CDEC /* IOMobileFramebuffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOMobileFramebuffer.framework; path = System/Library/PrivateFrameworks/IOMobileFramebuffer.framework; sourceTree = SDKROOT; };
+		6CA319E10ECDA5C900B4CDEC /* ITSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ITSync.framework; path = System/Library/PrivateFrameworks/ITSync.framework; sourceTree = SDKROOT; };
+		6CA319E20ECDA5C900B4CDEC /* iTunesStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iTunesStore.framework; path = System/Library/PrivateFrameworks/iTunesStore.framework; sourceTree = SDKROOT; };
+		6CA319E30ECDA5C900B4CDEC /* iTunesStoreUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iTunesStoreUI.framework; path = System/Library/PrivateFrameworks/iTunesStoreUI.framework; sourceTree = SDKROOT; };
+		6CA319E40ECDA5C900B4CDEC /* iWorkImport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iWorkImport.framework; path = System/Library/PrivateFrameworks/iWorkImport.framework; sourceTree = SDKROOT; };
+		6CA319E50ECDA5C900B4CDEC /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/PrivateFrameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		6CA319E60ECDA5C900B4CDEC /* ManagedConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedConfiguration.framework; path = System/Library/PrivateFrameworks/ManagedConfiguration.framework; sourceTree = SDKROOT; };
+		6CA319E70ECDA5C900B4CDEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/PrivateFrameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6CA319E80ECDA5C900B4CDEC /* MBX2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBX2D.framework; path = System/Library/PrivateFrameworks/MBX2D.framework; sourceTree = SDKROOT; };
+		6CA319E90ECDA5C900B4CDEC /* MBXConnect.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBXConnect.framework; path = System/Library/PrivateFrameworks/MBXConnect.framework; sourceTree = SDKROOT; };
+		6CA319EA0ECDA5C900B4CDEC /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/PrivateFrameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
+		6CA319EB0ECDA5C900B4CDEC /* Message.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Message.framework; path = System/Library/PrivateFrameworks/Message.framework; sourceTree = SDKROOT; };
+		6CA319EC0ECDA5C900B4CDEC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/PrivateFrameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		6CA319EE0ECDA5C900B4CDEC /* MobileBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileBluetooth.framework; path = System/Library/PrivateFrameworks/MobileBluetooth.framework; sourceTree = SDKROOT; };
+		6CA319EF0ECDA5C900B4CDEC /* MobileDeviceLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileDeviceLink.framework; path = System/Library/PrivateFrameworks/MobileDeviceLink.framework; sourceTree = SDKROOT; };
+		6CA319F00ECDA5C900B4CDEC /* MobileInstallation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileInstallation.framework; path = System/Library/PrivateFrameworks/MobileInstallation.framework; sourceTree = SDKROOT; };
+		6CA319F10ECDA5C900B4CDEC /* MobileMusicPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileMusicPlayer.framework; path = System/Library/PrivateFrameworks/MobileMusicPlayer.framework; sourceTree = SDKROOT; };
+		6CA319F20ECDA5C900B4CDEC /* MobileSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileSync.framework; path = System/Library/PrivateFrameworks/MobileSync.framework; sourceTree = SDKROOT; };
+		6CA319F30ECDA5C900B4CDEC /* MobileWirelessSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileWirelessSync.framework; path = System/Library/PrivateFrameworks/MobileWirelessSync.framework; sourceTree = SDKROOT; };
+		6CA319F40ECDA5C900B4CDEC /* MultitouchSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultitouchSupport.framework; path = System/Library/PrivateFrameworks/MultitouchSupport.framework; sourceTree = SDKROOT; };
+		6CA319F50ECDA5C900B4CDEC /* MusicLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MusicLibrary.framework; path = System/Library/PrivateFrameworks/MusicLibrary.framework; sourceTree = SDKROOT; };
+		6CA319F60ECDA5C900B4CDEC /* OfficeImport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OfficeImport.framework; path = System/Library/PrivateFrameworks/OfficeImport.framework; sourceTree = SDKROOT; };
+		6CA319F70ECDA5C900B4CDEC /* PersistentConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PersistentConnection.framework; path = System/Library/PrivateFrameworks/PersistentConnection.framework; sourceTree = SDKROOT; };
+		6CA319F80ECDA5C900B4CDEC /* PhotoLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotoLibrary.framework; path = System/Library/PrivateFrameworks/PhotoLibrary.framework; sourceTree = SDKROOT; };
+		6CA319F90ECDA5C900B4CDEC /* Preferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Preferences.framework; path = System/Library/PrivateFrameworks/Preferences.framework; sourceTree = SDKROOT; };
+		6CA319FA0ECDA5C900B4CDEC /* SpringBoardServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpringBoardServices.framework; path = System/Library/PrivateFrameworks/SpringBoardServices.framework; sourceTree = SDKROOT; };
+		6CA319FB0ECDA5C900B4CDEC /* SpringBoardUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpringBoardUI.framework; path = System/Library/PrivateFrameworks/SpringBoardUI.framework; sourceTree = SDKROOT; };
+		6CA319FC0ECDA5C900B4CDEC /* Symbolication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Symbolication.framework; path = System/Library/PrivateFrameworks/Symbolication.framework; sourceTree = SDKROOT; };
+		6CA319FD0ECDA5C900B4CDEC /* TelephonyUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TelephonyUI.framework; path = System/Library/PrivateFrameworks/TelephonyUI.framework; sourceTree = SDKROOT; };
+		6CA319FE0ECDA5C900B4CDEC /* URLify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URLify.framework; path = System/Library/PrivateFrameworks/URLify.framework; sourceTree = SDKROOT; };
+		6CA319FF0ECDA5C900B4CDEC /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/PrivateFrameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		6CA31A000ECDA5C900B4CDEC /* VisualVoicemail.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualVoicemail.framework; path = System/Library/PrivateFrameworks/VisualVoicemail.framework; sourceTree = SDKROOT; };
+		6CA31A010ECDA5C900B4CDEC /* WebCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebCore.framework; path = System/Library/PrivateFrameworks/WebCore.framework; sourceTree = SDKROOT; };
+		6CA31A020ECDA5C900B4CDEC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/PrivateFrameworks/WebKit.framework; sourceTree = SDKROOT; };
+		6CA31A030ECDA5C900B4CDEC /* XMPP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMPP.framework; path = System/Library/PrivateFrameworks/XMPP.framework; sourceTree = SDKROOT; };
+		6CA31A040ECDA5C900B4CDEC /* YouTube.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTube.framework; path = System/Library/PrivateFrameworks/YouTube.framework; sourceTree = SDKROOT; };
 		6CFBCC460ECB00110055DB85 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6CFBCC470ECB00110055DB85 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		6CFBCC480ECB00110055DB85 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -86,6 +212,69 @@
 				6CFBCC670ECB00110055DB85 /* Security.framework in Frameworks */,
 				6CFBCC680ECB00110055DB85 /* SystemConfiguration.framework in Frameworks */,
 				6CFBCC690ECB00110055DB85 /* UIKit.framework in Frameworks */,
+				6CA31A050ECDA5C900B4CDEC /* Accelerate.framework in Frameworks */,
+				6CA31A060ECDA5C900B4CDEC /* AccountSettings.framework in Frameworks */,
+				6CA31A070ECDA5C900B4CDEC /* AOSNotification.framework in Frameworks */,
+				6CA31A080ECDA5C900B4CDEC /* Apple80211.framework in Frameworks */,
+				6CA31A090ECDA5C900B4CDEC /* AppleJPEG.framework in Frameworks */,
+				6CA31A0A0ECDA5C900B4CDEC /* AppSupport.framework in Frameworks */,
+				6CA31A0B0ECDA5C900B4CDEC /* ArtworkCache.framework in Frameworks */,
+				6CA31A0C0ECDA5C900B4CDEC /* BluetoothManager.framework in Frameworks */,
+				6CA31A0D0ECDA5C900B4CDEC /* Bom.framework in Frameworks */,
+				6CA31A0E0ECDA5C900B4CDEC /* Calculate.framework in Frameworks */,
+				6CA31A0F0ECDA5C900B4CDEC /* Calendar.framework in Frameworks */,
+				6CA31A100ECDA5C900B4CDEC /* CalendarUI.framework in Frameworks */,
+				6CA31A110ECDA5C900B4CDEC /* Camera.framework in Frameworks */,
+				6CA31A120ECDA5C900B4CDEC /* Celestial.framework in Frameworks */,
+				6CA31A130ECDA5C900B4CDEC /* CoreMedia.framework in Frameworks */,
+				6CA31A140ECDA5C900B4CDEC /* CoreSurface.framework in Frameworks */,
+				6CA31A150ECDA5C900B4CDEC /* CoreTelephony.framework in Frameworks */,
+				6CA31A160ECDA5C900B4CDEC /* CoreVideo.framework in Frameworks */,
+				6CA31A170ECDA5C900B4CDEC /* CrashReporterSupport.framework in Frameworks */,
+				6CA31A180ECDA5C900B4CDEC /* DataAccess.framework in Frameworks */,
+				6CA31A190ECDA5C900B4CDEC /* DataAccessExpress.framework in Frameworks */,
+				6CA31A1A0ECDA5C900B4CDEC /* DataMigration.framework in Frameworks */,
+				6CA31A1B0ECDA5C900B4CDEC /* EAP8021X.framework in Frameworks */,
+				6CA31A1C0ECDA5C900B4CDEC /* GMM.framework in Frameworks */,
+				6CA31A1D0ECDA5C900B4CDEC /* GraphicsServices.framework in Frameworks */,
+				6CA31A1E0ECDA5C900B4CDEC /* IAP.framework in Frameworks */,
+				6CA31A1F0ECDA5C900B4CDEC /* ImageIO.framework in Frameworks */,
+				6CA31A200ECDA5C900B4CDEC /* IOMobileFramebuffer.framework in Frameworks */,
+				6CA31A210ECDA5C900B4CDEC /* ITSync.framework in Frameworks */,
+				6CA31A220ECDA5C900B4CDEC /* iTunesStore.framework in Frameworks */,
+				6CA31A230ECDA5C900B4CDEC /* iTunesStoreUI.framework in Frameworks */,
+				6CA31A240ECDA5C900B4CDEC /* iWorkImport.framework in Frameworks */,
+				6CA31A250ECDA5C900B4CDEC /* JavaScriptCore.framework in Frameworks */,
+				6CA31A260ECDA5C900B4CDEC /* ManagedConfiguration.framework in Frameworks */,
+				6CA31A270ECDA5C900B4CDEC /* MapKit.framework in Frameworks */,
+				6CA31A280ECDA5C900B4CDEC /* MBX2D.framework in Frameworks */,
+				6CA31A290ECDA5C900B4CDEC /* MBXConnect.framework in Frameworks */,
+				6CA31A2A0ECDA5C900B4CDEC /* MediaToolbox.framework in Frameworks */,
+				6CA31A2B0ECDA5C900B4CDEC /* Message.framework in Frameworks */,
+				6CA31A2C0ECDA5C900B4CDEC /* MessageUI.framework in Frameworks */,
+				6CA31A2E0ECDA5C900B4CDEC /* MobileBluetooth.framework in Frameworks */,
+				6CA31A2F0ECDA5C900B4CDEC /* MobileDeviceLink.framework in Frameworks */,
+				6CA31A300ECDA5C900B4CDEC /* MobileInstallation.framework in Frameworks */,
+				6CA31A310ECDA5C900B4CDEC /* MobileMusicPlayer.framework in Frameworks */,
+				6CA31A320ECDA5C900B4CDEC /* MobileSync.framework in Frameworks */,
+				6CA31A330ECDA5C900B4CDEC /* MobileWirelessSync.framework in Frameworks */,
+				6CA31A340ECDA5C900B4CDEC /* MultitouchSupport.framework in Frameworks */,
+				6CA31A350ECDA5C900B4CDEC /* MusicLibrary.framework in Frameworks */,
+				6CA31A360ECDA5C900B4CDEC /* OfficeImport.framework in Frameworks */,
+				6CA31A370ECDA5C900B4CDEC /* PersistentConnection.framework in Frameworks */,
+				6CA31A380ECDA5C900B4CDEC /* PhotoLibrary.framework in Frameworks */,
+				6CA31A390ECDA5C900B4CDEC /* Preferences.framework in Frameworks */,
+				6CA31A3A0ECDA5C900B4CDEC /* SpringBoardServices.framework in Frameworks */,
+				6CA31A3B0ECDA5C900B4CDEC /* SpringBoardUI.framework in Frameworks */,
+				6CA31A3C0ECDA5C900B4CDEC /* Symbolication.framework in Frameworks */,
+				6CA31A3D0ECDA5C900B4CDEC /* TelephonyUI.framework in Frameworks */,
+				6CA31A3E0ECDA5C900B4CDEC /* URLify.framework in Frameworks */,
+				6CA31A3F0ECDA5C900B4CDEC /* VideoToolbox.framework in Frameworks */,
+				6CA31A400ECDA5C900B4CDEC /* VisualVoicemail.framework in Frameworks */,
+				6CA31A410ECDA5C900B4CDEC /* WebCore.framework in Frameworks */,
+				6CA31A420ECDA5C900B4CDEC /* WebKit.framework in Frameworks */,
+				6CA31A430ECDA5C900B4CDEC /* XMPP.framework in Frameworks */,
+				6CA31A440ECDA5C900B4CDEC /* YouTube.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +338,69 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CA319C50ECDA5C900B4CDEC /* Accelerate.framework */,
+				6CA319C60ECDA5C900B4CDEC /* AccountSettings.framework */,
+				6CA319C70ECDA5C900B4CDEC /* AOSNotification.framework */,
+				6CA319C80ECDA5C900B4CDEC /* Apple80211.framework */,
+				6CA319C90ECDA5C900B4CDEC /* AppleJPEG.framework */,
+				6CA319CA0ECDA5C900B4CDEC /* AppSupport.framework */,
+				6CA319CB0ECDA5C900B4CDEC /* ArtworkCache.framework */,
+				6CA319CC0ECDA5C900B4CDEC /* BluetoothManager.framework */,
+				6CA319CD0ECDA5C900B4CDEC /* Bom.framework */,
+				6CA319CE0ECDA5C900B4CDEC /* Calculate.framework */,
+				6CA319CF0ECDA5C900B4CDEC /* Calendar.framework */,
+				6CA319D00ECDA5C900B4CDEC /* CalendarUI.framework */,
+				6CA319D10ECDA5C900B4CDEC /* Camera.framework */,
+				6CA319D20ECDA5C900B4CDEC /* Celestial.framework */,
+				6CA319D30ECDA5C900B4CDEC /* CoreMedia.framework */,
+				6CA319D40ECDA5C900B4CDEC /* CoreSurface.framework */,
+				6CA319D50ECDA5C900B4CDEC /* CoreTelephony.framework */,
+				6CA319D60ECDA5C900B4CDEC /* CoreVideo.framework */,
+				6CA319D70ECDA5C900B4CDEC /* CrashReporterSupport.framework */,
+				6CA319D80ECDA5C900B4CDEC /* DataAccess.framework */,
+				6CA319D90ECDA5C900B4CDEC /* DataAccessExpress.framework */,
+				6CA319DA0ECDA5C900B4CDEC /* DataMigration.framework */,
+				6CA319DB0ECDA5C900B4CDEC /* EAP8021X.framework */,
+				6CA319DC0ECDA5C900B4CDEC /* GMM.framework */,
+				6CA319DD0ECDA5C900B4CDEC /* GraphicsServices.framework */,
+				6CA319DE0ECDA5C900B4CDEC /* IAP.framework */,
+				6CA319DF0ECDA5C900B4CDEC /* ImageIO.framework */,
+				6CA319E00ECDA5C900B4CDEC /* IOMobileFramebuffer.framework */,
+				6CA319E10ECDA5C900B4CDEC /* ITSync.framework */,
+				6CA319E20ECDA5C900B4CDEC /* iTunesStore.framework */,
+				6CA319E30ECDA5C900B4CDEC /* iTunesStoreUI.framework */,
+				6CA319E40ECDA5C900B4CDEC /* iWorkImport.framework */,
+				6CA319E50ECDA5C900B4CDEC /* JavaScriptCore.framework */,
+				6CA319E60ECDA5C900B4CDEC /* ManagedConfiguration.framework */,
+				6CA319E70ECDA5C900B4CDEC /* MapKit.framework */,
+				6CA319E80ECDA5C900B4CDEC /* MBX2D.framework */,
+				6CA319E90ECDA5C900B4CDEC /* MBXConnect.framework */,
+				6CA319EA0ECDA5C900B4CDEC /* MediaToolbox.framework */,
+				6CA319EB0ECDA5C900B4CDEC /* Message.framework */,
+				6CA319EC0ECDA5C900B4CDEC /* MessageUI.framework */,
+				6CA319EE0ECDA5C900B4CDEC /* MobileBluetooth.framework */,
+				6CA319EF0ECDA5C900B4CDEC /* MobileDeviceLink.framework */,
+				6CA319F00ECDA5C900B4CDEC /* MobileInstallation.framework */,
+				6CA319F10ECDA5C900B4CDEC /* MobileMusicPlayer.framework */,
+				6CA319F20ECDA5C900B4CDEC /* MobileSync.framework */,
+				6CA319F30ECDA5C900B4CDEC /* MobileWirelessSync.framework */,
+				6CA319F40ECDA5C900B4CDEC /* MultitouchSupport.framework */,
+				6CA319F50ECDA5C900B4CDEC /* MusicLibrary.framework */,
+				6CA319F60ECDA5C900B4CDEC /* OfficeImport.framework */,
+				6CA319F70ECDA5C900B4CDEC /* PersistentConnection.framework */,
+				6CA319F80ECDA5C900B4CDEC /* PhotoLibrary.framework */,
+				6CA319F90ECDA5C900B4CDEC /* Preferences.framework */,
+				6CA319FA0ECDA5C900B4CDEC /* SpringBoardServices.framework */,
+				6CA319FB0ECDA5C900B4CDEC /* SpringBoardUI.framework */,
+				6CA319FC0ECDA5C900B4CDEC /* Symbolication.framework */,
+				6CA319FD0ECDA5C900B4CDEC /* TelephonyUI.framework */,
+				6CA319FE0ECDA5C900B4CDEC /* URLify.framework */,
+				6CA319FF0ECDA5C900B4CDEC /* VideoToolbox.framework */,
+				6CA31A000ECDA5C900B4CDEC /* VisualVoicemail.framework */,
+				6CA31A010ECDA5C900B4CDEC /* WebCore.framework */,
+				6CA31A020ECDA5C900B4CDEC /* WebKit.framework */,
+				6CA31A030ECDA5C900B4CDEC /* XMPP.framework */,
+				6CA31A040ECDA5C900B4CDEC /* YouTube.framework */,
 				6CFBCC460ECB00110055DB85 /* AddressBook.framework */,
 				6CFBCC470ECB00110055DB85 /* AddressBookUI.framework */,
 				6CFBCC480ECB00110055DB85 /* AudioToolbox.framework */,
@@ -248,6 +500,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ClassBrowser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/CoreServices/Encodings\"",
+				);
 				PRODUCT_NAME = ClassBrowser;
 			};
 			name = Debug;
@@ -264,6 +520,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ClassBrowser_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/CoreServices/Encodings\"",
+				);
 				PRODUCT_NAME = ClassBrowser;
 			};
 			name = Release;
