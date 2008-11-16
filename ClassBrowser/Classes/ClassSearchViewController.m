@@ -2,9 +2,6 @@
 //  ClassSearchViewController.m
 //  ClassBrowser
 //
-//  Created by 野村 憲男 on 08/11/16.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
-//
 
 
 #import <objc/runtime.h>
