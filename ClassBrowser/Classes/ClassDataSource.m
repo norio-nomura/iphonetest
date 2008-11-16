@@ -13,7 +13,7 @@
 @implementation NSArray(indexedDictionary)
 
 - (NSDictionary*)indexedDictionary {
-	NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
+	NSMutableDictionary *dictionary = [[[NSMutableDictionary alloc] initWithCapacity:0] autorelease];
 	for (id obj in self) {
 		NSString *initialChar = [[[obj description] substringToIndex:1] uppercaseString];
 		NSMutableArray *array = [dictionary objectForKey:initialChar];
@@ -37,6 +37,7 @@
 
 @implementation ClassDataSource
 
+@synthesize name;
 @synthesize sectionIndexTitles;
 @synthesize rows;
 
@@ -56,6 +57,7 @@
 
 
 - (void)dealloc {
+	[name release];
 	[sectionIndexTitles release];
 	[rows release];
     [super dealloc];
@@ -77,16 +79,14 @@
 
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-	return sectionIndexTitles;
+	return [sectionIndexTitles count] > 1 ? sectionIndexTitles : nil;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.name];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:self.name] autorelease];
     }
 	cell.text = [self objectForRowAtIndexPath:indexPath];
     return cell;
@@ -94,7 +94,8 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if ([sectionIndexTitles objectAtIndex:section]) {
+	NSInteger count = [sectionIndexTitles count];
+	if (count && [sectionIndexTitles objectAtIndex:section]) {
 		return [[rows objectForKey:[sectionIndexTitles objectAtIndex:section]] count];
 	} else {
 		return 0;

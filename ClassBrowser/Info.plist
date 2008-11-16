@@ -26,5 +26,7 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
 </dict>
 </plist>

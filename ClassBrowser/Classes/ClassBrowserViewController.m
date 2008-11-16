@@ -5,29 +5,36 @@
 
 #import <objc/runtime.h>
 #import "ClassBrowserViewController.h"
+#import "ClassSearchViewController.h"
 #import "ClassTree.h"
 #import "ClassDataSource.h"
+
+
+#define KEY_SUBCLASSES			@"Subclasses"
+#define KEY_PROPERTIES			@"Properties"
+#define KEY_CLASS_METHODS		@"ClassMethods"
+#define KEY_INSTANCE_METHODS	@"InstanceMethods"
+#define KEY_PROTOCOLS			@"Protocols"
+
 
 @implementation ClassBrowserViewController
 
 @synthesize tableView;
 @synthesize tabBar;
+@synthesize classSearchButtonItem;
 @synthesize dataSourcesArray = dataSourcesArray_;
 
 
 - (void)dealloc {
 	[tableView release];
 	[tabBar release];
+	[classSearchButtonItem release];
 	[dataSourcesArray_ release];
     [super dealloc];
 }
 
 
-#pragma mark UIViewController Class
-
-
-- (void)viewDidLoad {
-	[super viewDidLoad];
+- (void)loadDataSources {
 	NSMutableArray *array = [NSMutableArray arrayWithCapacity:5];
 	NSMutableArray *tempArray;
 	ClassDataSource *classDataSource;
@@ -36,6 +43,7 @@
 	// Subclasses
 	if ([[[ClassTree sharedClassTree].classDictionary objectForKey:self.title] count] > 0) {
 		classDataSource = [[ClassDataSource alloc] initWithArray:[[[ClassTree sharedClassTree].classDictionary objectForKey:self.title] allKeys]];
+		classDataSource.name = KEY_SUBCLASSES;
 		[array addObject:classDataSource];
 		[classDataSource release];
 		[[tabBar.items objectAtIndex:index++] setTag:[array count]-1];
@@ -57,6 +65,7 @@
 			}
 			free(properties);
 			classDataSource = [[ClassDataSource alloc] initWithArray:tempArray];
+			classDataSource.name = KEY_PROPERTIES;
 			[array addObject:classDataSource];
 			[classDataSource release];
 			[[tabBar.items objectAtIndex:index++] setTag:[array count]-1];
@@ -74,6 +83,7 @@
 			}
 			free(classMethods);
 			classDataSource = [[ClassDataSource alloc] initWithArray:tempArray];
+			classDataSource.name = KEY_CLASS_METHODS;
 			[array addObject:classDataSource];
 			[classDataSource release];
 			[[tabBar.items objectAtIndex:index++] setTag:[array count]-1];
@@ -91,6 +101,7 @@
 			}
 			free(instanceMethods);
 			classDataSource = [[ClassDataSource alloc] initWithArray:tempArray];
+			classDataSource.name = KEY_INSTANCE_METHODS;
 			[array addObject:classDataSource];
 			[classDataSource release];
 			[[tabBar.items objectAtIndex:index++] setTag:[array count]-1];
@@ -106,6 +117,7 @@
 			}
 			free(protocols);
 			classDataSource = [[ClassDataSource alloc] initWithArray:tempArray];
+			classDataSource.name = KEY_PROTOCOLS;
 			[array addObject:classDataSource];
 			[classDataSource release];
 			[[tabBar.items objectAtIndex:index++] setTag:[array count]-1];
@@ -128,6 +140,27 @@
 			break;
 		}
 	}
+	
+	[tableView reloadData];
+}
+
+
+- (IBAction)showClassSearch:(id)sender {
+	if (![[[self.navigationController topViewController] class] isMemberOfClass:[ClassSearchViewController class]]) {
+		ClassSearchViewController *viewController = [[ClassSearchViewController alloc] initWithNibName:@"ClassSearchViewController" bundle:nil];
+		[self.navigationController pushViewController:viewController animated:YES];
+		[viewController release];
+	}
+}
+
+
+#pragma mark UIViewController Class
+
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	self.navigationItem.rightBarButtonItem = classSearchButtonItem;
+	[self loadDataSources];
 }
 
 
@@ -147,7 +180,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if ([tabBar.selectedItem.title isEqual:@"SubCls"]) {
+	if ([[(ClassDataSource*)self.tableView.dataSource name] isEqual:KEY_SUBCLASSES]) {
 		ClassBrowserViewController *viewController = [[ClassBrowserViewController alloc] initWithNibName:@"ClassBrowserViewController" bundle:nil];
 		viewController.title = [(ClassDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath];
 		[[self navigationController] pushViewController:viewController animated:YES];

@@ -11,16 +11,40 @@
 @implementation ClassBrowserAppDelegate
 
 @synthesize window;
+@synthesize activityIndicatorView;
 @synthesize navigationController;
 @synthesize rootViewController;
 
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
-    // Override point for customization after app launch    
-	rootViewController.title = KEY_ROOT_CLASSES;
+- (void)dealloc {
+	[rootViewController release];
+	[navigationController release];
+	[activityIndicatorView release];
+	[window release];
+	[super dealloc];
+}
 
-    [window addSubview:[navigationController view]];
+
+- (void)pushTree:(NSArray*)tree {
+	[navigationController popToRootViewControllerAnimated:NO];
+	for (NSString *className in tree) {
+		ClassBrowserViewController *viewController = [[ClassBrowserViewController alloc] initWithNibName:@"ClassBrowserViewController" bundle:nil];
+		viewController.title = className;
+		[navigationController pushViewController:viewController animated:NO];
+		[viewController release];
+	}
+	[tree release];
+}
+
+
+#pragma mark UIApplicationDelegate
+
+
+- (void)applicationDidFinishLaunching:(UIApplication *)application {    
+	[[ClassTree sharedClassTree] setupClassDictionary];
+	[activityIndicatorView stopAnimating];
+	rootViewController.title = KEY_ROOT_CLASSES;
+	[window addSubview:[navigationController view]];
 	[window makeKeyAndVisible];
 }
 
@@ -29,12 +53,5 @@
 	// Save data if appropriate
 }
 
-
-- (void)dealloc {
-	[rootViewController release];
-	[navigationController release];
-	[window release];
-	[super dealloc];
-}
 
 @end

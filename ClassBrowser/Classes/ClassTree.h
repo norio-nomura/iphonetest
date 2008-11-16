@@ -14,5 +14,6 @@
 @property (retain,readonly) NSDictionary *classDictionary;
 
 + (ClassTree*)sharedClassTree;
+- (void)setupClassDictionary;
 
 @end

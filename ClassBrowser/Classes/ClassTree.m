@@ -64,7 +64,6 @@ static ClassTree *sharedClassTreeInstance = nil;
 
 - (id)init {
 	if (self = [super init]) {
-		[self setupClassDictionary];
 	}
 	return self;
 }
