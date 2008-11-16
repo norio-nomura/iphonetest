@@ -7,7 +7,6 @@
 #import <objc/runtime.h>
 #import "ClassBrowserAppDelegate.h"
 #import "ClassSearchViewController.h"
-#import "ClassBrowserViewController.h"
 #import "ClassDataSource.h"
 #import "ClassTree.h"
 
@@ -61,10 +60,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (segmentedControl.selectedSegmentIndex == 0) {
-		ClassBrowserViewController *viewController = [[ClassBrowserViewController alloc] initWithNibName:@"ClassBrowserViewController" bundle:nil];
-		viewController.title = [(ClassDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath];
-		[[self navigationController] pushViewController:viewController animated:YES];
-		[viewController release];
+		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
+		[appDelegate pushClass:[(ClassDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath]];
 	} else if (segmentedControl.selectedSegmentIndex == 1) {
 		NSString *className = [(ClassDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath];
 		NSMutableArray *tree = [[NSMutableArray alloc] initWithObjects:className,nil];
@@ -74,7 +71,8 @@
 			superClassName = [NSString stringWithCString:class_getName(class_getSuperclass(objc_getClass([superClassName cStringUsingEncoding:NSNEXTSTEPStringEncoding]))) encoding:NSNEXTSTEPStringEncoding];
 		}
 		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
-		[appDelegate performSelector:@selector(pushTree:) withObject:tree afterDelay:1];
+		[appDelegate performSelector:@selector(pushClassTree:) withObject:tree afterDelay:0.1];
+		[tree release];
 	}
 }
 

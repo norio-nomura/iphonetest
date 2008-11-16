@@ -11,6 +11,7 @@
 @implementation ClassBrowserAppDelegate
 
 @synthesize window;
+@synthesize splashView;
 @synthesize activityIndicatorView;
 @synthesize navigationController;
 @synthesize rootViewController;
@@ -20,20 +21,42 @@
 	[rootViewController release];
 	[navigationController release];
 	[activityIndicatorView release];
+	[splashView release];
 	[window release];
 	[super dealloc];
 }
 
 
-- (void)pushTree:(NSArray*)tree {
-	[navigationController popToRootViewControllerAnimated:NO];
-	for (NSString *className in tree) {
-		ClassBrowserViewController *viewController = [[ClassBrowserViewController alloc] initWithNibName:@"ClassBrowserViewController" bundle:nil];
-		viewController.title = className;
-		[navigationController pushViewController:viewController animated:NO];
-		[viewController release];
+#define kANIMATION_DELAY_SECOND 1
+
+
+- (void)splashAnimation {
+	[[ClassTree sharedClassTree] setupClassDictionary];
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:kANIMATION_DELAY_SECOND];
+	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:window cache:NO];
+	[activityIndicatorView stopAnimating];
+	[splashView removeFromSuperview];
+	rootViewController.title = KEY_ROOT_CLASSES;
+	[window addSubview:[navigationController view]];
+	[UIView commitAnimations];
+}
+
+
+- (void)pushClass:(NSString*)className {
+	ClassBrowserViewController *viewController = [[ClassBrowserViewController alloc] initWithNibName:@"ClassBrowserViewController" bundle:nil];
+	viewController.title = className;
+	[navigationController pushViewController:viewController animated:YES];
+	[viewController release];
+}
+
+
+- (void)pushClassTree:(NSArray*)classTree {
+	[navigationController popToRootViewControllerAnimated:YES];
+	int i = 1;
+	for (NSString *className in classTree) {
+		[self performSelector:@selector(pushClass:) withObject:className afterDelay:0.9*i++];
 	}
-	[tree release];
 }
 
 
@@ -41,11 +64,8 @@
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-	[[ClassTree sharedClassTree] setupClassDictionary];
-	[activityIndicatorView stopAnimating];
-	rootViewController.title = KEY_ROOT_CLASSES;
-	[window addSubview:[navigationController view]];
 	[window makeKeyAndVisible];
+	[self performSelector:@selector(splashAnimation) withObject:nil afterDelay:0.1];
 }
 
 

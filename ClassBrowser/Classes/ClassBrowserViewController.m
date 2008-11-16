@@ -4,6 +4,7 @@
 //
 
 #import <objc/runtime.h>
+#import "ClassBrowserAppDelegate.h"
 #import "ClassBrowserViewController.h"
 #import "ClassSearchViewController.h"
 #import "ClassTree.h"
@@ -181,10 +182,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if ([[(ClassDataSource*)self.tableView.dataSource name] isEqual:KEY_SUBCLASSES]) {
-		ClassBrowserViewController *viewController = [[ClassBrowserViewController alloc] initWithNibName:@"ClassBrowserViewController" bundle:nil];
-		viewController.title = [(ClassDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath];
-		[[self navigationController] pushViewController:viewController animated:YES];
-		[viewController release];
+		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
+		[appDelegate pushClass:[(ClassDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath]];
 	}
 }
 

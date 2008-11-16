@@ -11,6 +11,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ClassBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ClassBrowserViewController.m */; };
+		6C15C4680ED0596000A2E8D9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C15C4670ED0596000A2E8D9 /* Default.png */; };
 		6C3A8E930ED03B3C00313D2F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3A8E810ED03B3C00313D2F /* AddressBook.framework */; };
 		6C3A8E940ED03B3C00313D2F /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3A8E820ED03B3C00313D2F /* AddressBookUI.framework */; };
 		6C3A8E950ED03B3C00313D2F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3A8E830ED03B3C00313D2F /* AudioToolbox.framework */; };
@@ -96,7 +97,6 @@
 		6C7DBF070ECE548D0089E3E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */; };
 		6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */; };
 		6CA317CF0ECD874100B4CDEC /* ClassDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA317CE0ECD874100B4CDEC /* ClassDataSource.m */; };
-		6CB2DDD50ECEB19600983975 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CB2DDD40ECEB19600983975 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +108,7 @@
 		28D7ACF70DDB3853001CB0EB /* ClassBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBrowserViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ClassBrowser_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassBrowser_Prefix.pch; sourceTree = "<group>"; };
+		6C15C4670ED0596000A2E8D9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6C3A8E810ED03B3C00313D2F /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6C3A8E820ED03B3C00313D2F /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		6C3A8E830ED03B3C00313D2F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -196,7 +197,6 @@
 		6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBrowserViewController.xib; sourceTree = "<group>"; };
 		6CA317CD0ECD874100B4CDEC /* ClassDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassDataSource.h; sourceTree = "<group>"; };
 		6CA317CE0ECD874100B4CDEC /* ClassDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDataSource.m; sourceTree = "<group>"; };
-		6CB2DDD40ECEB19600983975 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -344,7 +344,7 @@
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */,
-				6CB2DDD40ECEB19600983975 /* Default.png */,
+				6C15C4670ED0596000A2E8D9 /* Default.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -480,8 +480,8 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */,
 				6C7DBF070ECE548D0089E3E5 /* InfoPlist.strings in Resources */,
-				6CB2DDD50ECEB19600983975 /* Default.png in Resources */,
 				6C4C1A7A0ECFF43D00BF12F1 /* ClassSearchViewController.xib in Resources */,
+				6C15C4680ED0596000A2E8D9 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
