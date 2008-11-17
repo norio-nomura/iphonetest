@@ -55,7 +55,7 @@
 	[navigationController popToRootViewControllerAnimated:YES];
 	int i = 1;
 	for (NSString *className in classTree) {
-		[self performSelector:@selector(pushClass:) withObject:className afterDelay:0.9*i++];
+		[self performSelector:@selector(pushClass:) withObject:className afterDelay:i++];
 	}
 }
 
