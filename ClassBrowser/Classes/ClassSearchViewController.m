@@ -33,7 +33,6 @@
 
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
 	SubclassesDataSource * subclassesDataSource = [[SubclassesDataSource alloc] initWithArray:[[ClassTree sharedClassTree].classDictionary allKeys]];
 	self.initialDataSource = subclassesDataSource;
 	self.dataSource = subclassesDataSource;
@@ -67,7 +66,7 @@
 		NSMutableArray *tree = [[NSMutableArray alloc] initWithObjects:className,nil];
 		NSString *superClassName = [NSString stringWithCString:class_getName(class_getSuperclass(objc_getClass([className cStringUsingEncoding:NSNEXTSTEPStringEncoding]))) encoding:NSNEXTSTEPStringEncoding];
 		while (![superClassName isEqualToString:@"nil"]) {
-			[tree insertObject:superClassName atIndex:0];
+			[tree addObject:superClassName];
 			superClassName = [NSString stringWithCString:class_getName(class_getSuperclass(objc_getClass([superClassName cStringUsingEncoding:NSNEXTSTEPStringEncoding]))) encoding:NSNEXTSTEPStringEncoding];
 		}
 		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
