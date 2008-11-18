@@ -69,6 +69,18 @@
 }
 
 
+- (NSIndexPath*)indexPathForObject:(id)obj {
+	NSString *initialChar = [[[obj description] substringToIndex:1] uppercaseString];
+	NSUInteger section = [sectionIndexTitles indexOfObject:initialChar];
+	NSUInteger row = [[rows objectForKey:initialChar] indexOfObject:[obj description]];
+	if (section != NSNotFound && row != NSNotFound) {
+		return [NSIndexPath indexPathForRow:row inSection:section];
+	} else {
+		return nil;
+	}
+}
+
+
 #pragma mark UITableViewDataSource Protocol
 
 

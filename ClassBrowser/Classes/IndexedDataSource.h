@@ -19,5 +19,6 @@
 - (id)initWithArray:(NSArray*)array;
 - (id)initWithDictionary:(NSDictionary*)dictionary;
 - (id)objectForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (NSIndexPath*)indexPathForObject:(id)obj;
 
 @end
