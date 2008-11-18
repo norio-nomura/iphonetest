@@ -7,6 +7,7 @@
 #import "ClassBrowserAppDelegate.h"
 #import "ClassBrowserViewController.h"
 #import "ClassTree.h"
+#import "IndexedDataSource.h"
 
 @implementation ClassBrowserAppDelegate
 
@@ -15,9 +16,11 @@
 @synthesize activityIndicatorView;
 @synthesize navigationController;
 @synthesize rootViewController;
+@synthesize autoPushClassNames;
 
 
 - (void)dealloc {
+	[autoPushClassNames release];
 	[rootViewController release];
 	[navigationController release];
 	[activityIndicatorView release];
@@ -51,12 +54,9 @@
 }
 
 
-- (void)pushClassTree:(NSArray*)classTree {
-	[navigationController popToRootViewControllerAnimated:NO];
-	int i = 1;
-	for (NSString *className in classTree) {
-		[self performSelector:@selector(pushClass:) withObject:className afterDelay:i++];
-	}
+- (void)pushClassTree:(NSMutableArray*)classTree {
+	self.autoPushClassNames = classTree;
+	[navigationController popToRootViewControllerAnimated:YES];
 }
 
 
@@ -71,6 +71,35 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Save data if appropriate
+}
+
+
+#pragma mark UINavigationControllerDelegate 
+
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+	if (self.autoPushClassNames) {
+		NSUInteger index = [self.navigationController.viewControllers indexOfObject:viewController];
+		if (index && index != NSNotFound) {
+			ClassBrowserViewController *prevViewController = (ClassBrowserViewController*)[self.navigationController.viewControllers objectAtIndex:index-1];
+			IndexedDataSource *dataSource = (IndexedDataSource*)prevViewController.tableView.dataSource;
+			NSIndexPath *indexPath = [dataSource indexPathForObject:viewController.title];
+			if (indexPath) {
+				[prevViewController.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+			}
+		}
+		if ([self.autoPushClassNames count] == 0) {
+			self.autoPushClassNames = nil;
+		}
+	}
+}
+
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+	if (self.autoPushClassNames) {
+		[self performSelector:@selector(pushClass:) withObject:[self.autoPushClassNames lastObject] afterDelay:0.1];
+		[self.autoPushClassNames removeLastObject];
+	}
 }
 
 
