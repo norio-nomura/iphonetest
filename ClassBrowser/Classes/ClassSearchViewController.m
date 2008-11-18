@@ -59,8 +59,21 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
-	[appDelegate pushClass:[[(SubclassesDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath] description]];
+	if (segmentedControl.selectedSegmentIndex == 0) {
+		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
+		[appDelegate pushClass:[[(SubclassesDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath] description]];
+	} else if (segmentedControl.selectedSegmentIndex == 1) {
+		NSString *className = [(SubclassesDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath];
+		NSMutableArray *tree = [[NSMutableArray alloc] initWithObjects:className,nil];
+		NSString *superClassName = [NSString stringWithCString:class_getName(class_getSuperclass(objc_getClass([className cStringUsingEncoding:NSNEXTSTEPStringEncoding]))) encoding:NSNEXTSTEPStringEncoding];
+		while (![superClassName isEqualToString:@"nil"]) {
+			[tree insertObject:superClassName atIndex:0];
+			superClassName = [NSString stringWithCString:class_getName(class_getSuperclass(objc_getClass([superClassName cStringUsingEncoding:NSNEXTSTEPStringEncoding]))) encoding:NSNEXTSTEPStringEncoding];
+		}
+		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
+		[appDelegate performSelector:@selector(pushClassTree:) withObject:tree afterDelay:0.1];
+		[tree release];
+	}
 }
 
 
