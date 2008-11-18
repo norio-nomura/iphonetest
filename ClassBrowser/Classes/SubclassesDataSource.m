@@ -13,6 +13,15 @@
 @synthesize cellFromNib;
 
 
+- (void)dealloc {
+	[cellFromNib release];
+    [super dealloc];
+}
+
+
+#pragma mark UITableViewDataSource Protocol
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *SubclassesCellIdentifier = @"SubclassesCell";
     SubclassesCell *cell = (SubclassesCell*)[tableView dequeueReusableCellWithIdentifier:SubclassesCellIdentifier];
