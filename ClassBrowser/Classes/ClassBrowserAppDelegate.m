@@ -52,7 +52,7 @@
 
 
 - (void)pushClassTree:(NSArray*)classTree {
-	[navigationController popToRootViewControllerAnimated:YES];
+	[navigationController popToRootViewControllerAnimated:NO];
 	int i = 1;
 	for (NSString *className in classTree) {
 		[self performSelector:@selector(pushClass:) withObject:className afterDelay:i++];
