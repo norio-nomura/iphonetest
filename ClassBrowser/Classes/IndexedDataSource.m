@@ -1,9 +1,9 @@
 //
-//  ClassDataSource.m
+//  IndexedDataSource.m
 //  ClassBrowser
 //
 
-#import "ClassDataSource.h"
+#import "IndexedDataSource.h"
 
 @interface NSArray(indexedDictionary)
 - (NSDictionary*)indexedDictionary;
@@ -35,7 +35,7 @@
 @end
 
 
-@implementation ClassDataSource
+@implementation IndexedDataSource
 
 @synthesize name;
 @synthesize sectionIndexTitles;
@@ -88,7 +88,7 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:self.name] autorelease];
     }
-	cell.text = [self objectForRowAtIndexPath:indexPath];
+	cell.text = [[self objectForRowAtIndexPath:indexPath] description];
     return cell;
 }
 

@@ -8,7 +8,8 @@
 #import "ClassBrowserViewController.h"
 #import "ClassSearchViewController.h"
 #import "ClassTree.h"
-#import "ClassDataSource.h"
+#import "IndexedDataSource.h"
+#import "SubclassesDataSource.h"
 
 
 #define KEY_SUBCLASSES			@"Subclasses"
@@ -38,15 +39,15 @@
 - (void)loadDataSources {
 	NSMutableArray *array = [NSMutableArray arrayWithCapacity:5];
 	NSMutableArray *tempArray;
-	ClassDataSource *classDataSource;
+	IndexedDataSource *indexedDataSource;
 	NSUInteger index = 0;
 	
 	// Subclasses
 	if ([[[ClassTree sharedClassTree].classDictionary objectForKey:self.title] count] > 0) {
-		classDataSource = [[ClassDataSource alloc] initWithArray:[[[ClassTree sharedClassTree].classDictionary objectForKey:self.title] allKeys]];
-		classDataSource.name = KEY_SUBCLASSES;
-		[array addObject:classDataSource];
-		[classDataSource release];
+		indexedDataSource = [[SubclassesDataSource alloc] initWithArray:[[[ClassTree sharedClassTree].classDictionary objectForKey:self.title] allKeys]];
+		indexedDataSource.name = KEY_SUBCLASSES;
+		[array addObject:indexedDataSource];
+		[indexedDataSource release];
 		[[tabBar.items objectAtIndex:index++] setTag:[array count]-1];
 	} else {
 		[[tabBar.items objectAtIndex:index++] setEnabled:NO];
@@ -65,10 +66,10 @@
 									  property_getAttributes(properties[i])]];
 			}
 			free(properties);
-			classDataSource = [[ClassDataSource alloc] initWithArray:tempArray];
-			classDataSource.name = KEY_PROPERTIES;
-			[array addObject:classDataSource];
-			[classDataSource release];
+			indexedDataSource = [[IndexedDataSource alloc] initWithArray:tempArray];
+			indexedDataSource.name = KEY_PROPERTIES;
+			[array addObject:indexedDataSource];
+			[indexedDataSource release];
 			[[tabBar.items objectAtIndex:index++] setTag:[array count]-1];
 		} else {
 			[[tabBar.items objectAtIndex:index++] setEnabled:NO];
@@ -83,10 +84,10 @@
 									  method_getTypeEncoding(classMethods[i])]];
 			}
 			free(classMethods);
-			classDataSource = [[ClassDataSource alloc] initWithArray:tempArray];
-			classDataSource.name = KEY_CLASS_METHODS;
-			[array addObject:classDataSource];
-			[classDataSource release];
+			indexedDataSource = [[IndexedDataSource alloc] initWithArray:tempArray];
+			indexedDataSource.name = KEY_CLASS_METHODS;
+			[array addObject:indexedDataSource];
+			[indexedDataSource release];
 			[[tabBar.items objectAtIndex:index++] setTag:[array count]-1];
 		} else {
 			[[tabBar.items objectAtIndex:index++] setEnabled:NO];
@@ -101,10 +102,10 @@
 									  method_getTypeEncoding(instanceMethods[i])]];
 			}
 			free(instanceMethods);
-			classDataSource = [[ClassDataSource alloc] initWithArray:tempArray];
-			classDataSource.name = KEY_INSTANCE_METHODS;
-			[array addObject:classDataSource];
-			[classDataSource release];
+			indexedDataSource = [[IndexedDataSource alloc] initWithArray:tempArray];
+			indexedDataSource.name = KEY_INSTANCE_METHODS;
+			[array addObject:indexedDataSource];
+			[indexedDataSource release];
 			[[tabBar.items objectAtIndex:index++] setTag:[array count]-1];
 		} else {
 			[[tabBar.items objectAtIndex:index++] setEnabled:NO];
@@ -117,10 +118,10 @@
 									  protocol_getName(protocols[i])]];
 			}
 			free(protocols);
-			classDataSource = [[ClassDataSource alloc] initWithArray:tempArray];
-			classDataSource.name = KEY_PROTOCOLS;
-			[array addObject:classDataSource];
-			[classDataSource release];
+			indexedDataSource = [[IndexedDataSource alloc] initWithArray:tempArray];
+			indexedDataSource.name = KEY_PROTOCOLS;
+			[array addObject:indexedDataSource];
+			[indexedDataSource release];
 			[[tabBar.items objectAtIndex:index++] setTag:[array count]-1];
 		} else {
 			[[tabBar.items objectAtIndex:index++] setEnabled:NO];
@@ -181,9 +182,12 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if ([[(ClassDataSource*)self.tableView.dataSource name] isEqual:KEY_SUBCLASSES]) {
+	if ([[(IndexedDataSource*)self.tableView.dataSource name] isEqual:KEY_SUBCLASSES]) {
 		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
-		[appDelegate pushClass:[(ClassDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath]];
+		[appDelegate pushClass:[[(IndexedDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath] description]];
+	} else if ([[(IndexedDataSource*)self.tableView.dataSource name] isEqual:KEY_CLASS_METHODS]) {
+//		Class class = objc_getClass(self.title);
+//		Method 
 	}
 }
 

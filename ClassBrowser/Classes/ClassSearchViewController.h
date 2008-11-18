@@ -5,19 +5,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class ClassDataSource;
+@class IndexedDataSource;
 
 @interface ClassSearchViewController : UIViewController<UITableViewDelegate,UISearchBarDelegate> {
 	UITableView *tableView;
 	UISegmentedControl *segmentedControl;
-	ClassDataSource *dataSource;
-	ClassDataSource *initialDataSource;
+	IndexedDataSource *dataSource;
+	IndexedDataSource *initialDataSource;
 }
 
 @property (nonatomic,retain) IBOutlet UITableView *tableView;
 @property (nonatomic,retain) IBOutlet UISegmentedControl *segmentedControl;
-@property (nonatomic,retain) ClassDataSource *dataSource;
-@property (nonatomic,retain) ClassDataSource *initialDataSource;
+@property (nonatomic,retain) IndexedDataSource *dataSource;
+@property (nonatomic,retain) IndexedDataSource *initialDataSource;
 
 
 @end

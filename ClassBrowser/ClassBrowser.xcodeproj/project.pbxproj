@@ -95,8 +95,11 @@
 		6C4C1A7F0ECFF52F00BF12F1 /* ClassSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C1A7E0ECFF52F00BF12F1 /* ClassSearchViewController.m */; };
 		6C64DE7B0ECBFE3D003A3DF2 /* ClassTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */; };
 		6C7DBF070ECE548D0089E3E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */; };
+		6C82726D0ED283F400B5CEEB /* IndexedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C82726C0ED283F400B5CEEB /* IndexedDataSource.m */; };
+		6C82727F0ED285BA00B5CEEB /* SubclassesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C82727E0ED285BA00B5CEEB /* SubclassesDataSource.m */; };
+		6C8272B10ED287E800B5CEEB /* SubclassesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8272B00ED287E800B5CEEB /* SubclassesCell.xib */; };
+		6C8272C60ED2894400B5CEEB /* SubclassesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8272C50ED2894400B5CEEB /* SubclassesCell.m */; };
 		6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */; };
-		6CA317CF0ECD874100B4CDEC /* ClassDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA317CE0ECD874100B4CDEC /* ClassDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,9 +197,14 @@
 		6C64DE790ECBFE3D003A3DF2 /* ClassTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassTree.h; sourceTree = "<group>"; };
 		6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassTree.m; sourceTree = "<group>"; };
 		6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		6C82726B0ED283F400B5CEEB /* IndexedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedDataSource.h; sourceTree = "<group>"; };
+		6C82726C0ED283F400B5CEEB /* IndexedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexedDataSource.m; sourceTree = "<group>"; };
+		6C82727D0ED285BA00B5CEEB /* SubclassesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesDataSource.h; sourceTree = "<group>"; };
+		6C82727E0ED285BA00B5CEEB /* SubclassesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassesDataSource.m; sourceTree = "<group>"; };
+		6C8272B00ED287E800B5CEEB /* SubclassesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubclassesCell.xib; sourceTree = "<group>"; };
+		6C8272C40ED2894400B5CEEB /* SubclassesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesCell.h; sourceTree = "<group>"; };
+		6C8272C50ED2894400B5CEEB /* SubclassesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassesCell.m; sourceTree = "<group>"; };
 		6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBrowserViewController.xib; sourceTree = "<group>"; };
-		6CA317CD0ECD874100B4CDEC /* ClassDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassDataSource.h; sourceTree = "<group>"; };
-		6CA317CE0ECD874100B4CDEC /* ClassDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDataSource.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -297,12 +305,16 @@
 				1D3623250D0F684500981E51 /* ClassBrowserAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* ClassBrowserViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* ClassBrowserViewController.m */,
-				6CA317CD0ECD874100B4CDEC /* ClassDataSource.h */,
-				6CA317CE0ECD874100B4CDEC /* ClassDataSource.m */,
 				6C4C1A7D0ECFF52F00BF12F1 /* ClassSearchViewController.h */,
 				6C4C1A7E0ECFF52F00BF12F1 /* ClassSearchViewController.m */,
 				6C64DE790ECBFE3D003A3DF2 /* ClassTree.h */,
 				6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */,
+				6C82726B0ED283F400B5CEEB /* IndexedDataSource.h */,
+				6C82726C0ED283F400B5CEEB /* IndexedDataSource.m */,
+				6C8272C40ED2894400B5CEEB /* SubclassesCell.h */,
+				6C8272C50ED2894400B5CEEB /* SubclassesCell.m */,
+				6C82727D0ED285BA00B5CEEB /* SubclassesDataSource.h */,
+				6C82727E0ED285BA00B5CEEB /* SubclassesDataSource.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -341,10 +353,11 @@
 			children = (
 				6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */,
 				6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */,
+				6C15C4670ED0596000A2E8D9 /* Default.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */,
-				6C15C4670ED0596000A2E8D9 /* Default.png */,
+				6C8272B00ED287E800B5CEEB /* SubclassesCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -482,6 +495,7 @@
 				6C7DBF070ECE548D0089E3E5 /* InfoPlist.strings in Resources */,
 				6C4C1A7A0ECFF43D00BF12F1 /* ClassSearchViewController.xib in Resources */,
 				6C15C4680ED0596000A2E8D9 /* Default.png in Resources */,
+				6C8272B10ED287E800B5CEEB /* SubclassesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,8 +510,10 @@
 				1D3623260D0F684500981E51 /* ClassBrowserAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* ClassBrowserViewController.m in Sources */,
 				6C64DE7B0ECBFE3D003A3DF2 /* ClassTree.m in Sources */,
-				6CA317CF0ECD874100B4CDEC /* ClassDataSource.m in Sources */,
 				6C4C1A7F0ECFF52F00BF12F1 /* ClassSearchViewController.m in Sources */,
+				6C82726D0ED283F400B5CEEB /* IndexedDataSource.m in Sources */,
+				6C82727F0ED285BA00B5CEEB /* SubclassesDataSource.m in Sources */,
+				6C8272C60ED2894400B5CEEB /* SubclassesCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

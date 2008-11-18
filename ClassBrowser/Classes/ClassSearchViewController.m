@@ -7,8 +7,8 @@
 #import <objc/runtime.h>
 #import "ClassBrowserAppDelegate.h"
 #import "ClassSearchViewController.h"
-#import "ClassDataSource.h"
 #import "ClassTree.h"
+#import "SubclassesDataSource.h"
 
 
 @implementation ClassSearchViewController
@@ -34,10 +34,10 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	ClassDataSource * classDataSource = [[ClassDataSource alloc] initWithArray:[[ClassTree sharedClassTree].classDictionary allKeys]];
-	self.initialDataSource = classDataSource;
-	self.dataSource = classDataSource;
-	[classDataSource release];
+	SubclassesDataSource * subclassesDataSource = [[SubclassesDataSource alloc] initWithArray:[[ClassTree sharedClassTree].classDictionary allKeys]];
+	self.initialDataSource = subclassesDataSource;
+	self.dataSource = subclassesDataSource;
+	[subclassesDataSource release];
 	tableView.dataSource = self.dataSource;
 	[tableView reloadData];
 }
@@ -59,21 +59,8 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (segmentedControl.selectedSegmentIndex == 0) {
-		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
-		[appDelegate pushClass:[(ClassDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath]];
-	} else if (segmentedControl.selectedSegmentIndex == 1) {
-		NSString *className = [(ClassDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath];
-		NSMutableArray *tree = [[NSMutableArray alloc] initWithObjects:className,nil];
-		NSString *superClassName = [NSString stringWithCString:class_getName(class_getSuperclass(objc_getClass([className cStringUsingEncoding:NSNEXTSTEPStringEncoding]))) encoding:NSNEXTSTEPStringEncoding];
-		while (![superClassName isEqualToString:@"nil"]) {
-			[tree insertObject:superClassName atIndex:0];
-			superClassName = [NSString stringWithCString:class_getName(class_getSuperclass(objc_getClass([superClassName cStringUsingEncoding:NSNEXTSTEPStringEncoding]))) encoding:NSNEXTSTEPStringEncoding];
-		}
-		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
-		[appDelegate performSelector:@selector(pushClassTree:) withObject:tree afterDelay:0.1];
-		[tree release];
-	}
+	ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
+	[appDelegate pushClass:[[(SubclassesDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath] description]];
 }
 
 
@@ -89,9 +76,9 @@
 			[filteredArray addObject:className];
 		}
 	}
-	ClassDataSource * classDataSource = [[ClassDataSource alloc] initWithArray:filteredArray];
-	self.dataSource = classDataSource;
-	[classDataSource release];
+	SubclassesDataSource * subclassesDataSource = [[SubclassesDataSource alloc] initWithArray:filteredArray];
+	self.dataSource = subclassesDataSource;
+	[subclassesDataSource release];
 	tableView.dataSource = self.dataSource;
 	[tableView reloadData];
 }
@@ -125,4 +112,3 @@
 
 
 @end
-

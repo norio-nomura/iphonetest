@@ -1,12 +1,12 @@
 //
-//  ClassDataSource.h
+//  IndexedDataSource.h
 //  ClassBrowser
 //
 
 #import <UIKit/UIKit.h>
 
 
-@interface ClassDataSource : NSObject<UITableViewDataSource> {
+@interface IndexedDataSource : NSObject<UITableViewDataSource> {
 	NSString *name;
 	NSArray *sectionIndexTitles;
 	NSDictionary *rows;
