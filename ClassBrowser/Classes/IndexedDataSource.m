@@ -5,24 +5,30 @@
 
 #import "IndexedDataSource.h"
 
-@interface NSArray(indexedDictionary)
-- (NSDictionary*)indexedDictionary;
+@implementation NSObject(indexedDictionary)
+
+- (NSString*)capitalChar {
+	return [[[self description] substringToIndex:1] uppercaseString];
+}
+
 @end
 
 
 @implementation NSArray(indexedDictionary)
 
-- (NSDictionary*)indexedDictionary {
+- (NSDictionary*)indexedDictionaryWithIndexSelector:(SEL)aSel {
 	NSMutableDictionary *dictionary = [[[NSMutableDictionary alloc] initWithCapacity:0] autorelease];
 	for (id obj in self) {
-		NSString *initialChar = [[[obj description] substringToIndex:1] uppercaseString];
-		NSMutableArray *array = [dictionary objectForKey:initialChar];
-		if (array) {
-			[array addObject:obj];
-		} else {
-			array = [[NSMutableArray alloc] initWithObjects:obj,nil];
-			[dictionary setObject:array forKey:initialChar];
-			[array release];
+		NSString *indexString = [obj performSelector:aSel];
+		if (indexString) {
+			NSMutableArray *array = [dictionary objectForKey:indexString];
+			if (array) {
+				[array addObject:obj];
+			} else {
+				array = [[NSMutableArray alloc] initWithObjects:obj,nil];
+				[dictionary setObject:array forKey:indexString];
+				[array release];
+			}
 		}
 	}
 	for (id key in [dictionary allKeys]) {
@@ -30,6 +36,10 @@
 		[dictionary setObject:[array sortedArrayUsingSelector:@selector(compare:)] forKey:key];
 	}
 	return dictionary;
+}
+
+- (NSDictionary*)capitalCharIndexedDictionary {
+	return [self indexedDictionaryWithIndexSelector:@selector(capitalChar)];
 }
 
 @end
@@ -43,7 +53,7 @@
 
 
 - (id)initWithArray:(NSArray*)array {
-	return [self initWithDictionary:[array indexedDictionary]];
+	return [self initWithDictionary:[array capitalCharIndexedDictionary]];
 }
 
 

@@ -6,6 +6,17 @@
 #import <UIKit/UIKit.h>
 
 
+@interface NSObject(indexedDictionary)
+- (NSString*)capitalChar;
+@end
+
+
+@interface NSArray(indexedDictionary)
+- (NSDictionary*)indexedDictionaryWithIndexSelector:(SEL)aSel;
+- (NSDictionary*)capitalCharIndexedDictionary;
+@end
+
+
 @interface IndexedDataSource : NSObject<UITableViewDataSource> {
 	NSString *name;
 	NSArray *sectionIndexTitles;

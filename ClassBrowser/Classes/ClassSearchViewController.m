@@ -9,6 +9,7 @@
 #import "ClassSearchViewController.h"
 #import "ClassTree.h"
 #import "SubclassesDataSource.h"
+#import "SubclassesWithImageSectionsDataSource.h"
 
 
 @implementation ClassSearchViewController
@@ -16,15 +17,17 @@
 
 @synthesize tableView;
 @synthesize segmentedControl;
-@synthesize dataSource;
-@synthesize initialDataSource;
+@synthesize tabBar;
+@synthesize dataSourcesArray;
+@synthesize initialDataSourcesArray;
 
 
 - (void)dealloc {
 	[tableView release];
 	[segmentedControl release];
-	[dataSource release];
-	[initialDataSource release];
+	[tabBar release];
+	[dataSourcesArray release];
+	[initialDataSourcesArray release];
     [super dealloc];
 }
 
@@ -33,12 +36,21 @@
 
 
 - (void)viewDidLoad {
-	SubclassesDataSource * subclassesDataSource = [[SubclassesDataSource alloc] initWithArray:[[ClassTree sharedClassTree].classDictionary allKeys]];
-	self.initialDataSource = subclassesDataSource;
-	self.dataSource = subclassesDataSource;
-	[subclassesDataSource release];
-	tableView.dataSource = self.dataSource;
-	[tableView reloadData];
+	NSUInteger tag = 0;
+	self.dataSourcesArray = [[NSMutableArray alloc] initWithCapacity:2];
+	self.initialDataSourcesArray = [[NSMutableArray alloc] initWithCapacity:2];
+	
+	[self.dataSourcesArray addObject:[ClassTree sharedClassTree].subclassesDataSource];
+	[self.initialDataSourcesArray addObject:[ClassTree sharedClassTree].subclassesDataSource];
+	[[[self.tabBar items] objectAtIndex:[self.dataSourcesArray count]-1] setTag:tag++];
+
+	[self.dataSourcesArray addObject:[ClassTree sharedClassTree].subclassesWithImageSectionsDataSource];
+	[self.initialDataSourcesArray addObject:[ClassTree sharedClassTree].subclassesWithImageSectionsDataSource];
+	[[[self.tabBar items] objectAtIndex:[self.dataSourcesArray count]-1] setTag:tag++];
+	
+	self.tabBar.selectedItem = [tabBar.items objectAtIndex:0];
+	tableView.dataSource = [self.dataSourcesArray objectAtIndex:tabBar.selectedItem.tag];
+	[self.tableView reloadData];
 }
 
 
@@ -60,9 +72,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (segmentedControl.selectedSegmentIndex == 0) {
 		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
-		[appDelegate pushClass:[[(SubclassesDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath] description]];
+		[appDelegate pushClass:[[(IndexedDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath] description]];
 	} else if (segmentedControl.selectedSegmentIndex == 1) {
-		NSString *className = [(SubclassesDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath];
+		NSString *className = [(IndexedDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath];
 		NSMutableArray *tree = [[NSMutableArray alloc] initWithObjects:className,nil];
 		NSString *superClassName = [NSString stringWithCString:class_getName(class_getSuperclass(objc_getClass([className cStringUsingEncoding:NSNEXTSTEPStringEncoding]))) encoding:NSNEXTSTEPStringEncoding];
 		while (![superClassName isEqualToString:@"nil"]) {
@@ -89,16 +101,22 @@
 		}
 	}
 	SubclassesDataSource * subclassesDataSource = [[SubclassesDataSource alloc] initWithArray:filteredArray];
-	self.dataSource = subclassesDataSource;
+	[self.dataSourcesArray replaceObjectAtIndex:0 withObject:subclassesDataSource];
 	[subclassesDataSource release];
-	tableView.dataSource = self.dataSource;
-	[tableView reloadData];
+	SubclassesWithImageSectionsDataSource *subclassesWithImageSectionsDataSource = [[SubclassesWithImageSectionsDataSource alloc] initWithArray:filteredArray];
+	[self.dataSourcesArray replaceObjectAtIndex:1 withObject:subclassesWithImageSectionsDataSource];
+	[subclassesWithImageSectionsDataSource release];
+	
+	tableView.dataSource = [self.dataSourcesArray objectAtIndex:tabBar.selectedItem.tag];
+	[self.tableView reloadData];
 }
 
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
 	if (searchBar.text.length > 0) {
-		self.tableView.dataSource = self.initialDataSource;
+		[self.dataSourcesArray replaceObjectAtIndex:0 withObject:[self.initialDataSourcesArray objectAtIndex:0]];
+		[self.dataSourcesArray replaceObjectAtIndex:1 withObject:[self.initialDataSourcesArray objectAtIndex:1]];
+		self.tableView.dataSource = [self.initialDataSourcesArray objectAtIndex:tabBar.selectedItem.tag];
 	}
 	
 	[tableView reloadData];
@@ -120,6 +138,15 @@
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
 	searchBar.showsCancelButton = NO;
+}
+
+
+#pragma mark UITabBarDelegate Protocol
+
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+	tableView.dataSource = [self.dataSourcesArray objectAtIndex:item.tag];
+	[self.tableView reloadData];
 }
 
 

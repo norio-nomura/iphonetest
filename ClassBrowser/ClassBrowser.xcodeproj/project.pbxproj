@@ -157,6 +157,7 @@
 		6C8276760ED2AB8D00B5CEEB /* libTraditionalChineseConverter.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8276640ED2AB8D00B5CEEB /* libTraditionalChineseConverter.dylib */; };
 		6C8276770ED2AB8D00B5CEEB /* libVietnameseConverter.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8276650ED2AB8D00B5CEEB /* libVietnameseConverter.dylib */; };
 		6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */; };
+		6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -319,6 +320,8 @@
 		6C8276640ED2AB8D00B5CEEB /* libTraditionalChineseConverter.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libTraditionalChineseConverter.dylib; path = System/Library/CoreServices/Encodings/libTraditionalChineseConverter.dylib; sourceTree = SDKROOT; };
 		6C8276650ED2AB8D00B5CEEB /* libVietnameseConverter.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libVietnameseConverter.dylib; path = System/Library/CoreServices/Encodings/libVietnameseConverter.dylib; sourceTree = SDKROOT; };
 		6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBrowserViewController.xib; sourceTree = "<group>"; };
+		6CBED43A0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesWithImageSectionsDataSource.h; sourceTree = "<group>"; };
+		6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassesWithImageSectionsDataSource.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -486,6 +489,8 @@
 				6C8272C50ED2894400B5CEEB /* SubclassesCell.m */,
 				6C82727D0ED285BA00B5CEEB /* SubclassesDataSource.h */,
 				6C82727E0ED285BA00B5CEEB /* SubclassesDataSource.m */,
+				6CBED43A0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.h */,
+				6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 				6C82726D0ED283F400B5CEEB /* IndexedDataSource.m in Sources */,
 				6C82727F0ED285BA00B5CEEB /* SubclassesDataSource.m in Sources */,
 				6C8272C60ED2894400B5CEEB /* SubclassesCell.m in Sources */,
+				6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,17 +7,19 @@
 
 @class IndexedDataSource;
 
-@interface ClassSearchViewController : UIViewController<UITableViewDelegate,UISearchBarDelegate> {
+@interface ClassSearchViewController : UIViewController<UITableViewDelegate,UISearchBarDelegate,UITabBarDelegate> {
 	UITableView *tableView;
 	UISegmentedControl *segmentedControl;
-	IndexedDataSource *dataSource;
-	IndexedDataSource *initialDataSource;
+	UITabBar *tabBar;
+	NSMutableArray *dataSourcesArray;
+	NSMutableArray *initialDataSourcesArray;
 }
 
 @property (nonatomic,retain) IBOutlet UITableView *tableView;
 @property (nonatomic,retain) IBOutlet UISegmentedControl *segmentedControl;
-@property (nonatomic,retain) IndexedDataSource *dataSource;
-@property (nonatomic,retain) IndexedDataSource *initialDataSource;
+@property (nonatomic,retain) IBOutlet UITabBar *tabBar;
+@property (nonatomic,retain) NSMutableArray *dataSourcesArray;
+@property (nonatomic,retain) NSMutableArray *initialDataSourcesArray;
 
 
 @end

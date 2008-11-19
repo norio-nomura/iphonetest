@@ -14,6 +14,8 @@
 @implementation ClassTree
 
 @synthesize classDictionary = classDictionary_;
+@synthesize subclassesDataSource = subclassesDataSource_;
+@synthesize subclassesWithImageSectionsDataSource = subclassesWithImageSectionsDataSource_;
 
 
 static ClassTree *sharedClassTreeInstance = nil;
@@ -98,6 +100,9 @@ static ClassTree *sharedClassTreeInstance = nil;
 			[[classDictionary_ objectForKey:KEY_ROOT_CLASSES] setObject:[classDictionary_ objectForKey:subClassName] forKey:subClassName];
 		}
 	}
+
+	subclassesDataSource_ = [[SubclassesDataSource alloc] initWithArray:[classDictionary_ allKeys]];
+	subclassesWithImageSectionsDataSource_ = [[SubclassesWithImageSectionsDataSource alloc] initWithArray:[classDictionary_ allKeys]];
 }
 
 @end
