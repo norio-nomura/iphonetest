@@ -60,22 +60,42 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUITabBarItem" id="960767369">
 								<string key="IBUITitle">SubCls</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">btnSubCls.png</string>
+								</object>
 								<reference key="IBUITabBar" ref="267984052"/>
 							</object>
 							<object class="IBUITabBarItem" id="286774016">
 								<string key="IBUITitle">Property</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">btnProperty.png</string>
+								</object>
 								<reference key="IBUITabBar" ref="267984052"/>
 							</object>
 							<object class="IBUITabBarItem" id="932642017">
 								<string key="IBUITitle">C Method</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">btnCMethod.png</string>
+								</object>
 								<reference key="IBUITabBar" ref="267984052"/>
 							</object>
 							<object class="IBUITabBarItem" id="115741538">
 								<string key="IBUITitle">I Method</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">btnIMethod.png</string>
+								</object>
 								<reference key="IBUITabBar" ref="267984052"/>
 							</object>
 							<object class="IBUITabBarItem" id="413803867">
 								<string key="IBUITitle">Protocol</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">btnProtocol.png</string>
+								</object>
 								<reference key="IBUITabBar" ref="267984052"/>
 							</object>
 						</object>
@@ -329,6 +349,20 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Classes/IndexedDataSource.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Classes/SubclassesWithImageSectionsDataSource.h</string>
 					</object>
 				</object>
 			</object>

@@ -70,10 +70,18 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUITabBarItem" id="514746204">
 								<string key="IBUITitle">Index by Name</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">btnSubCls.png</string>
+								</object>
 								<reference key="IBUITabBar" ref="671492503"/>
 							</object>
 							<object class="IBUITabBarItem" id="399604566">
 								<string key="IBUITitle">Index by Image</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">btnIndexByImage.png</string>
+								</object>
 								<reference key="IBUITabBar" ref="671492503"/>
 							</object>
 						</object>
