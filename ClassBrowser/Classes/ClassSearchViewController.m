@@ -92,20 +92,25 @@
 
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-	NSArray *classNamesArray = [[[ClassTree sharedClassTree].classDictionary allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
-	NSMutableArray *filteredArray = [NSMutableArray arrayWithCapacity:[classNamesArray count]];
-	for (NSString *className in classNamesArray) {
-		NSComparisonResult result = [className compare:searchText options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchText length])];
-		if (result == NSOrderedSame) {
-			[filteredArray addObject:className];
+	if (searchBar.text.length > 0) {
+		NSArray *classNamesArray = [[[ClassTree sharedClassTree].classDictionary allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+		NSMutableArray *filteredArray = [NSMutableArray arrayWithCapacity:[classNamesArray count]];
+		for (NSString *className in classNamesArray) {
+			NSComparisonResult result = [className compare:searchText options:NSCaseInsensitiveSearch range:NSMakeRange(0, [searchText length])];
+			if (result == NSOrderedSame) {
+				[filteredArray addObject:className];
+			}
 		}
+		SubclassesDataSource * subclassesDataSource = [[SubclassesDataSource alloc] initWithArray:filteredArray];
+		[self.dataSourcesArray replaceObjectAtIndex:0 withObject:subclassesDataSource];
+		[subclassesDataSource release];
+		SubclassesWithImageSectionsDataSource *subclassesWithImageSectionsDataSource = [[SubclassesWithImageSectionsDataSource alloc] initWithArray:filteredArray];
+		[self.dataSourcesArray replaceObjectAtIndex:1 withObject:subclassesWithImageSectionsDataSource];
+		[subclassesWithImageSectionsDataSource release];
+	} else {
+		[self.dataSourcesArray replaceObjectAtIndex:0 withObject:[self.initialDataSourcesArray objectAtIndex:0]];
+		[self.dataSourcesArray replaceObjectAtIndex:1 withObject:[self.initialDataSourcesArray objectAtIndex:1]];
 	}
-	SubclassesDataSource * subclassesDataSource = [[SubclassesDataSource alloc] initWithArray:filteredArray];
-	[self.dataSourcesArray replaceObjectAtIndex:0 withObject:subclassesDataSource];
-	[subclassesDataSource release];
-	SubclassesWithImageSectionsDataSource *subclassesWithImageSectionsDataSource = [[SubclassesWithImageSectionsDataSource alloc] initWithArray:filteredArray];
-	[self.dataSourcesArray replaceObjectAtIndex:1 withObject:subclassesWithImageSectionsDataSource];
-	[subclassesWithImageSectionsDataSource release];
 	
 	tableView.dataSource = [self.dataSourcesArray objectAtIndex:tabBar.selectedItem.tag];
 	[self.tableView reloadData];
