@@ -64,12 +64,6 @@ static ClassTree *sharedClassTreeInstance = nil;
 	[super dealloc];
 }
 
-- (id)init {
-	if (self = [super init]) {
-	}
-	return self;
-}
-
 - (void)setupClassDictionary {
 	classDictionary_ = [[NSMutableDictionary alloc]initWithCapacity:1000];
 	NSMutableDictionary *subclassDictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
@@ -85,8 +79,7 @@ static ClassTree *sharedClassTreeInstance = nil;
 			NSString *subClassName = nil;
 			while (class) {
 				className = [NSString stringWithCString:class_getName(class)];
-				subclassDictionary = [classDictionary_ objectForKey:className];
-				if (!subclassDictionary) {
+				if (!(subclassDictionary = [classDictionary_ objectForKey:className])) {
 					subclassDictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
 					[classDictionary_ setObject:subclassDictionary forKey:className];
 					[subclassDictionary release];
