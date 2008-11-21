@@ -32,7 +32,7 @@
 
 
 - (id)initWithArray:(NSArray*)array {
-	if (self = [super initWithDictionary:[array indexedDictionaryWithIndexSelector:@selector(imageFromClass)]]) {
+	if (self = [super initWithArray:array withSelector:@selector(imageFromClass)]) {
 	}
 	return self;
 }

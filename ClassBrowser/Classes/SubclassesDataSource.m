@@ -14,7 +14,6 @@
 
 
 - (void)dealloc {
-	[cellFromNib release];
     [super dealloc];
 }
 

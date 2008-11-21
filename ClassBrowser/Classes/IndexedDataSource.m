@@ -14,11 +14,11 @@
 @end
 
 
-@implementation NSArray(indexedDictionary)
+@implementation NSDictionary(indexedDictionary)
 
-- (NSDictionary*)indexedDictionaryWithIndexSelector:(SEL)aSel {
-	NSMutableDictionary *dictionary = [[[NSMutableDictionary alloc] initWithCapacity:0] autorelease];
-	for (id obj in self) {
+- (id)initIndexedDictionaryWithArray:(NSArray*)array withSelector:(SEL)aSel {
+	NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
+	for (id obj in array) {
 		NSString *indexString = [obj performSelector:aSel];
 		if (indexString) {
 			NSMutableArray *array = [dictionary objectForKey:indexString];
@@ -32,15 +32,15 @@
 		}
 	}
 	for (id key in [dictionary allKeys]) {
-		NSArray *array = [dictionary objectForKey:key];
-		[dictionary setObject:[array sortedArrayUsingSelector:@selector(compare:)] forKey:key];
+		NSArray *sortedArray = [[NSArray alloc] initWithArray:[[dictionary objectForKey:key] sortedArrayUsingSelector:@selector(compare:)]];
+		[dictionary setObject:sortedArray forKey:key];
+		[sortedArray release];
 	}
-	return dictionary;
+	self = [self initWithDictionary:dictionary];
+	[dictionary release];
+	return self;
 }
 
-- (NSDictionary*)capitalCharIndexedDictionary {
-	return [self indexedDictionaryWithIndexSelector:@selector(capitalChar)];
-}
 
 @end
 
@@ -53,14 +53,18 @@
 
 
 - (id)initWithArray:(NSArray*)array {
-	return [self initWithDictionary:[array capitalCharIndexedDictionary]];
+	return [self initWithArray:array withSelector:@selector(capitalChar)];
 }
 
 
-- (id)initWithDictionary:(NSDictionary*)dictionary {
+- (id)initWithArray:(NSArray*)array withSelector:(SEL)aSel {
 	if (self = [super init]) {
+		NSDictionary *dictionary = [[NSDictionary alloc] initIndexedDictionaryWithArray:array withSelector:aSel];
 		self.rows = dictionary;
-		self.sectionIndexTitles = [[self.rows allKeys] sortedArrayUsingSelector:@selector(compare:)];
+		[dictionary release];
+		NSArray *sortedArray = [[NSArray alloc] initWithArray:[[self.rows allKeys] sortedArrayUsingSelector:@selector(compare:)]];
+		self.sectionIndexTitles = sortedArray;
+		[sortedArray release];
 	}
 	return self;
 }

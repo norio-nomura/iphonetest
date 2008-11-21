@@ -13,7 +13,7 @@
 }
 
 
-@property (nonatomic,retain) IBOutlet SubclassesCell *cellFromNib;
+@property (nonatomic,assign) IBOutlet SubclassesCell *cellFromNib;
 
 
 @end

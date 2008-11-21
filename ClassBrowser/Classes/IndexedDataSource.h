@@ -10,10 +10,8 @@
 - (NSString*)capitalChar;
 @end
 
-
-@interface NSArray(indexedDictionary)
-- (NSDictionary*)indexedDictionaryWithIndexSelector:(SEL)aSel;
-- (NSDictionary*)capitalCharIndexedDictionary;
+@interface NSDictionary(indexedDictionary)
+- (id)initIndexedDictionaryWithArray:(NSArray*)array withSelector:(SEL)aSel;
 @end
 
 
@@ -28,7 +26,7 @@
 @property (nonatomic,retain) NSDictionary *rows;
 
 - (id)initWithArray:(NSArray*)array;
-- (id)initWithDictionary:(NSDictionary*)dictionary;
+- (id)initWithArray:(NSArray*)array withSelector:(SEL)aSel;
 - (id)objectForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath*)indexPathForObject:(id)obj;
 
