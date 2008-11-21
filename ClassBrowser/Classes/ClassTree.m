@@ -65,7 +65,7 @@ static ClassTree *sharedClassTreeInstance = nil;
 }
 
 - (void)setupClassDictionary {
-	classDictionary_ = [[NSMutableDictionary alloc]initWithCapacity:1000];
+	classDictionary_ = [[NSMutableDictionary alloc]initWithCapacity:3000];
 	NSMutableDictionary *subclassDictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
 	[classDictionary_ setObject:subclassDictionary forKey:KEY_ROOT_CLASSES];
 	[subclassDictionary release];
