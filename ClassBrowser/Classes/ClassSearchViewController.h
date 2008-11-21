@@ -11,8 +11,8 @@
 	UITableView *tableView;
 	UISegmentedControl *segmentedControl;
 	UITabBar *tabBar;
-	NSMutableArray *dataSourcesArray;
-	NSMutableArray *initialDataSourcesArray;
+	NSMutableArray *dataSourcesArray_;
+	NSMutableArray *initialDataSourcesArray_;
 }
 
 @property (nonatomic,retain) IBOutlet UITableView *tableView;

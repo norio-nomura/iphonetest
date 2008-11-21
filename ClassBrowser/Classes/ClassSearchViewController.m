@@ -3,7 +3,6 @@
 //  ClassBrowser
 //
 
-
 #import <objc/runtime.h>
 #import "ClassBrowserAppDelegate.h"
 #import "ClassSearchViewController.h"
@@ -18,16 +17,16 @@
 @synthesize tableView;
 @synthesize segmentedControl;
 @synthesize tabBar;
-@synthesize dataSourcesArray;
-@synthesize initialDataSourcesArray;
+@synthesize dataSourcesArray = dataSourcesArray_;
+@synthesize initialDataSourcesArray = initialDataSourcesArray_;
 
 
 - (void)dealloc {
 	[tableView release];
 	[segmentedControl release];
 	[tabBar release];
-	[dataSourcesArray release];
-	[initialDataSourcesArray release];
+	[dataSourcesArray_ release];
+	[initialDataSourcesArray_ release];
     [super dealloc];
 }
 
@@ -37,8 +36,8 @@
 
 - (void)viewDidLoad {
 	NSUInteger tag = 0;
-	self.dataSourcesArray = [[NSMutableArray alloc] initWithCapacity:2];
-	self.initialDataSourcesArray = [[NSMutableArray alloc] initWithCapacity:2];
+	dataSourcesArray_ = [[NSMutableArray alloc] initWithCapacity:2];
+	initialDataSourcesArray_ = [[NSMutableArray alloc] initWithCapacity:2];
 	
 	[self.dataSourcesArray addObject:[ClassTree sharedClassTree].subclassesDataSource];
 	[self.initialDataSourcesArray addObject:[ClassTree sharedClassTree].subclassesDataSource];
