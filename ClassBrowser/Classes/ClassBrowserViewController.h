@@ -10,7 +10,7 @@
 	UITabBar *tabBar;
 	UIBarButtonItem *classSearchButtonItem;
 	@private
-	NSArray *dataSourcesArray_;
+	NSMutableArray *dataSourcesArray_;
 }
 
 @property (nonatomic,retain) IBOutlet UITableView *tableView;
