@@ -8,10 +8,11 @@
 
 @implementation NSObject(indexedDictionary_imageFromClass)
 
-- (NSString*)imageFromClass {
+
+- (NSString*)imageFromClassName {
 	Class class = objc_getClass([[self description] cStringUsingEncoding:NSNEXTSTEPStringEncoding]);
 	if (class) {
-		NSString *imagePath = [NSString stringWithCString:class_getImageName(class)];
+		NSString *imagePath = [NSString stringWithCString:class_getImageName(class) encoding:NSNEXTSTEPStringEncoding];
 		NSArray *components = [imagePath pathComponents];
 		if ([components count]>2) {
 			NSRange rangeLastThree;
@@ -26,16 +27,16 @@
 	}
 }
 
+
 @end
 
 @implementation SubclassesWithImageSectionsDataSource
 
 
 - (id)initWithArray:(NSArray*)array {
-	if (self = [super initWithArray:array withSelector:@selector(imageFromClass)]) {
-	}
-	return self;
+	return [super initWithArray:array usingSelector:@selector(imageFromClassName)];
 }
+
 
 #pragma mark UITableViewDataSource Protocol
 
