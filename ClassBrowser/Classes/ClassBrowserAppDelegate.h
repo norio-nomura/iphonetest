@@ -4,8 +4,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class ClassBrowserViewController;
+#import "ClassBrowserViewController.h"
 
 @interface ClassBrowserAppDelegate : NSObject <UIApplicationDelegate,UINavigationControllerDelegate> {
 	UIWindow *window;
@@ -21,9 +20,8 @@
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, retain) IBOutlet ClassBrowserViewController *rootViewController;
-@property (nonatomic, retain) NSMutableArray *autoPushClassNames;
+@property (retain) NSMutableArray *autoPushClassNames;
 
 - (void)pushClass:(NSString*)className;
-- (void)pushClassTree:(NSMutableArray*)classTree;
 
 @end
