@@ -5,11 +5,11 @@
 
 #import "SubclassesCell.h"
 
-
 @implementation SubclassesCell
 
 @synthesize subclassName;
 @synthesize imagePath;
+
 
 - (void)dealloc {
 	[subclassName release];

@@ -5,7 +5,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface SubclassesCell : UITableViewCell {
 	UILabel *subclassName;
 	UILabel *imagePath;
