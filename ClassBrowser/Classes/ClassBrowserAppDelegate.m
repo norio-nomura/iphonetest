@@ -88,7 +88,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
 	if (self.autoPushClassNames) {
-		[self performSelector:@selector(pushClass:) withObject:[self.autoPushClassNames lastObject] afterDelay:0.01];
+		[self performSelector:@selector(pushClass:) withObject:[self.autoPushClassNames lastObject] afterDelay:0.1];
 		[self.autoPushClassNames removeLastObject];
 	}
 }
