@@ -7,16 +7,18 @@
 
 @implementation NSObject(indexedDictionary)
 
+
 - (NSString*)capitalChar {
 	return [[[self description] substringToIndex:1] uppercaseString];
 }
 
-@end
 
+@end
 
 @implementation NSDictionary(indexedDictionary)
 
-- (id)initIndexedDictionaryWithArray:(NSArray*)array withSelector:(SEL)aSel {
+
+- (id)initIndexedDictionaryWithArray:(NSArray*)array usingSelector:(SEL)aSel {
 	NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:0];
 	for (id obj in array) {
 		NSString *indexString = [obj performSelector:aSel];
@@ -44,26 +46,25 @@
 
 @end
 
-
 @implementation IndexedDataSource
 
-@synthesize name;
-@synthesize sectionIndexTitles;
+@synthesize sectionTitles;
 @synthesize rows;
 
 
 - (id)initWithArray:(NSArray*)array {
-	return [self initWithArray:array withSelector:@selector(capitalChar)];
+	return [self initWithArray:array usingSelector:@selector(capitalChar)];
 }
 
 
-- (id)initWithArray:(NSArray*)array withSelector:(SEL)aSel {
+- (id)initWithArray:(NSArray*)array usingSelector:(SEL)aSel {
 	if (self = [super init]) {
-		NSDictionary *dictionary = [[NSDictionary alloc] initIndexedDictionaryWithArray:array withSelector:aSel];
+		selectorForIndex = aSel;
+		NSDictionary *dictionary = [[NSDictionary alloc] initIndexedDictionaryWithArray:array usingSelector:selectorForIndex];
 		self.rows = dictionary;
 		[dictionary release];
-		NSArray *sortedArray = [[NSArray alloc] initWithArray:[[self.rows allKeys] sortedArrayUsingSelector:@selector(compare:)]];
-		self.sectionIndexTitles = sortedArray;
+		NSArray *sortedArray = [[NSArray alloc] initWithArray:[[rows allKeys] sortedArrayUsingSelector:@selector(compare:)]];
+		self.sectionTitles = sortedArray;
 		[sortedArray release];
 	}
 	return self;
@@ -71,22 +72,21 @@
 
 
 - (void)dealloc {
-	[name release];
-	[sectionIndexTitles release];
+	[sectionTitles release];
 	[rows release];
     [super dealloc];
 }
 
 
 - (id)objectForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return [[rows objectForKey:[sectionIndexTitles objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+	return [[rows objectForKey:[sectionTitles objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
 }
 
 
 - (NSIndexPath*)indexPathForObject:(id)obj {
-	NSString *initialChar = [[[obj description] substringToIndex:1] uppercaseString];
-	NSUInteger section = [sectionIndexTitles indexOfObject:initialChar];
-	NSUInteger row = [[rows objectForKey:initialChar] indexOfObject:[obj description]];
+	NSString *indexString = [obj performSelector:selectorForIndex];
+	NSUInteger section = [sectionTitles indexOfObject:indexString];
+	NSUInteger row = [[rows objectForKey:indexString] indexOfObject:[obj description]];
 	if (section != NSNotFound && row != NSNotFound) {
 		return [NSIndexPath indexPathForRow:row inSection:section];
 	} else {
@@ -99,20 +99,21 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	NSInteger count = [sectionIndexTitles count];
+	NSInteger count = [sectionTitles count];
     return count ? count : 1;
 }
 
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-	return [sectionIndexTitles count] > 1 ? sectionIndexTitles : nil;
+	return [sectionTitles count] > 1 ? sectionTitles : nil;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.name];
+	static NSString *cellIdentifier = @"IndexedDataSourceCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:self.name] autorelease];
+        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
     }
 	cell.text = [[self objectForRowAtIndexPath:indexPath] description];
     return cell;
@@ -120,9 +121,9 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSInteger count = [sectionIndexTitles count];
-	if (count && [sectionIndexTitles objectAtIndex:section]) {
-		return [[rows objectForKey:[sectionIndexTitles objectAtIndex:section]] count];
+	NSInteger count = [sectionTitles count];
+	if (count && [sectionTitles objectAtIndex:section]) {
+		return [[rows objectForKey:[sectionTitles objectAtIndex:section]] count];
 	} else {
 		return 0;
 	}
@@ -130,8 +131,8 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if ([sectionIndexTitles count]) {
-		return [sectionIndexTitles objectAtIndex:section];
+	if ([sectionTitles count]) {
+		return [sectionTitles objectAtIndex:section];
 	} else {
 		return nil;
 	}
