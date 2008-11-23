@@ -46,8 +46,12 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrame">{{10, 0}, {310, 33}}</string>
 								<reference key="NSSuperview" ref="959840210"/>
+								<object class="NSColor" key="IBUIBackgroundColor" id="366859900">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MSAxIDEAA</bytes>
+								</object>
 								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
+								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="IBUIText">subclassName</string>
 								<object class="NSColor" key="IBUITextColor" id="409125730">
@@ -63,8 +67,9 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrame">{{37, 24}, {283, 20}}</string>
 								<reference key="NSSuperview" ref="959840210"/>
+								<reference key="IBUIBackgroundColor" ref="366859900"/>
 								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
+								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="IBUIText">imagePath</string>
 								<reference key="IBUITextColor" ref="409125730"/>
@@ -77,10 +82,6 @@
 						</object>
 						<string key="NSFrameSize">{320, 44}</string>
 						<reference key="NSSuperview" ref="515736913"/>
-						<object class="NSColor" key="IBUIBackgroundColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MCAwAA</bytes>
-						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">4</int>
@@ -89,10 +90,7 @@
 				</object>
 				<string key="NSFrameSize">{320, 44}</string>
 				<reference key="NSSuperview"/>
-				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MSAwAA</bytes>
-				</object>
+				<nil key="IBUIBackgroundColor"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<bool key="IBUIClipsSubviews">YES</bool>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -189,7 +187,7 @@
 					<string>SubclassesDataSource</string>
 					<string>UIResponder</string>
 					<string>SubclassesCell</string>
-					<string>{{478, 750}, {320, 44}}</string>
+					<string>{{493, 811}, {320, 44}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
