@@ -46,7 +46,7 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrame">{{10, 0}, {310, 33}}</string>
 								<reference key="NSSuperview" ref="959840210"/>
-								<object class="NSColor" key="IBUIBackgroundColor" id="366859900">
+								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MSAxIDEAA</bytes>
 								</object>
@@ -67,7 +67,10 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrame">{{37, 24}, {283, 20}}</string>
 								<reference key="NSSuperview" ref="959840210"/>
-								<reference key="IBUIBackgroundColor" ref="366859900"/>
+								<object class="NSColor" key="IBUIBackgroundColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MSAxIDEgMAA</bytes>
+								</object>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -90,7 +93,6 @@
 				</object>
 				<string key="NSFrameSize">{320, 44}</string>
 				<reference key="NSSuperview"/>
-				<nil key="IBUIBackgroundColor"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<bool key="IBUIClipsSubviews">YES</bool>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
