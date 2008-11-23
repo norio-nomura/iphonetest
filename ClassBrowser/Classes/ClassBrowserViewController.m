@@ -4,157 +4,159 @@
 //
 
 #import <objc/runtime.h>
-#import "ClassBrowserAppDelegate.h"
 #import "ClassBrowserViewController.h"
+#import "ClassBrowserAppDelegate.h"
 #import "ClassSearchViewController.h"
 #import "ClassTree.h"
 #import "IndexedDataSource.h"
 #import "SubclassesDataSource.h"
 
-
-#define KEY_SUBCLASSES			@"Subclasses"
-#define KEY_PROPERTIES			@"Properties"
-#define KEY_CLASS_METHODS		@"ClassMethods"
-#define KEY_INSTANCE_METHODS	@"InstanceMethods"
-#define KEY_PROTOCOLS			@"Protocols"
-
-
 @implementation ClassBrowserViewController
 
 @synthesize tableView;
 @synthesize tabBar;
+@synthesize itemSubclasses;
+@synthesize itemProperties;
+@synthesize itemClassMethods;
+@synthesize itemInstanceMethods;
+@synthesize itemProtocols;
 @synthesize classSearchButtonItem;
-@synthesize dataSourcesArray = dataSourcesArray_;
+@synthesize dataSourcesArray;
 
 
 - (void)dealloc {
 	[tableView release];
 	[tabBar release];
+	[itemSubclasses release];
+	[itemProperties release];
+	[itemClassMethods release];
+	[itemInstanceMethods release];
+	[itemProtocols release];
 	[classSearchButtonItem release];
-	[dataSourcesArray_ release];
+	[dataSourcesArray release];
     [super dealloc];
 }
 
 
 - (void)loadDataSources {
-	dataSourcesArray_ = [[NSMutableArray alloc] initWithCapacity:5];
-	NSMutableArray *tempArray;
+	NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:5];
+	self.dataSourcesArray = array;
+	[array release];
+	
 	IndexedDataSource *indexedDataSource;
-	NSUInteger index = 0;
 	
 	// Subclasses
 	if ([[[ClassTree sharedClassTree].classDictionary objectForKey:self.title] count] > 0) {
 		indexedDataSource = [[SubclassesDataSource alloc] initWithArray:[[[ClassTree sharedClassTree].classDictionary objectForKey:self.title] allKeys]];
-		indexedDataSource.name = KEY_SUBCLASSES;
-		[dataSourcesArray_ addObject:indexedDataSource];
+		[dataSourcesArray addObject:indexedDataSource];
 		[indexedDataSource release];
-		[[tabBar.items objectAtIndex:index++] setTag:[dataSourcesArray_ count]-1];
+		itemSubclasses.tag = [dataSourcesArray count] - 1;
 	} else {
-		[[tabBar.items objectAtIndex:index++] setEnabled:NO];
+		itemSubclasses.enabled = NO;
 	}
 	
 	Class class = objc_getClass([self.title cStringUsingEncoding:NSNEXTSTEPStringEncoding]);
 	if (class) {
-		// Properties
 		unsigned int outCount;
+		// Properties
 		objc_property_t *properties = class_copyPropertyList(class, &outCount);
 		if (outCount) {
-			tempArray = [[NSMutableArray alloc] initWithCapacity:outCount];
+			array = [[NSMutableArray alloc] initWithCapacity:outCount];
 			for (unsigned int i = 0; i < outCount; i++) {
 				NSString *propertyString = [[NSString alloc] initWithFormat:@"%s(%s)", 
 											property_getName(properties[i]), 
 											property_getAttributes(properties[i])];
-				[tempArray addObject:propertyString];
+				[array addObject:propertyString];
 				[propertyString release];
 			}
 			free(properties);
-			indexedDataSource = [[IndexedDataSource alloc] initWithArray:tempArray];
-			[tempArray release];
-			indexedDataSource.name = KEY_PROPERTIES;
-			[dataSourcesArray_ addObject:indexedDataSource];
+			indexedDataSource = [[IndexedDataSource alloc] initWithArray:array];
+			[array release];
+			[dataSourcesArray addObject:indexedDataSource];
 			[indexedDataSource release];
-			[[tabBar.items objectAtIndex:index++] setTag:[dataSourcesArray_ count]-1];
+			itemProperties.tag = [dataSourcesArray count] - 1;
 		} else {
-			[[tabBar.items objectAtIndex:index++] setEnabled:NO];
+			itemProperties.enabled = NO;
 		}
 		// Class Methods
 		Method *classMethods = class_copyMethodList(object_getClass(class), &outCount);
 		if (outCount) {
-			tempArray = [[NSMutableArray alloc] initWithCapacity:outCount];
+			array = [[NSMutableArray alloc] initWithCapacity:outCount];
 			for (unsigned int i = 0; i < outCount; i++) {
 				NSString *classMethodString = [[NSString alloc] initWithFormat:@"%s(%s)", 
 											   sel_getName(method_getName(classMethods[i])), 
 											   method_getTypeEncoding(classMethods[i])];
-				[tempArray addObject:classMethodString];
+				[array addObject:classMethodString];
 				[classMethodString release];
 			}
 			free(classMethods);
-			indexedDataSource = [[IndexedDataSource alloc] initWithArray:tempArray];
-			[tempArray release];
-			indexedDataSource.name = KEY_CLASS_METHODS;
-			[dataSourcesArray_ addObject:indexedDataSource];
+			indexedDataSource = [[IndexedDataSource alloc] initWithArray:array];
+			[array release];
+			[dataSourcesArray addObject:indexedDataSource];
 			[indexedDataSource release];
-			[[tabBar.items objectAtIndex:index++] setTag:[dataSourcesArray_ count]-1];
+			itemClassMethods.tag = [dataSourcesArray count] - 1;
 		} else {
-			[[tabBar.items objectAtIndex:index++] setEnabled:NO];
+			itemClassMethods.enabled = NO;
 		}
 		// Instance Methods
 		Method *instanceMethods = class_copyMethodList(class, &outCount);
 		if (outCount) {
-			tempArray = [[NSMutableArray alloc] initWithCapacity:outCount];
+			array = [[NSMutableArray alloc] initWithCapacity:outCount];
 			for (unsigned int i = 0; i < outCount; i++) {
 				NSString *instanceMethodString = [[NSString alloc] initWithFormat:@"%s(%s)", 
 												  sel_getName(method_getName(instanceMethods[i])), 
 												  method_getTypeEncoding(instanceMethods[i])];
-				[tempArray addObject:instanceMethodString];
+				[array addObject:instanceMethodString];
 				[instanceMethodString release];
 			}
 			free(instanceMethods);
-			indexedDataSource = [[IndexedDataSource alloc] initWithArray:tempArray];
-			[tempArray release];
-			indexedDataSource.name = KEY_INSTANCE_METHODS;
-			[dataSourcesArray_ addObject:indexedDataSource];
+			indexedDataSource = [[IndexedDataSource alloc] initWithArray:array];
+			[array release];
+			[dataSourcesArray addObject:indexedDataSource];
 			[indexedDataSource release];
-			[[tabBar.items objectAtIndex:index++] setTag:[dataSourcesArray_ count]-1];
+			itemInstanceMethods.tag = [dataSourcesArray count] - 1;
 		} else {
-			[[tabBar.items objectAtIndex:index++] setEnabled:NO];
+			itemInstanceMethods.enabled = NO;
 		}
+		// Protocols
 		Protocol **protocols = class_copyProtocolList(class, &outCount);
 		if (outCount) {
-			tempArray = [[NSMutableArray alloc] initWithCapacity:outCount];
+			array = [[NSMutableArray alloc] initWithCapacity:outCount];
 			for (unsigned int i = 0; i < outCount; i++) {
 				NSString *protocolString = [[NSString alloc] initWithFormat:@"%s", 
 											protocol_getName(protocols[i])];
-				[tempArray addObject:protocolString];
+				[array addObject:protocolString];
 				[protocolString release];
 			}
 			free(protocols);
-			indexedDataSource = [[IndexedDataSource alloc] initWithArray:tempArray];
-			[tempArray release];
-			indexedDataSource.name = KEY_PROTOCOLS;
-			[dataSourcesArray_ addObject:indexedDataSource];
+			indexedDataSource = [[IndexedDataSource alloc] initWithArray:array];
+			[array release];
+			[dataSourcesArray addObject:indexedDataSource];
 			[indexedDataSource release];
-			[[tabBar.items objectAtIndex:index++] setTag:[dataSourcesArray_ count]-1];
+			itemProtocols.tag = [dataSourcesArray count] - 1;
 		} else {
-			[[tabBar.items objectAtIndex:index++] setEnabled:NO];
+			itemProtocols.enabled = NO;
 		}
 	} else {
-		[[tabBar.items objectAtIndex:index++] setEnabled:NO];
-		[[tabBar.items objectAtIndex:index++] setEnabled:NO];
-		[[tabBar.items objectAtIndex:index++] setEnabled:NO];
-		[[tabBar.items objectAtIndex:index++] setEnabled:NO];
+		itemProperties.enabled = NO;
+		itemClassMethods.enabled = NO;
+		itemInstanceMethods.enabled = NO;
+		itemProtocols.enabled = NO;
 	}
 	
 	for (UITabBarItem* item in tabBar.items) {
 		if (item.enabled) {
 			tabBar.selectedItem = item;
-			tableView.dataSource = [dataSourcesArray_ objectAtIndex:item.tag];
+			tableView.dataSource = [dataSourcesArray objectAtIndex:item.tag];
 			break;
 		}
 	}
 	
 	[tableView reloadData];
 }
+
+
+#pragma mark Public method
 
 
 - (IBAction)showClassSearch:(id)sender {
@@ -166,11 +168,28 @@
 }
 
 
+- (void)selectSubclassRow:(NSString*)className {
+	if (itemSubclasses.enabled) {
+		if (![tabBar.selectedItem isEqual:itemSubclasses]) {
+			tabBar.selectedItem = itemSubclasses;
+			tableView.dataSource = [dataSourcesArray objectAtIndex:itemSubclasses.tag];
+			[tableView reloadData];
+		}
+		IndexedDataSource *currentDataSource = [dataSourcesArray objectAtIndex:itemSubclasses.tag];
+		if (currentDataSource) {
+			NSIndexPath *indexPath = [currentDataSource indexPathForObject:className];
+			if (indexPath) {
+				[tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+			}
+		}
+	}
+}
+
+
 #pragma mark UIViewController Class
 
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
 	self.navigationItem.rightBarButtonItem = classSearchButtonItem;
 	[self loadDataSources];
 }
@@ -192,12 +211,9 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if ([[(IndexedDataSource*)self.tableView.dataSource name] isEqual:KEY_SUBCLASSES]) {
+	if ([tabBar.selectedItem isEqual:itemSubclasses]) {
 		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
-		[appDelegate pushClass:[[(IndexedDataSource*)self.tableView.dataSource objectForRowAtIndexPath:indexPath] description]];
-	} else if ([[(IndexedDataSource*)self.tableView.dataSource name] isEqual:KEY_CLASS_METHODS]) {
-//		Class class = objc_getClass(self.title);
-//		Method 
+		[appDelegate pushClass:[[[dataSourcesArray objectAtIndex:itemSubclasses.tag] objectForRowAtIndexPath:indexPath] description]];
 	}
 }
 
@@ -206,8 +222,8 @@
 
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-	tableView.dataSource = [self.dataSourcesArray objectAtIndex:item.tag];
-	[self.tableView reloadData];
+	tableView.dataSource = [dataSourcesArray objectAtIndex:item.tag];
+	[tableView reloadData];
 }
 
 
