@@ -5,9 +5,7 @@
 
 #import <objc/runtime.h>
 #import "ClassBrowserAppDelegate.h"
-#import "ClassBrowserViewController.h"
 #import "ClassTree.h"
-#import "IndexedDataSource.h"
 
 @implementation ClassBrowserAppDelegate
 
@@ -20,17 +18,28 @@
 
 
 - (void)dealloc {
-	[autoPushClassNames release];
-	[rootViewController release];
-	[navigationController release];
-	[activityIndicatorView release];
-	[splashView release];
 	[window release];
+	[splashView release];
+	[activityIndicatorView release];
+	[navigationController release];
+	[rootViewController release];
+	[autoPushClassNames release];
 	[super dealloc];
 }
 
 
 #define kANIMATION_DELAY_SECOND 1
+
+
+- (void)pushClass:(NSString*)className {
+	ClassBrowserViewController *viewController = [[ClassBrowserViewController alloc] initWithNibName:@"ClassBrowserViewController" bundle:nil];
+	viewController.title = className;
+	[navigationController pushViewController:viewController animated:YES];
+	[viewController release];
+}
+
+
+#pragma mark privateMethod
 
 
 - (void)splashAnimation {
@@ -46,26 +55,12 @@
 }
 
 
-- (void)pushClass:(NSString*)className {
-	ClassBrowserViewController *viewController = [[ClassBrowserViewController alloc] initWithNibName:@"ClassBrowserViewController" bundle:nil];
-	viewController.title = className;
-	[navigationController pushViewController:viewController animated:YES];
-	[viewController release];
-}
-
-
-- (void)pushClassTree:(NSMutableArray*)classTree {
-	self.autoPushClassNames = classTree;
-	[navigationController popToRootViewControllerAnimated:YES];
-}
-
-
 #pragma mark UIApplicationDelegate
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 	[window makeKeyAndVisible];
-	[self performSelector:@selector(splashAnimation) withObject:nil afterDelay:0.1];
+	[self performSelector:@selector(splashAnimation) withObject:nil afterDelay:0.01];
 }
 
 
@@ -82,11 +77,7 @@
 		NSUInteger index = [self.navigationController.viewControllers indexOfObject:viewController];
 		if (index && index != NSNotFound) {
 			ClassBrowserViewController *prevViewController = (ClassBrowserViewController*)[self.navigationController.viewControllers objectAtIndex:index-1];
-			IndexedDataSource *dataSource = (IndexedDataSource*)prevViewController.tableView.dataSource;
-			NSIndexPath *indexPath = [dataSource indexPathForObject:viewController.title];
-			if (indexPath) {
-				[prevViewController.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
-			}
+			[prevViewController selectSubclassRow:viewController.title];
 		}
 		if ([self.autoPushClassNames count] == 0) {
 			self.autoPushClassNames = nil;
