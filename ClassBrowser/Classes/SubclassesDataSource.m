@@ -6,16 +6,9 @@
 #import <objc/runtime.h>
 #import "SubclassesDataSource.h"
 
-
 @implementation SubclassesDataSource
 
-
 @synthesize cellFromNib;
-
-
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 #pragma mark UITableViewDataSource Protocol
@@ -31,7 +24,7 @@
 	cell.subclassName.text = [[self objectForRowAtIndexPath:indexPath] description];
 	Class class = objc_getClass([cell.subclassName.text cStringUsingEncoding:NSNEXTSTEPStringEncoding]);
 	if (class) {
-		cell.imagePath.text = [NSString stringWithCString:class_getImageName(class)];
+		cell.imagePath.text = [NSString stringWithCString:class_getImageName(class) encoding:NSNEXTSTEPStringEncoding];
 	} else {
 		cell.imagePath.text = nil;
 	}
