@@ -60,6 +60,7 @@
 
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
 	searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
 	[self loadDataSources];
 }
