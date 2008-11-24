@@ -11,7 +11,6 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ClassBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ClassBrowserViewController.m */; };
-		6C46B2520ED9765D00777058 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C02537B0ED7A5B0006D5211 /* AVFoundation.framework */; };
 		6C4C1A7A0ECFF43D00BF12F1 /* ClassSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */; };
 		6C4C1A7F0ECFF52F00BF12F1 /* ClassSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C1A7E0ECFF52F00BF12F1 /* ClassSearchViewController.m */; };
 		6C64DE7B0ECBFE3D003A3DF2 /* ClassTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */; };
@@ -169,6 +168,7 @@
 		6C8276760ED2AB8D00B5CEEB /* libTraditionalChineseConverter.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8276640ED2AB8D00B5CEEB /* libTraditionalChineseConverter.dylib */; };
 		6C8276770ED2AB8D00B5CEEB /* libVietnameseConverter.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8276650ED2AB8D00B5CEEB /* libVietnameseConverter.dylib */; };
 		6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */; };
+		6CA550D60EDAD8F8000245EB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C02537B0ED7A5B0006D5211 /* AVFoundation.framework */; };
 		6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */; };
 		6CF199210EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF199200EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m */; };
 		6CF199230EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF199220EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib */; };
@@ -499,7 +499,7 @@
 				6C8276750ED2AB8D00B5CEEB /* libThaiConverter.dylib in Frameworks */,
 				6C8276760ED2AB8D00B5CEEB /* libTraditionalChineseConverter.dylib in Frameworks */,
 				6C8276770ED2AB8D00B5CEEB /* libVietnameseConverter.dylib in Frameworks */,
-				6C46B2520ED9765D00777058 /* AVFoundation.framework in Frameworks */,
+				6CA550D60EDAD8F8000245EB /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
