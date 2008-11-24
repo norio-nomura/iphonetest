@@ -190,6 +190,7 @@
 
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
 	self.navigationItem.rightBarButtonItem = classSearchButtonItem;
 	[self loadDataSources];
 }
@@ -214,6 +215,9 @@
 	if ([tabBar.selectedItem isEqual:itemSubclasses]) {
 		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
 		[appDelegate pushClass:[[[dataSourcesArray objectAtIndex:itemSubclasses.tag] objectForRowAtIndexPath:indexPath] description]];
+	} else if ([tabBar.selectedItem isEqual:itemProtocols]) {
+		ClassBrowserAppDelegate *appDelegate = (ClassBrowserAppDelegate *)[[UIApplication sharedApplication] delegate];
+		[appDelegate pushProtocol:[[[dataSourcesArray objectAtIndex:itemProtocols.tag] objectForRowAtIndexPath:indexPath] description]];
 	}
 }
 
