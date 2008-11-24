@@ -170,6 +170,7 @@
 		6C8276770ED2AB8D00B5CEEB /* libVietnameseConverter.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8276650ED2AB8D00B5CEEB /* libVietnameseConverter.dylib */; };
 		6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */; };
 		6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */; };
+		6CF26F7F0EDA5B2A00AB6DBC /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -348,6 +349,7 @@
 		6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBrowserViewController.xib; sourceTree = "<group>"; };
 		6CBED43A0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesWithImageSectionsDataSource.h; sourceTree = "<group>"; };
 		6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassesWithImageSectionsDataSource.m; sourceTree = "<group>"; };
+		6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -564,6 +566,7 @@
 				6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */,
 				6C801DF30EDA36A5009A03B0 /* ProtocolBrowserViewController.xib */,
 				6C8272B00ED287E800B5CEEB /* SubclassesCell.xib */,
+				6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -828,6 +831,7 @@
 				6C801DF40EDA36A5009A03B0 /* ProtocolBrowserViewController.xib in Resources */,
 				6C801E730EDA4D08009A03B0 /* btnOptional.png in Resources */,
 				6C801E740EDA4D08009A03B0 /* btnRequired.png in Resources */,
+				6CF26F7F0EDA5B2A00AB6DBC /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,6 +941,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Norio Nomura";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
