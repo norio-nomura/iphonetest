@@ -5,10 +5,9 @@
 
 #import <objc/runtime.h>
 #import "SubclassesDataSource.h"
+#import "SubclassesCell.h"
 
 @implementation SubclassesDataSource
-
-@synthesize cellFromNib;
 
 
 #pragma mark UITableViewDataSource Protocol
@@ -19,7 +18,7 @@
     SubclassesCell *cell = (SubclassesCell*)[tableView dequeueReusableCellWithIdentifier:SubclassesCellIdentifier];
     if (cell == nil) {
 		[[NSBundle mainBundle] loadNibNamed:@"SubclassesCell" owner:self options:nil];
-		cell = cellFromNib;
+		cell = (SubclassesCell*)self.cellFromNib;
     }
 	cell.subclassName.text = [[self objectForRowAtIndexPath:indexPath] description];
 	Class class = objc_getClass([cell.subclassName.text cStringUsingEncoding:NSNEXTSTEPStringEncoding]);

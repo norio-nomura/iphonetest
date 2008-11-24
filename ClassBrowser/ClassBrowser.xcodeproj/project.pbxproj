@@ -170,6 +170,8 @@
 		6C8276770ED2AB8D00B5CEEB /* libVietnameseConverter.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8276650ED2AB8D00B5CEEB /* libVietnameseConverter.dylib */; };
 		6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */; };
 		6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */; };
+		6CF199210EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF199200EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m */; };
+		6CF199230EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF199220EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib */; };
 		6CF26F7F0EDA5B2A00AB6DBC /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */; };
 /* End PBXBuildFile section */
 
@@ -349,6 +351,9 @@
 		6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBrowserViewController.xib; sourceTree = "<group>"; };
 		6CBED43A0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesWithImageSectionsDataSource.h; sourceTree = "<group>"; };
 		6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassesWithImageSectionsDataSource.m; sourceTree = "<group>"; };
+		6CF1991F0EDA7E2D00B3CFE1 /* IndexedDataSourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedDataSourceCell.h; sourceTree = "<group>"; };
+		6CF199200EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexedDataSourceCell.m; sourceTree = "<group>"; };
+		6CF199220EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexedDataSourceCell.xib; sourceTree = "<group>"; };
 		6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -514,6 +519,8 @@
 				6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */,
 				6C82726B0ED283F400B5CEEB /* IndexedDataSource.h */,
 				6C82726C0ED283F400B5CEEB /* IndexedDataSource.m */,
+				6CF1991F0EDA7E2D00B3CFE1 /* IndexedDataSourceCell.h */,
+				6CF199200EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m */,
 				6C801DF00EDA348D009A03B0 /* ProtocolBrowserViewController.h */,
 				6C801DF10EDA348D009A03B0 /* ProtocolBrowserViewController.m */,
 				6C8272C40ED2894400B5CEEB /* SubclassesCell.h */,
@@ -561,9 +568,10 @@
 				6C776D420ED5245000C73AF3 /* Images */,
 				6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */,
 				6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				6CF199220EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				6C801DF30EDA36A5009A03B0 /* ProtocolBrowserViewController.xib */,
 				6C8272B00ED287E800B5CEEB /* SubclassesCell.xib */,
 				6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */,
@@ -832,6 +840,7 @@
 				6C801E730EDA4D08009A03B0 /* btnOptional.png in Resources */,
 				6C801E740EDA4D08009A03B0 /* btnRequired.png in Resources */,
 				6CF26F7F0EDA5B2A00AB6DBC /* Entitlements.plist in Resources */,
+				6CF199230EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +861,7 @@
 				6C8272C60ED2894400B5CEEB /* SubclassesCell.m in Sources */,
 				6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */,
 				6C801DF20EDA348D009A03B0 /* ProtocolBrowserViewController.m in Sources */,
+				6CF199210EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

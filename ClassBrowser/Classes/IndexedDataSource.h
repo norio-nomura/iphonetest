@@ -16,12 +16,14 @@
 @interface IndexedDataSource : NSObject<UITableViewDataSource> {
 	NSArray *sectionTitles;
 	NSDictionary *rows;
+	UITableViewCell *cellFromNib;
 	@private
 	SEL selectorForIndex;
 }
 
 @property (nonatomic,retain) NSArray *sectionTitles;
 @property (nonatomic,retain) NSDictionary *rows;
+@property (nonatomic,assign) IBOutlet UITableViewCell *cellFromNib;
 
 - (id)initWithArray:(NSArray*)array;
 - (id)initWithArray:(NSArray*)array usingSelector:(SEL)aSel;

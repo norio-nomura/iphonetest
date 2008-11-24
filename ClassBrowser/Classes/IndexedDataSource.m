@@ -4,6 +4,7 @@
 //
 
 #import "IndexedDataSource.h"
+#import "IndexedDataSourceCell.h"
 
 @implementation NSObject(indexedDictionary)
 
@@ -50,6 +51,7 @@
 
 @synthesize sectionTitles;
 @synthesize rows;
+@synthesize cellFromNib;
 
 
 - (id)initWithArray:(NSArray*)array {
@@ -111,11 +113,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *cellIdentifier = @"IndexedDataSourceCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    IndexedDataSourceCell *cell = (IndexedDataSourceCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
+		[[NSBundle mainBundle] loadNibNamed:@"IndexedDataSourceCell" owner:self options:nil];
+		cell = (IndexedDataSourceCell*)self.cellFromNib;
     }
-	cell.text = [[self objectForRowAtIndexPath:indexPath] description];
+	cell.label.text = [[self objectForRowAtIndexPath:indexPath] description];
     return cell;
 }
 

@@ -65,7 +65,7 @@
 		if (outCount) {
 			array = [[NSMutableArray alloc] initWithCapacity:outCount];
 			for (unsigned int i = 0; i < outCount; i++) {
-				NSString *propertyString = [[NSString alloc] initWithFormat:@"%s(%s)", 
+				NSString *propertyString = [[NSString alloc] initWithFormat:@"%s\n    (%s)", 
 											property_getName(properties[i]), 
 											property_getAttributes(properties[i])];
 				[array addObject:propertyString];
@@ -88,7 +88,7 @@
 		if (classMethodsCount || instanceMethodsCount) {
 			array = [[NSMutableArray alloc] initWithCapacity:classMethodsCount + instanceMethodsCount];
 			for (unsigned int i = 0; i < classMethodsCount; i++) {
-				NSString *classMethodString = [[NSString alloc] initWithFormat:@"+%s(%s)", 
+				NSString *classMethodString = [[NSString alloc] initWithFormat:@"+%s\n    (%s)", 
 											   sel_getName(classMethods[i].name), 
 											   classMethods[i].types];
 				[array addObject:classMethodString];
@@ -98,7 +98,7 @@
 				free(classMethods);
 			}
 			for (unsigned int i = 0; i < instanceMethodsCount; i++) {
-				NSString *instanceMethodString = [[NSString alloc] initWithFormat:@"-%s(%s)", 
+				NSString *instanceMethodString = [[NSString alloc] initWithFormat:@"-%s\n    (%s)", 
 												  sel_getName(instanceMethods[i].name), 
 												  instanceMethods[i].types];
 				[array addObject:instanceMethodString];
@@ -121,7 +121,7 @@
 		if (classMethodsCount || instanceMethodsCount) {
 			array = [[NSMutableArray alloc] initWithCapacity:classMethodsCount + instanceMethodsCount];
 			for (unsigned int i = 0; i < classMethodsCount; i++) {
-				NSString *classMethodString = [[NSString alloc] initWithFormat:@"+%s(%s)", 
+				NSString *classMethodString = [[NSString alloc] initWithFormat:@"+%s\n    (%s)", 
 											   sel_getName(classMethods[i].name), 
 											   classMethods[i].types];
 				[array addObject:classMethodString];
@@ -131,7 +131,7 @@
 				free(classMethods);
 			}
 			for (unsigned int i = 0; i < instanceMethodsCount; i++) {
-				NSString *instanceMethodString = [[NSString alloc] initWithFormat:@"-%s(%s)", 
+				NSString *instanceMethodString = [[NSString alloc] initWithFormat:@"-%s\n    (%s)", 
 												  sel_getName(instanceMethods[i].name), 
 												  instanceMethods[i].types];
 				[array addObject:instanceMethodString];
