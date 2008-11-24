@@ -23,5 +23,6 @@
 @property (retain) NSMutableArray *autoPushClassNames;
 
 - (void)pushClass:(NSString*)className;
+- (void)pushProtocol:(NSString*)protocolName;
 
 @end

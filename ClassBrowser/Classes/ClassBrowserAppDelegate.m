@@ -3,9 +3,13 @@
 //  ClassBrowser
 //
 
-#import <objc/runtime.h>
 #import "ClassBrowserAppDelegate.h"
+#import "ProtocolBrowserViewController.h"
 #import "ClassTree.h"
+
+@interface ClassBrowserAppDelegate(private)
+- (void)pushViewController:(Class)class withTitle:(NSString*)title;
+@end
 
 @implementation ClassBrowserAppDelegate
 
@@ -32,14 +36,26 @@
 
 
 - (void)pushClass:(NSString*)className {
-	ClassBrowserViewController *viewController = [[ClassBrowserViewController alloc] initWithNibName:@"ClassBrowserViewController" bundle:nil];
-	viewController.title = className;
-	[navigationController pushViewController:viewController animated:YES];
-	[viewController release];
+	[self pushViewController:[ClassBrowserViewController class] withTitle:className];
+}
+
+
+- (void)pushProtocol:(NSString*)protocolName {
+	[self pushViewController:[ProtocolBrowserViewController class] withTitle:protocolName];
 }
 
 
 #pragma mark privateMethod
+
+
+- (void)pushViewController:(Class)class withTitle:(NSString*)title {
+	if ([class isSubclassOfClass:[UIViewController class]]) {
+		UIViewController *viewController = [[class alloc] initWithNibName:NSStringFromClass(class) bundle:nil];
+		viewController.title = title;
+		[navigationController pushViewController:viewController animated:YES];
+		[viewController release];
+	}
+}
 
 
 - (void)splashAnimation {
