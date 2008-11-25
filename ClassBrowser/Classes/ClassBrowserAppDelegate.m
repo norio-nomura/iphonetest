@@ -59,6 +59,7 @@
 
 
 - (void)splashAnimation {
+	[[ClassTree sharedClassTree] loadAllFrameworks];
 	[[ClassTree sharedClassTree] setupClassDictionary];
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:kANIMATION_DELAY_SECOND];
