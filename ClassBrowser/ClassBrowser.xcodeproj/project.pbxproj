@@ -47,71 +47,6 @@
 		6C8274F90ED2A64200B5CEEB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8274E70ED2A64200B5CEEB /* Security.framework */; };
 		6C8274FA0ED2A64200B5CEEB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8274E80ED2A64200B5CEEB /* SystemConfiguration.framework */; };
 		6C8274FB0ED2A64200B5CEEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8274E90ED2A64200B5CEEB /* UIKit.framework */; };
-		6C8275670ED2A6AC00B5CEEB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275270ED2A6AC00B5CEEB /* Accelerate.framework */; };
-		6C8275680ED2A6AC00B5CEEB /* AccountSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275280ED2A6AC00B5CEEB /* AccountSettings.framework */; };
-		6C8275690ED2A6AC00B5CEEB /* AOSNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275290ED2A6AC00B5CEEB /* AOSNotification.framework */; };
-		6C82756A0ED2A6AC00B5CEEB /* Apple80211.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82752A0ED2A6AC00B5CEEB /* Apple80211.framework */; };
-		6C82756B0ED2A6AC00B5CEEB /* AppleJPEG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82752B0ED2A6AC00B5CEEB /* AppleJPEG.framework */; };
-		6C82756C0ED2A6AC00B5CEEB /* AppSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82752C0ED2A6AC00B5CEEB /* AppSupport.framework */; };
-		6C82756D0ED2A6AC00B5CEEB /* ArtworkCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82752D0ED2A6AC00B5CEEB /* ArtworkCache.framework */; };
-		6C82756E0ED2A6AC00B5CEEB /* BluetoothManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82752E0ED2A6AC00B5CEEB /* BluetoothManager.framework */; };
-		6C82756F0ED2A6AC00B5CEEB /* Bom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82752F0ED2A6AC00B5CEEB /* Bom.framework */; };
-		6C8275700ED2A6AC00B5CEEB /* Calculate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275300ED2A6AC00B5CEEB /* Calculate.framework */; };
-		6C8275710ED2A6AC00B5CEEB /* Calendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275310ED2A6AC00B5CEEB /* Calendar.framework */; };
-		6C8275720ED2A6AC00B5CEEB /* CalendarUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275320ED2A6AC00B5CEEB /* CalendarUI.framework */; };
-		6C8275730ED2A6AC00B5CEEB /* Camera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275330ED2A6AC00B5CEEB /* Camera.framework */; };
-		6C8275740ED2A6AC00B5CEEB /* Celestial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275340ED2A6AC00B5CEEB /* Celestial.framework */; };
-		6C8275750ED2A6AC00B5CEEB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275350ED2A6AC00B5CEEB /* CoreMedia.framework */; };
-		6C8275760ED2A6AC00B5CEEB /* CoreSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275360ED2A6AC00B5CEEB /* CoreSurface.framework */; };
-		6C8275770ED2A6AC00B5CEEB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275370ED2A6AC00B5CEEB /* CoreTelephony.framework */; };
-		6C8275780ED2A6AC00B5CEEB /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275380ED2A6AC00B5CEEB /* CoreVideo.framework */; };
-		6C8275790ED2A6AC00B5CEEB /* CrashReporterSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275390ED2A6AC00B5CEEB /* CrashReporterSupport.framework */; };
-		6C82757A0ED2A6AC00B5CEEB /* DataAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82753A0ED2A6AC00B5CEEB /* DataAccess.framework */; };
-		6C82757B0ED2A6AC00B5CEEB /* DataAccessExpress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82753B0ED2A6AC00B5CEEB /* DataAccessExpress.framework */; };
-		6C82757C0ED2A6AC00B5CEEB /* DataMigration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82753C0ED2A6AC00B5CEEB /* DataMigration.framework */; };
-		6C82757D0ED2A6AC00B5CEEB /* EAP8021X.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82753D0ED2A6AC00B5CEEB /* EAP8021X.framework */; };
-		6C82757E0ED2A6AC00B5CEEB /* GMM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82753E0ED2A6AC00B5CEEB /* GMM.framework */; };
-		6C82757F0ED2A6AC00B5CEEB /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82753F0ED2A6AC00B5CEEB /* GraphicsServices.framework */; };
-		6C8275800ED2A6AC00B5CEEB /* IAP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275400ED2A6AC00B5CEEB /* IAP.framework */; };
-		6C8275810ED2A6AC00B5CEEB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275410ED2A6AC00B5CEEB /* ImageIO.framework */; };
-		6C8275820ED2A6AC00B5CEEB /* IOMobileFramebuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275420ED2A6AC00B5CEEB /* IOMobileFramebuffer.framework */; };
-		6C8275830ED2A6AC00B5CEEB /* ITSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275430ED2A6AC00B5CEEB /* ITSync.framework */; };
-		6C8275840ED2A6AC00B5CEEB /* iTunesStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275440ED2A6AC00B5CEEB /* iTunesStore.framework */; };
-		6C8275850ED2A6AC00B5CEEB /* iTunesStoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275450ED2A6AC00B5CEEB /* iTunesStoreUI.framework */; };
-		6C8275860ED2A6AC00B5CEEB /* iWorkImport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275460ED2A6AC00B5CEEB /* iWorkImport.framework */; };
-		6C8275870ED2A6AC00B5CEEB /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275470ED2A6AC00B5CEEB /* JavaScriptCore.framework */; };
-		6C8275880ED2A6AC00B5CEEB /* ManagedConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275480ED2A6AC00B5CEEB /* ManagedConfiguration.framework */; };
-		6C8275890ED2A6AC00B5CEEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275490ED2A6AC00B5CEEB /* MapKit.framework */; };
-		6C82758A0ED2A6AC00B5CEEB /* MBX2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82754A0ED2A6AC00B5CEEB /* MBX2D.framework */; };
-		6C82758B0ED2A6AC00B5CEEB /* MBXConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82754B0ED2A6AC00B5CEEB /* MBXConnect.framework */; };
-		6C82758C0ED2A6AC00B5CEEB /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82754C0ED2A6AC00B5CEEB /* MediaToolbox.framework */; };
-		6C82758D0ED2A6AC00B5CEEB /* Message.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82754D0ED2A6AC00B5CEEB /* Message.framework */; };
-		6C82758E0ED2A6AC00B5CEEB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82754E0ED2A6AC00B5CEEB /* MessageUI.framework */; };
-		6C8275900ED2A6AC00B5CEEB /* MobileBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275500ED2A6AC00B5CEEB /* MobileBluetooth.framework */; };
-		6C8275910ED2A6AC00B5CEEB /* MobileDeviceLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275510ED2A6AC00B5CEEB /* MobileDeviceLink.framework */; };
-		6C8275920ED2A6AC00B5CEEB /* MobileInstallation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275520ED2A6AC00B5CEEB /* MobileInstallation.framework */; };
-		6C8275930ED2A6AC00B5CEEB /* MobileMusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275530ED2A6AC00B5CEEB /* MobileMusicPlayer.framework */; };
-		6C8275940ED2A6AC00B5CEEB /* MobileSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275540ED2A6AC00B5CEEB /* MobileSync.framework */; };
-		6C8275950ED2A6AC00B5CEEB /* MobileWirelessSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275550ED2A6AC00B5CEEB /* MobileWirelessSync.framework */; };
-		6C8275960ED2A6AC00B5CEEB /* MultitouchSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275560ED2A6AC00B5CEEB /* MultitouchSupport.framework */; };
-		6C8275970ED2A6AC00B5CEEB /* MusicLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275570ED2A6AC00B5CEEB /* MusicLibrary.framework */; };
-		6C8275980ED2A6AC00B5CEEB /* OfficeImport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275580ED2A6AC00B5CEEB /* OfficeImport.framework */; };
-		6C8275990ED2A6AC00B5CEEB /* PersistentConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275590ED2A6AC00B5CEEB /* PersistentConnection.framework */; };
-		6C82759A0ED2A6AC00B5CEEB /* PhotoLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82755A0ED2A6AC00B5CEEB /* PhotoLibrary.framework */; };
-		6C82759B0ED2A6AC00B5CEEB /* Preferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82755B0ED2A6AC00B5CEEB /* Preferences.framework */; };
-		6C82759C0ED2A6AC00B5CEEB /* SpringBoardServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82755C0ED2A6AC00B5CEEB /* SpringBoardServices.framework */; };
-		6C82759D0ED2A6AC00B5CEEB /* SpringBoardUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82755D0ED2A6AC00B5CEEB /* SpringBoardUI.framework */; };
-		6C82759E0ED2A6AC00B5CEEB /* Symbolication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82755E0ED2A6AC00B5CEEB /* Symbolication.framework */; };
-		6C82759F0ED2A6AC00B5CEEB /* TelephonyUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C82755F0ED2A6AC00B5CEEB /* TelephonyUI.framework */; };
-		6C8275A00ED2A6AC00B5CEEB /* URLify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275600ED2A6AC00B5CEEB /* URLify.framework */; };
-		6C8275A10ED2A6AC00B5CEEB /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275610ED2A6AC00B5CEEB /* VideoToolbox.framework */; };
-		6C8275A20ED2A6AC00B5CEEB /* VisualVoicemail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275620ED2A6AC00B5CEEB /* VisualVoicemail.framework */; };
-		6C8275A30ED2A6AC00B5CEEB /* WebCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275630ED2A6AC00B5CEEB /* WebCore.framework */; };
-		6C8275A40ED2A6AC00B5CEEB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275640ED2A6AC00B5CEEB /* WebKit.framework */; };
-		6C8275A50ED2A6AC00B5CEEB /* XMPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275650ED2A6AC00B5CEEB /* XMPP.framework */; };
-		6C8275A60ED2A6AC00B5CEEB /* YouTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275660ED2A6AC00B5CEEB /* YouTube.framework */; };
-		6C8275F00ED2AA6C00B5CEEB /* H264H1.videodecoder in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275EE0ED2AA6C00B5CEEB /* H264H1.videodecoder */; };
-		6C8275F10ED2AA6C00B5CEEB /* MP4VH1.videodecoder in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275EF0ED2AA6C00B5CEEB /* MP4VH1.videodecoder */; };
 		6C8275F40ED2AACD00B5CEEB /* libIOKit.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275F30ED2AACD00B5CEEB /* libIOKit.dylib */; };
 		6C82762B0ED2AAF800B5CEEB /* libafc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275FC0ED2AAF800B5CEEB /* libafc.dylib */; };
 		6C82762C0ED2AAF800B5CEEB /* libbsm.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8275FD0ED2AAF800B5CEEB /* libbsm.dylib */; };
@@ -168,7 +103,6 @@
 		6C8276760ED2AB8D00B5CEEB /* libTraditionalChineseConverter.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8276640ED2AB8D00B5CEEB /* libTraditionalChineseConverter.dylib */; };
 		6C8276770ED2AB8D00B5CEEB /* libVietnameseConverter.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8276650ED2AB8D00B5CEEB /* libVietnameseConverter.dylib */; };
 		6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */; };
-		6CA550D60EDAD8F8000245EB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C02537B0ED7A5B0006D5211 /* AVFoundation.framework */; };
 		6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */; };
 		6CF199210EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF199200EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m */; };
 		6CF199230EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF199220EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib */; };
@@ -379,71 +313,6 @@
 				6C8274F90ED2A64200B5CEEB /* Security.framework in Frameworks */,
 				6C8274FA0ED2A64200B5CEEB /* SystemConfiguration.framework in Frameworks */,
 				6C8274FB0ED2A64200B5CEEB /* UIKit.framework in Frameworks */,
-				6C8275670ED2A6AC00B5CEEB /* Accelerate.framework in Frameworks */,
-				6C8275680ED2A6AC00B5CEEB /* AccountSettings.framework in Frameworks */,
-				6C8275690ED2A6AC00B5CEEB /* AOSNotification.framework in Frameworks */,
-				6C82756A0ED2A6AC00B5CEEB /* Apple80211.framework in Frameworks */,
-				6C82756B0ED2A6AC00B5CEEB /* AppleJPEG.framework in Frameworks */,
-				6C82756C0ED2A6AC00B5CEEB /* AppSupport.framework in Frameworks */,
-				6C82756D0ED2A6AC00B5CEEB /* ArtworkCache.framework in Frameworks */,
-				6C82756E0ED2A6AC00B5CEEB /* BluetoothManager.framework in Frameworks */,
-				6C82756F0ED2A6AC00B5CEEB /* Bom.framework in Frameworks */,
-				6C8275700ED2A6AC00B5CEEB /* Calculate.framework in Frameworks */,
-				6C8275710ED2A6AC00B5CEEB /* Calendar.framework in Frameworks */,
-				6C8275720ED2A6AC00B5CEEB /* CalendarUI.framework in Frameworks */,
-				6C8275730ED2A6AC00B5CEEB /* Camera.framework in Frameworks */,
-				6C8275740ED2A6AC00B5CEEB /* Celestial.framework in Frameworks */,
-				6C8275750ED2A6AC00B5CEEB /* CoreMedia.framework in Frameworks */,
-				6C8275760ED2A6AC00B5CEEB /* CoreSurface.framework in Frameworks */,
-				6C8275770ED2A6AC00B5CEEB /* CoreTelephony.framework in Frameworks */,
-				6C8275780ED2A6AC00B5CEEB /* CoreVideo.framework in Frameworks */,
-				6C8275790ED2A6AC00B5CEEB /* CrashReporterSupport.framework in Frameworks */,
-				6C82757A0ED2A6AC00B5CEEB /* DataAccess.framework in Frameworks */,
-				6C82757B0ED2A6AC00B5CEEB /* DataAccessExpress.framework in Frameworks */,
-				6C82757C0ED2A6AC00B5CEEB /* DataMigration.framework in Frameworks */,
-				6C82757D0ED2A6AC00B5CEEB /* EAP8021X.framework in Frameworks */,
-				6C82757E0ED2A6AC00B5CEEB /* GMM.framework in Frameworks */,
-				6C82757F0ED2A6AC00B5CEEB /* GraphicsServices.framework in Frameworks */,
-				6C8275800ED2A6AC00B5CEEB /* IAP.framework in Frameworks */,
-				6C8275810ED2A6AC00B5CEEB /* ImageIO.framework in Frameworks */,
-				6C8275820ED2A6AC00B5CEEB /* IOMobileFramebuffer.framework in Frameworks */,
-				6C8275830ED2A6AC00B5CEEB /* ITSync.framework in Frameworks */,
-				6C8275840ED2A6AC00B5CEEB /* iTunesStore.framework in Frameworks */,
-				6C8275850ED2A6AC00B5CEEB /* iTunesStoreUI.framework in Frameworks */,
-				6C8275860ED2A6AC00B5CEEB /* iWorkImport.framework in Frameworks */,
-				6C8275870ED2A6AC00B5CEEB /* JavaScriptCore.framework in Frameworks */,
-				6C8275880ED2A6AC00B5CEEB /* ManagedConfiguration.framework in Frameworks */,
-				6C8275890ED2A6AC00B5CEEB /* MapKit.framework in Frameworks */,
-				6C82758A0ED2A6AC00B5CEEB /* MBX2D.framework in Frameworks */,
-				6C82758B0ED2A6AC00B5CEEB /* MBXConnect.framework in Frameworks */,
-				6C82758C0ED2A6AC00B5CEEB /* MediaToolbox.framework in Frameworks */,
-				6C82758D0ED2A6AC00B5CEEB /* Message.framework in Frameworks */,
-				6C82758E0ED2A6AC00B5CEEB /* MessageUI.framework in Frameworks */,
-				6C8275900ED2A6AC00B5CEEB /* MobileBluetooth.framework in Frameworks */,
-				6C8275910ED2A6AC00B5CEEB /* MobileDeviceLink.framework in Frameworks */,
-				6C8275920ED2A6AC00B5CEEB /* MobileInstallation.framework in Frameworks */,
-				6C8275930ED2A6AC00B5CEEB /* MobileMusicPlayer.framework in Frameworks */,
-				6C8275940ED2A6AC00B5CEEB /* MobileSync.framework in Frameworks */,
-				6C8275950ED2A6AC00B5CEEB /* MobileWirelessSync.framework in Frameworks */,
-				6C8275960ED2A6AC00B5CEEB /* MultitouchSupport.framework in Frameworks */,
-				6C8275970ED2A6AC00B5CEEB /* MusicLibrary.framework in Frameworks */,
-				6C8275980ED2A6AC00B5CEEB /* OfficeImport.framework in Frameworks */,
-				6C8275990ED2A6AC00B5CEEB /* PersistentConnection.framework in Frameworks */,
-				6C82759A0ED2A6AC00B5CEEB /* PhotoLibrary.framework in Frameworks */,
-				6C82759B0ED2A6AC00B5CEEB /* Preferences.framework in Frameworks */,
-				6C82759C0ED2A6AC00B5CEEB /* SpringBoardServices.framework in Frameworks */,
-				6C82759D0ED2A6AC00B5CEEB /* SpringBoardUI.framework in Frameworks */,
-				6C82759E0ED2A6AC00B5CEEB /* Symbolication.framework in Frameworks */,
-				6C82759F0ED2A6AC00B5CEEB /* TelephonyUI.framework in Frameworks */,
-				6C8275A00ED2A6AC00B5CEEB /* URLify.framework in Frameworks */,
-				6C8275A10ED2A6AC00B5CEEB /* VideoToolbox.framework in Frameworks */,
-				6C8275A20ED2A6AC00B5CEEB /* VisualVoicemail.framework in Frameworks */,
-				6C8275A30ED2A6AC00B5CEEB /* WebCore.framework in Frameworks */,
-				6C8275A40ED2A6AC00B5CEEB /* WebKit.framework in Frameworks */,
-				6C8275A50ED2A6AC00B5CEEB /* XMPP.framework in Frameworks */,
-				6C8275A60ED2A6AC00B5CEEB /* YouTube.framework in Frameworks */,
-				6C8275F00ED2AA6C00B5CEEB /* H264H1.videodecoder in Frameworks */,
-				6C8275F10ED2AA6C00B5CEEB /* MP4VH1.videodecoder in Frameworks */,
 				6C8275F40ED2AACD00B5CEEB /* libIOKit.dylib in Frameworks */,
 				6C82762B0ED2AAF800B5CEEB /* libafc.dylib in Frameworks */,
 				6C82762C0ED2AAF800B5CEEB /* libbsm.dylib in Frameworks */,
@@ -499,7 +368,6 @@
 				6C8276750ED2AB8D00B5CEEB /* libThaiConverter.dylib in Frameworks */,
 				6C8276760ED2AB8D00B5CEEB /* libTraditionalChineseConverter.dylib in Frameworks */,
 				6C8276770ED2AB8D00B5CEEB /* libVietnameseConverter.dylib in Frameworks */,
-				6CA550D60EDAD8F8000245EB /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
