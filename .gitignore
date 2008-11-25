@@ -1,0 +1,10 @@
+build
+check
+documents
+.DS_Store
+*.o
+*.ob
+*.pbxuser
+*.tmproj
+*.mode1*
+*.build
