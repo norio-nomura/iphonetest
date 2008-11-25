@@ -3,12 +3,9 @@
 //  ClassBrowser
 //
 
+#import <dlfcn.h>
 #import <objc/runtime.h>
 #import "ClassTree.h"
-
-@interface ClassTree(private)
-- (void)setupClassDictionary;
-@end
 
 @implementation ClassTree
 
@@ -105,6 +102,28 @@ static ClassTree *sharedClassTreeInstance = nil;
 
 	subclassesDataSource_ = [[SubclassesDataSource alloc] initWithArray:[classDictionary_ allKeys]];
 	subclassesWithImageSectionsDataSource_ = [[SubclassesWithImageSectionsDataSource alloc] initWithArray:[classDictionary_ allKeys]];
+}
+
+
+- (void)loadAllFrameworks {
+	NSArray *allLibrariesPath = NSSearchPathForDirectoriesInDomains(NSAllLibrariesDirectory,NSSystemDomainMask,NO);
+	NSArray *ignorePaths = NSSearchPathForDirectoriesInDomains(NSDeveloperDirectory,NSSystemDomainMask,NO);
+	NSMutableArray *searchPaths = [allLibrariesPath mutableCopy];
+	[searchPaths removeObjectsInArray:ignorePaths];
+	for (NSString *path in searchPaths) {
+		NSString *file, *libraryPath;
+		NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
+		while (file = [dirEnum nextObject]) {
+			NSArray *components = [file pathComponents];
+			if ([components count] > 2 && 
+				[[components objectAtIndex:[components count]-2] hasSuffix:@".framework"] && 
+				[[components objectAtIndex:[components count]-2] hasPrefix:[components lastObject]] &&
+				[[[components lastObject] pathExtension] isEqualToString: @""]) {
+				libraryPath = [path stringByAppendingPathComponent:file];
+				dlopen([libraryPath cStringUsingEncoding:NSNEXTSTEPStringEncoding],RTLD_NOW|RTLD_GLOBAL);
+			}
+		}
+	}
 }
 
 

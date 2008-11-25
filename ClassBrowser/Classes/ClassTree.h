@@ -21,5 +21,6 @@
 
 + (ClassTree*)sharedClassTree;
 - (void)setupClassDictionary;
+- (void)loadAllFrameworks;
 
 @end
