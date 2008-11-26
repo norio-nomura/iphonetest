@@ -10,7 +10,6 @@
 
 - (id)__setInputMode:(NSString*)obj {
 	static BOOL toggle = YES;
-	NSLog(@"%@",obj);
 	id result;
 	if (toggle && [obj isEqual:@"ja_JP-Romaji"]) {
 		result = [self __setInputMode:@"emoji"];
