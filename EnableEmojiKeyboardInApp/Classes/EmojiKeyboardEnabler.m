@@ -5,16 +5,21 @@
 #import <objc/runtime.h>
 #import "EmojiKeyboardEnabler.h"
 
+#define kEmojiInputMode @"emoji"
+
 @implementation UIView(EmojiKeyboardEnabler)
 
 static NSString *triggerInputMode = nil;
 
 
 - (id)__setInputMode:(NSString*)mode {
-	static BOOL toggle = YES;
+	static BOOL toggle = NO;
 	id result;
-	if (toggle && [mode isEqual:triggerInputMode]) {
-		result = [self __setInputMode:@"emoji"];
+	if ([mode isEqual:kEmojiInputMode]) {
+		result = [self __setInputMode:mode];
+		toggle = NO;
+	} else if (toggle && [mode isEqual:triggerInputMode]) {
+		result = [self __setInputMode:kEmojiInputMode];
 		toggle = NO;
 	} else {
 		result = [self __setInputMode:mode];
@@ -27,11 +32,11 @@ static NSString *triggerInputMode = nil;
 - (id)__inputModePreference {
 	NSMutableArray *array;
 	array = [self __inputModePreference];
-	if (!triggerInputMode) {
-		triggerInputMode = [array objectAtIndex:0];
-	}
-	if (NSNotFound == [array indexOfObject:@"emoji"]) {
-		[array addObject:@"emoji"];
+	if (NSNotFound == [array indexOfObject:kEmojiInputMode]) {
+		[array addObject:kEmojiInputMode];
+		if (!triggerInputMode) {
+			triggerInputMode = [array objectAtIndex:0];
+		}
 	}
 	return array;
 }
