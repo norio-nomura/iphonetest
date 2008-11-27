@@ -13,17 +13,21 @@ static NSString *triggerInputMode = nil;
 
 
 - (id)__setInputMode:(NSString*)mode {
-	static BOOL toggle = NO;
 	id result;
-	if ([mode isEqual:kEmojiInputMode]) {
-		result = [self __setInputMode:mode];
-		toggle = NO;
-	} else if (toggle && [mode isEqual:triggerInputMode]) {
-		result = [self __setInputMode:kEmojiInputMode];
-		toggle = NO;
+	if ([mode isEqual:triggerInputMode]) {
+		static BOOL toggle = YES;
+		if (toggle) {
+			result = [self __setInputMode:kEmojiInputMode];
+			toggle = NO;
+		} else {
+			result = [self __setInputMode:mode];
+			toggle = YES;
+		}
 	} else {
+		if ([mode isEqual:kEmojiInputMode]) {
+			triggerInputMode = kEmojiInputMode;
+		}
 		result = [self __setInputMode:mode];
-		toggle = YES;
 	}
 	return result;
 }
@@ -33,9 +37,18 @@ static NSString *triggerInputMode = nil;
 	NSMutableArray *array;
 	array = [self __inputModePreference];
 	if (NSNotFound == [array indexOfObject:kEmojiInputMode]) {
-		[array addObject:kEmojiInputMode];
 		if (!triggerInputMode) {
-			triggerInputMode = [array objectAtIndex:0];
+			triggerInputMode = [array lastObject];
+		}
+		[array addObject:kEmojiInputMode];
+	} else {
+		if (!triggerInputMode) {
+			for (NSUInteger i = [array count] - 1; i>=0; i--) {
+				if (![[array objectAtIndex:i] isEqual:kEmojiInputMode]) {
+					triggerInputMode = [array objectAtIndex:i];
+					break;
+				}
+			}
 		}
 	}
 	return array;
