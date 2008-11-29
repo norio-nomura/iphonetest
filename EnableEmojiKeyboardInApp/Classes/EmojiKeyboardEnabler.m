@@ -4,83 +4,107 @@
 
 #import <objc/runtime.h>
 #import "EmojiKeyboardEnabler.h"
+#import "SharedInstanceMacro.h"
 
 #define kEmojiInputMode @"emoji"
 
-@implementation UIView(EmojiKeyboardEnabler)
-
+static EmojiKeyboardEnabler *shardInstance = nil; 
 static NSString *triggerInputMode = nil;
+static BOOL emojiEnable = NO;
+static BOOL addedEmojiToPreference = NO;
 
+@implementation UIView(EmojiKeyboardEnabler)
 
 - (id)__setInputMode:(NSString*)mode {
 	id result;
-	if ([mode isEqual:triggerInputMode]) {
-		static BOOL toggle = YES;
-		if (toggle) {
-			result = [self __setInputMode:kEmojiInputMode];
-			toggle = NO;
+	if (emojiEnable) {
+		if ([mode isEqual:triggerInputMode]) {
+			static BOOL toggle = YES;
+			if (toggle) {
+				result = [self __setInputMode:kEmojiInputMode];
+				toggle = NO;
+			} else {
+				result = [self __setInputMode:mode];
+				toggle = YES;
+			}
 		} else {
+			if ([mode isEqual:kEmojiInputMode]) {
+				triggerInputMode = kEmojiInputMode;
+			}
 			result = [self __setInputMode:mode];
-			toggle = YES;
 		}
 	} else {
-		if ([mode isEqual:kEmojiInputMode]) {
-			triggerInputMode = kEmojiInputMode;
-		}
 		result = [self __setInputMode:mode];
 	}
 	return result;
 }
 
-
 - (id)__inputModePreference {
 	NSMutableArray *array;
-	array = [self __inputModePreference];
-	if (NSNotFound == [array indexOfObject:kEmojiInputMode]) {
-		if (!triggerInputMode) {
-			triggerInputMode = [array lastObject];
-		}
-		[array addObject:kEmojiInputMode];
-	} else {
-		if (!triggerInputMode) {
-			for (NSUInteger i = [array count] - 1; i>=0; i--) {
-				if (![[array objectAtIndex:i] isEqual:kEmojiInputMode]) {
-					triggerInputMode = [array objectAtIndex:i];
-					break;
+	array = [NSMutableArray arrayWithArray:[self __inputModePreference]];
+	if (emojiEnable) {
+		if (NSNotFound == [array indexOfObject:kEmojiInputMode]) {
+			if (!triggerInputMode) {
+				triggerInputMode = [array lastObject];
+			}
+			[array addObject:kEmojiInputMode];
+			addedEmojiToPreference = YES;
+		} else {
+			if (!triggerInputMode) {
+				for (NSUInteger i = [array count] - 1; i>=0; i--) {
+					if (![[array objectAtIndex:i] isEqual:kEmojiInputMode]) {
+						triggerInputMode = [array objectAtIndex:i];
+						break;
+					}
 				}
 			}
 		}
+	} else {
+		if (addedEmojiToPreference) {
+			[array removeObject:kEmojiInputMode];
+			addedEmojiToPreference = NO;
+		}
 	}
+	
 	return array;
 }
 
-
 @end
 
-static BOOL installedEmojiKeyboardEnabler = NO;
+@implementation EmojiKeyboardEnabler
 
+SHARD_INSTANCE_IMPL
 
-BOOL EmojiKeyboardEnable(BOOL bEnable) {
-	if (installedEmojiKeyboardEnabler != bEnable) {
-		Class class = objc_getClass("UIKeyboardImpl");
-		if (class) {
-			method_exchangeImplementations(class_getInstanceMethod(class, @selector(setInputMode:)),
-										   class_getInstanceMethod(class, @selector(__setInputMode:)));
-			method_exchangeImplementations(class_getInstanceMethod(class, @selector(inputModePreference)),
-										   class_getInstanceMethod(class, @selector(__inputModePreference)));
-			installedEmojiKeyboardEnabler = bEnable;
-			return YES;
+- (BOOL)available {
+	return [[[UIDevice currentDevice] systemVersion] isEqualToString:@"2.2"];
+}
+
+- (void)installHook {
+	Class class = objc_getClass("UIKeyboardImpl");
+	if (class) {
+		method_exchangeImplementations(class_getInstanceMethod(class, @selector(setInputMode:)),
+									   class_getInstanceMethod(class, @selector(__setInputMode:)));
+		method_exchangeImplementations(class_getInstanceMethod(class, @selector(inputModePreference)),
+									   class_getInstanceMethod(class, @selector(__inputModePreference)));
+	}		
+}
+
+- (id)init {
+	if (self = [super init]) {
+		if ([self available]) {
+			[self installHook];
 		}
 	}
-	return NO;
+	return self;
 }
 
-
-BOOL installEmojiKeyboardEnabler() {
-	return EmojiKeyboardEnable(YES);
+- (void)setEnable:(BOOL)yesOrNo {
+	emojiEnable = yesOrNo;
+	
+	// for reload inputModePreference
+	BOOL v = [[NSUserDefaults standardUserDefaults] boolForKey:@"hoge"];
+	[[NSUserDefaults standardUserDefaults] setBool:!v forKey:@"hoge"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-
-BOOL uninstallEmojiKeyboardEnabler() {
-	return EmojiKeyboardEnable(NO);
-}
+@end

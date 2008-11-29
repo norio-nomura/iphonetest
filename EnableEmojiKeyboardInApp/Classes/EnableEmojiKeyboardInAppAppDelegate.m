@@ -15,7 +15,7 @@
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    installEmojiKeyboardEnabler();
+	[[EmojiKeyboardEnabler shardInstance] setEnable:YES];
     // Override point for customization after app launch    
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
