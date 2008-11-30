@@ -8,7 +8,6 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -32,7 +31,7 @@
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 			</object>
 			<object class="IBUITableViewCell" id="515736913">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -92,12 +91,11 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 44}</string>
-				<reference key="NSSuperview"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<bool key="IBUIClipsSubviews">YES</bool>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<reference key="IBUIContentView" ref="959840210"/>
-				<string key="IBUIReuseIdentifier">SubclassesCell</string>
+				<string key="IBUIReuseIdentifier">SubclassesDataSource</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -222,15 +220,27 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
 					<string key="className">IndexedDataSource</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="882772658">
+					<string key="superclassName">LoadCellFromNibDataSource</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="290282693">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/IndexedDataSource.h</string>
+						<string key="minorKey">../Library/DataSources/IndexedDataSource.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">LoadCellFromNibDataSource</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">cellFromNib</string>
+						<string key="NS.object.0">UITableViewCell</string>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">../Library/DataSources/LoadCellFromNibDataSource.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NSObject</string>
-					<reference key="sourceIdentifier" ref="882772658"/>
+					<reference key="sourceIdentifier" ref="290282693"/>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NSObject</string>
@@ -263,10 +273,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">SubclassesDataSource</string>
 					<string key="superclassName">IndexedDataSource</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">cellFromNib</string>
-						<string key="NS.object.0">SubclassesCell</string>
-					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/SubclassesDataSource.h</string>
