@@ -87,6 +87,7 @@
 - (void)dealloc {
 	[sectionTitles release];
 	[rows release];
+	[nibIdentifier release];
     [super dealloc];
 }
 
