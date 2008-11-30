@@ -20,6 +20,7 @@
 @synthesize itemClassMethods;
 @synthesize itemInstanceMethods;
 @synthesize itemProtocols;
+@synthesize itemInstanceVariables;
 @synthesize classSearchButtonItem;
 @synthesize dataSourcesArray;
 
@@ -32,6 +33,7 @@
 	[itemClassMethods release];
 	[itemInstanceMethods release];
 	[itemProtocols release];
+	[itemInstanceVariables release];
 	[classSearchButtonItem release];
 	[dataSourcesArray release];
     [super dealloc];
@@ -39,7 +41,7 @@
 
 
 - (void)loadDataSources {
-	NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:5];
+	NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:6];
 	self.dataSourcesArray = array;
 	[array release];
 	
@@ -137,11 +139,32 @@
 		} else {
 			itemProtocols.enabled = NO;
 		}
+		// Instance Variables
+		Ivar *instanceVariables = class_copyIvarList(class, &outCount);
+		if (outCount) {
+			array = [[NSMutableArray alloc] initWithCapacity:outCount];
+			for (unsigned int i = 0; i < outCount; i++) {
+				NSString *instanceVariableString = [[NSString alloc] initWithFormat:@"%s\n    (%s)", 
+												  ivar_getName(instanceVariables[i]), 
+												  ivar_getTypeEncoding(instanceVariables[i])];
+				[array addObject:instanceVariableString];
+				[instanceVariableString release];
+			}
+			free(instanceVariables);
+			indexedDataSource = [[IndexedDataSource alloc] initWithArray:array];
+			[array release];
+			[dataSourcesArray addObject:indexedDataSource];
+			[indexedDataSource release];
+			itemInstanceVariables.tag = [dataSourcesArray count] - 1;
+		} else {
+			itemInstanceVariables.enabled = NO;
+		}
 	} else {
 		itemProperties.enabled = NO;
 		itemClassMethods.enabled = NO;
 		itemInstanceMethods.enabled = NO;
 		itemProtocols.enabled = NO;
+		itemInstanceVariables.enabled = NO;
 	}
 	
 	for (UITabBarItem* item in tabBar.items) {

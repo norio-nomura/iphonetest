@@ -51,7 +51,7 @@
 									<bytes key="NSRGB">MSAxIDEAA</bytes>
 								</object>
 								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
+								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="IBUIText">999</string>
 								<object class="NSColor" key="IBUITextColor" id="215807709">
@@ -70,7 +70,7 @@
 								<reference key="NSSuperview" ref="443853184"/>
 								<reference key="IBUIBackgroundColor" ref="364929363"/>
 								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
+								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="IBUIText">mobile</string>
 								<reference key="IBUITextColor" ref="215807709"/>
@@ -85,7 +85,7 @@
 								<reference key="NSSuperview" ref="443853184"/>
 								<reference key="IBUIBackgroundColor" ref="364929363"/>
 								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
+								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="IBUIText">mobile</string>
 								<reference key="IBUITextColor" ref="215807709"/>
@@ -122,6 +122,7 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">1.000000e+01</float>
+								<int key="IBUINumberOfLines">2</int>
 							</object>
 						</object>
 						<string key="NSFrameSize">{480, 44}</string>
@@ -141,7 +142,6 @@
 				<reference key="IBUIBackgroundColor" ref="364929363"/>
 				<bool key="IBUIOpaque">NO</bool>
 				<bool key="IBUIClipsSubviews">YES</bool>
-				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<reference key="IBUIContentView" ref="443853184"/>
 				<string key="IBUIReuseIdentifier">ContentsOfDirectoryDataSource</string>
 			</object>

@@ -1,6 +1,5 @@
 //
 //  IndexedDataSourceCell.m
-//  FileSystemBrowser
 //
 
 #import "IndexedDataSourceCell.h"

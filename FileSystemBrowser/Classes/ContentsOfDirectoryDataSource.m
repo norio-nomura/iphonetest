@@ -28,17 +28,14 @@
 	}
 	if (self = [super initWithArray:contents usingSelector:@selector(firstChar)]) {
 		self.path = aPath;
+		self.enableIndex = NO;
+		self.enableSectionTitles = NO;
 	}
 	return self;
 }
 
 
 #pragma mark UITableViewDataSource Protocol
-
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-	return nil;
-}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -63,11 +60,6 @@
 		cell.name.text = content;
 	}
 	return cell;
-}
-
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return nil;
 }
 
 

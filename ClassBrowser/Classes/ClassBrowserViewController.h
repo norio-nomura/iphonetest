@@ -13,6 +13,7 @@
 	UITabBarItem *itemClassMethods;
 	UITabBarItem *itemInstanceMethods;
 	UITabBarItem *itemProtocols;
+	UITabBarItem *itemInstanceVariables;
 	UIBarButtonItem *classSearchButtonItem;
 	NSMutableArray *dataSourcesArray;
 }
@@ -24,6 +25,7 @@
 @property (nonatomic,retain) IBOutlet UITabBarItem *itemClassMethods;
 @property (nonatomic,retain) IBOutlet UITabBarItem *itemInstanceMethods;
 @property (nonatomic,retain) IBOutlet UITabBarItem *itemProtocols;
+@property (nonatomic,retain) IBOutlet UITabBarItem *itemInstanceVariables;
 @property (nonatomic,retain) IBOutlet UIBarButtonItem *classSearchButtonItem;
 @property (nonatomic,retain) NSMutableArray *dataSourcesArray;
 

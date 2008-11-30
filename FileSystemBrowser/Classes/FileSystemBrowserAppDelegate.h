@@ -17,7 +17,7 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, retain) IBOutlet FileSystemViewController *rootViewController;
 
-- (void)pushFileSystemViewControllerWithPath:(NSString*)path;
+- (void)pushViewControllerWithPath:(NSString*)path;
 
 @end
 

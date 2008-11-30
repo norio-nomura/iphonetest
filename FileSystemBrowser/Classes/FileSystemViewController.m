@@ -61,7 +61,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSString *pathComponent = [contentsOfDirectory objectForRowAtIndexPath:indexPath];
 	FileSystemBrowserAppDelegate *appDelegate = (FileSystemBrowserAppDelegate*)[[UIApplication sharedApplication] delegate];
-	[appDelegate pushFileSystemViewControllerWithPath:[path stringByAppendingPathComponent:pathComponent]];
+	[appDelegate pushViewControllerWithPath:[path stringByAppendingPathComponent:pathComponent]];
 }
 
 

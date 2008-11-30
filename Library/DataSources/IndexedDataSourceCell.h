@@ -1,6 +1,5 @@
 //
 //  IndexedDataSourceCell.h
-//  ClassBrowser
 //
 
 #import <UIKit/UIKit.h>

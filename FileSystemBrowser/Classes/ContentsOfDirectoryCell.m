@@ -35,4 +35,21 @@
 }
 
 
+#pragma mark UIView
+
+
+- (void)layoutSubviews {
+	if (self.bounds.size.width == 480) {
+		nlink.hidden = NO;
+		owner.hidden = NO;
+		group.hidden = NO;
+	} else {
+		nlink.hidden = YES;
+		owner.hidden = YES;
+		group.hidden = YES;
+	}
+	[super layoutSubviews];
+}
+
+
 @end

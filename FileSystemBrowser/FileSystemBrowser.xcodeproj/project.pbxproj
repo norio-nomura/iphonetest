@@ -15,14 +15,15 @@
 		2899E5600DE3E45000AC0155 /* FileSystemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E55F0DE3E45000AC0155 /* FileSystemViewController.xib */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* FileSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* FileSystemViewController.m */; };
-		6CFD30A80EDFAE01000F8EAB /* IndexedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFD30A50EDFAE01000F8EAB /* IndexedDataSource.m */; };
-		6CFD30AB0EDFAE0F000F8EAB /* IndexedDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD30AA0EDFAE0F000F8EAB /* IndexedDataSource.xib */; };
+		6CDFD6800EE12C5400BAF67A /* PropertyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFD67F0EE12C5400BAF67A /* PropertyListViewController.m */; };
+		6CE943AA0EE2288700B0F058 /* IndexedDataSourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE943A70EE2288700B0F058 /* IndexedDataSourceCell.m */; };
+		6CE943AB0EE2288700B0F058 /* IndexedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE943A90EE2288700B0F058 /* IndexedDataSource.m */; };
+		6CE943AD0EE2289900B0F058 /* IndexedDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE943AC0EE2289900B0F058 /* IndexedDataSource.xib */; };
 		6CFD31CA0EDFC49B000F8EAB /* ContentsOfDirectoryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFD31C90EDFC49B000F8EAB /* ContentsOfDirectoryDataSource.m */; };
 		6CFD32C20EDFF4F2000F8EAB /* ContentsOfDirectoryDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD32C10EDFF4F2000F8EAB /* ContentsOfDirectoryDataSource.xib */; };
 		6CFD32C60EDFF958000F8EAB /* ContentsOfDirectoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFD32C50EDFF958000F8EAB /* ContentsOfDirectoryCell.m */; };
 		6CFD33200EE019BF000F8EAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD331F0EE019BF000F8EAB /* InfoPlist.strings */; };
 		6CFD33380EE02165000F8EAB /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD33370EE02165000F8EAB /* Entitlements.plist */; };
-		6CFD33830EE0278C000F8EAB /* IndexedDataSourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFD33810EE0278C000F8EAB /* IndexedDataSourceCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,9 +39,13 @@
 		28C286DF0D94DF7D0034E888 /* FileSystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemViewController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* FileSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6CFD30A40EDFAE01000F8EAB /* IndexedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedDataSource.h; sourceTree = "<group>"; };
-		6CFD30A50EDFAE01000F8EAB /* IndexedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexedDataSource.m; sourceTree = "<group>"; };
-		6CFD30AA0EDFAE0F000F8EAB /* IndexedDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexedDataSource.xib; sourceTree = "<group>"; };
+		6CDFD67E0EE12C5400BAF67A /* PropertyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyListViewController.h; sourceTree = "<group>"; };
+		6CDFD67F0EE12C5400BAF67A /* PropertyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyListViewController.m; sourceTree = "<group>"; };
+		6CE943A60EE2288700B0F058 /* IndexedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexedDataSource.h; path = ../Library/DataSources/IndexedDataSource.h; sourceTree = SOURCE_ROOT; };
+		6CE943A70EE2288700B0F058 /* IndexedDataSourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexedDataSourceCell.m; path = ../Library/DataSources/IndexedDataSourceCell.m; sourceTree = SOURCE_ROOT; };
+		6CE943A80EE2288700B0F058 /* IndexedDataSourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexedDataSourceCell.h; path = ../Library/DataSources/IndexedDataSourceCell.h; sourceTree = SOURCE_ROOT; };
+		6CE943A90EE2288700B0F058 /* IndexedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexedDataSource.m; path = ../Library/DataSources/IndexedDataSource.m; sourceTree = SOURCE_ROOT; };
+		6CE943AC0EE2289900B0F058 /* IndexedDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = IndexedDataSource.xib; path = ../Library/DataSources/IndexedDataSource.xib; sourceTree = SOURCE_ROOT; };
 		6CFD31C80EDFC49B000F8EAB /* ContentsOfDirectoryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentsOfDirectoryDataSource.h; sourceTree = "<group>"; };
 		6CFD31C90EDFC49B000F8EAB /* ContentsOfDirectoryDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentsOfDirectoryDataSource.m; sourceTree = "<group>"; };
 		6CFD32C10EDFF4F2000F8EAB /* ContentsOfDirectoryDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentsOfDirectoryDataSource.xib; sourceTree = "<group>"; };
@@ -48,8 +53,6 @@
 		6CFD32C50EDFF958000F8EAB /* ContentsOfDirectoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentsOfDirectoryCell.m; sourceTree = "<group>"; };
 		6CFD331F0EE019BF000F8EAB /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		6CFD33370EE02165000F8EAB /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		6CFD33810EE0278C000F8EAB /* IndexedDataSourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexedDataSourceCell.m; sourceTree = "<group>"; };
-		6CFD33820EE0278C000F8EAB /* IndexedDataSourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedDataSourceCell.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,10 +81,12 @@
 				1D3623250D0F684500981E51 /* FileSystemBrowserAppDelegate.m */,
 				28C286DF0D94DF7D0034E888 /* FileSystemViewController.h */,
 				28C286E00D94DF7D0034E888 /* FileSystemViewController.m */,
-				6CFD30A40EDFAE01000F8EAB /* IndexedDataSource.h */,
-				6CFD30A50EDFAE01000F8EAB /* IndexedDataSource.m */,
-				6CFD33810EE0278C000F8EAB /* IndexedDataSourceCell.m */,
-				6CFD33820EE0278C000F8EAB /* IndexedDataSourceCell.h */,
+				6CE943A60EE2288700B0F058 /* IndexedDataSource.h */,
+				6CE943A70EE2288700B0F058 /* IndexedDataSourceCell.m */,
+				6CE943A80EE2288700B0F058 /* IndexedDataSourceCell.h */,
+				6CE943A90EE2288700B0F058 /* IndexedDataSource.m */,
+				6CDFD67E0EE12C5400BAF67A /* PropertyListViewController.h */,
+				6CDFD67F0EE12C5400BAF67A /* PropertyListViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -121,7 +126,7 @@
 				6CFD32C10EDFF4F2000F8EAB /* ContentsOfDirectoryDataSource.xib */,
 				6CFD33370EE02165000F8EAB /* Entitlements.plist */,
 				2899E55F0DE3E45000AC0155 /* FileSystemViewController.xib */,
-				6CFD30AA0EDFAE0F000F8EAB /* IndexedDataSource.xib */,
+				6CE943AC0EE2289900B0F058 /* IndexedDataSource.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				6CFD331F0EE019BF000F8EAB /* InfoPlist.strings */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -190,10 +195,10 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2899E5600DE3E45000AC0155 /* FileSystemViewController.xib in Resources */,
-				6CFD30AB0EDFAE0F000F8EAB /* IndexedDataSource.xib in Resources */,
 				6CFD32C20EDFF4F2000F8EAB /* ContentsOfDirectoryDataSource.xib in Resources */,
 				6CFD33200EE019BF000F8EAB /* InfoPlist.strings in Resources */,
 				6CFD33380EE02165000F8EAB /* Entitlements.plist in Resources */,
+				6CE943AD0EE2289900B0F058 /* IndexedDataSource.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,10 +212,11 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* FileSystemBrowserAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* FileSystemViewController.m in Sources */,
-				6CFD30A80EDFAE01000F8EAB /* IndexedDataSource.m in Sources */,
 				6CFD31CA0EDFC49B000F8EAB /* ContentsOfDirectoryDataSource.m in Sources */,
 				6CFD32C60EDFF958000F8EAB /* ContentsOfDirectoryCell.m in Sources */,
-				6CFD33830EE0278C000F8EAB /* IndexedDataSourceCell.m in Sources */,
+				6CDFD6800EE12C5400BAF67A /* PropertyListViewController.m in Sources */,
+				6CE943AA0EE2288700B0F058 /* IndexedDataSourceCell.m in Sources */,
+				6CE943AB0EE2288700B0F058 /* IndexedDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

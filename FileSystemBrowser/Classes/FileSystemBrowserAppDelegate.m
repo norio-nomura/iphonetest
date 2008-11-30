@@ -5,6 +5,7 @@
 
 #import "FileSystemBrowserAppDelegate.h"
 #import "FileSystemViewController.h"
+#import "PropertyListViewController.h"
 
 
 @implementation FileSystemBrowserAppDelegate
@@ -25,11 +26,25 @@
 #pragma mark privateMethod
 
 
-- (void)pushFileSystemViewControllerWithPath:(NSString*)path {
-	FileSystemViewController *viewController = [[FileSystemViewController alloc] initWithNibName:NSStringFromClass([FileSystemViewController class]) bundle:nil];
-	viewController.path = path;
-	[navigationController pushViewController:viewController animated:YES];
-	[viewController release];
+- (void)pushViewControllerWithPath:(NSString*)path {
+	NSDictionary *attributes = [[NSFileManager defaultManager] fileAttributesAtPath:path traverseLink:YES];
+	if ([[attributes objectForKey:NSFileType] isEqual:NSFileTypeDirectory]) {
+		FileSystemViewController *viewController = [[FileSystemViewController alloc] initWithNibName:NSStringFromClass([FileSystemViewController class]) bundle:nil];
+		viewController.path = path;
+		[navigationController pushViewController:viewController animated:YES];
+		[viewController release];
+	} else if ([[attributes objectForKey:NSFileType] isEqual:NSFileTypeRegular]) {
+		if ([path hasSuffix:@".plist"]) {
+			PropertyListViewController *viewController = [[PropertyListViewController alloc] initWithNibName:NSStringFromClass([PropertyListViewController class]) bundle:nil];
+			viewController.path = path;
+			[navigationController pushViewController:viewController animated:YES];
+			[viewController release];
+		}
+	} else {
+		for (id key in [attributes allKeys]) {
+			NSLog(@"%@:%@",key,[attributes objectForKey:key]);
+		}
+	}
 }
 
 

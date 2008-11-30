@@ -34,15 +34,11 @@
 
 
 - (id)initWithArray:(NSArray*)array {
-	return [super initWithArray:array usingSelector:@selector(imageFromClassName)];
-}
-
-
-#pragma mark UITableViewDataSource Protocol
-
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-	return nil;
+	if (self = [super initWithArray:array usingSelector:@selector(imageFromClassName)]) {
+		self.nibIdentifier = NSStringFromClass([self superclass]);
+		self.enableIndex = NO;
+	}
+	return self;
 }
 
 

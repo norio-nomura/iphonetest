@@ -27,9 +27,7 @@
 		6C801DF40EDA36A5009A03B0 /* ProtocolBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C801DF30EDA36A5009A03B0 /* ProtocolBrowserViewController.xib */; };
 		6C801E730EDA4D08009A03B0 /* btnOptional.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C801E710EDA4D08009A03B0 /* btnOptional.png */; };
 		6C801E740EDA4D08009A03B0 /* btnRequired.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C801E720EDA4D08009A03B0 /* btnRequired.png */; };
-		6C82726D0ED283F400B5CEEB /* IndexedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C82726C0ED283F400B5CEEB /* IndexedDataSource.m */; };
 		6C82727F0ED285BA00B5CEEB /* SubclassesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C82727E0ED285BA00B5CEEB /* SubclassesDataSource.m */; };
-		6C8272B10ED287E800B5CEEB /* SubclassesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C8272B00ED287E800B5CEEB /* SubclassesCell.xib */; };
 		6C8272C60ED2894400B5CEEB /* SubclassesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8272C50ED2894400B5CEEB /* SubclassesCell.m */; };
 		6C8274EA0ED2A64200B5CEEB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8274D80ED2A64200B5CEEB /* AddressBook.framework */; };
 		6C8274EB0ED2A64200B5CEEB /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8274D90ED2A64200B5CEEB /* AddressBookUI.framework */; };
@@ -49,8 +47,10 @@
 		6C8274FB0ED2A64200B5CEEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8274E90ED2A64200B5CEEB /* UIKit.framework */; };
 		6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */; };
 		6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */; };
-		6CF199210EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF199200EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m */; };
-		6CF199230EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CF199220EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib */; };
+		6CE943B50EE228D700B0F058 /* IndexedDataSourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE943B10EE228D700B0F058 /* IndexedDataSourceCell.m */; };
+		6CE943B60EE228D700B0F058 /* IndexedDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE943B20EE228D700B0F058 /* IndexedDataSource.xib */; };
+		6CE943B70EE228D700B0F058 /* IndexedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE943B40EE228D700B0F058 /* IndexedDataSource.m */; };
+		6CE943D60EE22BA800B0F058 /* SubclassesDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE943D50EE22BA800B0F058 /* SubclassesDataSource.xib */; };
 		6CF26F7F0EDA5B2A00AB6DBC /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */; };
 /* End PBXBuildFile section */
 
@@ -84,11 +84,8 @@
 		6C801DF30EDA36A5009A03B0 /* ProtocolBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtocolBrowserViewController.xib; sourceTree = "<group>"; };
 		6C801E710EDA4D08009A03B0 /* btnOptional.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnOptional.png; path = Images/btnOptional.png; sourceTree = "<group>"; };
 		6C801E720EDA4D08009A03B0 /* btnRequired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnRequired.png; path = Images/btnRequired.png; sourceTree = "<group>"; };
-		6C82726B0ED283F400B5CEEB /* IndexedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedDataSource.h; sourceTree = "<group>"; };
-		6C82726C0ED283F400B5CEEB /* IndexedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexedDataSource.m; sourceTree = "<group>"; };
 		6C82727D0ED285BA00B5CEEB /* SubclassesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesDataSource.h; sourceTree = "<group>"; };
 		6C82727E0ED285BA00B5CEEB /* SubclassesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassesDataSource.m; sourceTree = "<group>"; };
-		6C8272B00ED287E800B5CEEB /* SubclassesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubclassesCell.xib; sourceTree = "<group>"; };
 		6C8272C40ED2894400B5CEEB /* SubclassesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesCell.h; sourceTree = "<group>"; };
 		6C8272C50ED2894400B5CEEB /* SubclassesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassesCell.m; sourceTree = "<group>"; };
 		6C8274D80ED2A64200B5CEEB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -110,9 +107,12 @@
 		6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBrowserViewController.xib; sourceTree = "<group>"; };
 		6CBED43A0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesWithImageSectionsDataSource.h; sourceTree = "<group>"; };
 		6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassesWithImageSectionsDataSource.m; sourceTree = "<group>"; };
-		6CF1991F0EDA7E2D00B3CFE1 /* IndexedDataSourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedDataSourceCell.h; sourceTree = "<group>"; };
-		6CF199200EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexedDataSourceCell.m; sourceTree = "<group>"; };
-		6CF199220EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexedDataSourceCell.xib; sourceTree = "<group>"; };
+		6CE943B00EE228D700B0F058 /* IndexedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexedDataSource.h; path = ../Library/DataSources/IndexedDataSource.h; sourceTree = SOURCE_ROOT; };
+		6CE943B10EE228D700B0F058 /* IndexedDataSourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexedDataSourceCell.m; path = ../Library/DataSources/IndexedDataSourceCell.m; sourceTree = SOURCE_ROOT; };
+		6CE943B20EE228D700B0F058 /* IndexedDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = IndexedDataSource.xib; path = ../Library/DataSources/IndexedDataSource.xib; sourceTree = SOURCE_ROOT; };
+		6CE943B30EE228D700B0F058 /* IndexedDataSourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexedDataSourceCell.h; path = ../Library/DataSources/IndexedDataSourceCell.h; sourceTree = SOURCE_ROOT; };
+		6CE943B40EE228D700B0F058 /* IndexedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexedDataSource.m; path = ../Library/DataSources/IndexedDataSource.m; sourceTree = SOURCE_ROOT; };
+		6CE943D50EE22BA800B0F058 /* SubclassesDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubclassesDataSource.xib; sourceTree = "<group>"; };
 		6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,10 +155,10 @@
 				6C4C1A7E0ECFF52F00BF12F1 /* ClassSearchViewController.m */,
 				6C64DE790ECBFE3D003A3DF2 /* ClassTree.h */,
 				6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */,
-				6C82726B0ED283F400B5CEEB /* IndexedDataSource.h */,
-				6C82726C0ED283F400B5CEEB /* IndexedDataSource.m */,
-				6CF1991F0EDA7E2D00B3CFE1 /* IndexedDataSourceCell.h */,
-				6CF199200EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m */,
+				6CE943B00EE228D700B0F058 /* IndexedDataSource.h */,
+				6CE943B40EE228D700B0F058 /* IndexedDataSource.m */,
+				6CE943B30EE228D700B0F058 /* IndexedDataSourceCell.h */,
+				6CE943B10EE228D700B0F058 /* IndexedDataSourceCell.m */,
 				6C801DF00EDA348D009A03B0 /* ProtocolBrowserViewController.h */,
 				6C801DF10EDA348D009A03B0 /* ProtocolBrowserViewController.m */,
 				6C8272C40ED2894400B5CEEB /* SubclassesCell.h */,
@@ -206,13 +206,13 @@
 				6C776D420ED5245000C73AF3 /* Images */,
 				6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */,
 				6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */,
-				6CF199220EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib */,
+				6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */,
+				6CE943B20EE228D700B0F058 /* IndexedDataSource.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				6C801DF30EDA36A5009A03B0 /* ProtocolBrowserViewController.xib */,
-				6C8272B00ED287E800B5CEEB /* SubclassesCell.xib */,
-				6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */,
+				6CE943D50EE22BA800B0F058 /* SubclassesDataSource.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -305,7 +305,6 @@
 				6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */,
 				6C7DBF070ECE548D0089E3E5 /* InfoPlist.strings in Resources */,
 				6C4C1A7A0ECFF43D00BF12F1 /* ClassSearchViewController.xib in Resources */,
-				6C8272B10ED287E800B5CEEB /* SubclassesCell.xib in Resources */,
 				6C776D410ED5242600C73AF3 /* Default.png in Resources */,
 				6C776D890ED531B100C73AF3 /* Icon.png in Resources */,
 				6C776E110ED538CC00C73AF3 /* btnCMethod.png in Resources */,
@@ -318,7 +317,8 @@
 				6C801E730EDA4D08009A03B0 /* btnOptional.png in Resources */,
 				6C801E740EDA4D08009A03B0 /* btnRequired.png in Resources */,
 				6CF26F7F0EDA5B2A00AB6DBC /* Entitlements.plist in Resources */,
-				6CF199230EDA7EC700B3CFE1 /* IndexedDataSourceCell.xib in Resources */,
+				6CE943B60EE228D700B0F058 /* IndexedDataSource.xib in Resources */,
+				6CE943D60EE22BA800B0F058 /* SubclassesDataSource.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,12 +334,12 @@
 				28D7ACF80DDB3853001CB0EB /* ClassBrowserViewController.m in Sources */,
 				6C64DE7B0ECBFE3D003A3DF2 /* ClassTree.m in Sources */,
 				6C4C1A7F0ECFF52F00BF12F1 /* ClassSearchViewController.m in Sources */,
-				6C82726D0ED283F400B5CEEB /* IndexedDataSource.m in Sources */,
 				6C82727F0ED285BA00B5CEEB /* SubclassesDataSource.m in Sources */,
 				6C8272C60ED2894400B5CEEB /* SubclassesCell.m in Sources */,
 				6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */,
 				6C801DF20EDA348D009A03B0 /* ProtocolBrowserViewController.m in Sources */,
-				6CF199210EDA7E2D00B3CFE1 /* IndexedDataSourceCell.m in Sources */,
+				6CE943B50EE228D700B0F058 /* IndexedDataSourceCell.m in Sources */,
+				6CE943B70EE228D700B0F058 /* IndexedDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

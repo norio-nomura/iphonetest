@@ -1,9 +1,9 @@
 //
 //  IndexedDataSource.m
-//  FileSystemBrowser
 //
 
 #import "IndexedDataSource.h"
+#import "IndexedDataSourceCell.h"
 
 @implementation NSObject(indexedDictionary)
 
@@ -56,6 +56,9 @@
 @synthesize sectionTitles;
 @synthesize rows;
 @synthesize cellFromNib;
+@synthesize nibIdentifier;
+@synthesize enableIndex;
+@synthesize enableSectionTitles;
 
 
 - (id)initWithArray:(NSArray*)array {
@@ -72,6 +75,10 @@
 		NSArray *sortedArray = [[NSArray alloc] initWithArray:[[rows allKeys] sortedArrayUsingSelector:@selector(compare:)]];
 		self.sectionTitles = sortedArray;
 		[sortedArray release];
+		
+		self.nibIdentifier = NSStringFromClass([self class]);
+		self.enableIndex = YES;
+		self.enableSectionTitles = YES;
 	}
 	return self;
 }
@@ -111,18 +118,19 @@
 
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-	return [sectionTitles count] > 1 ? sectionTitles : nil;
+	return ([sectionTitles count] > 1 && enableIndex) ? sectionTitles : nil;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSString *cellIdentifier = NSStringFromClass([self class]);
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.nibIdentifier];
     if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:self options:nil];
+		[[NSBundle mainBundle] loadNibNamed:self.nibIdentifier owner:self options:nil];
 		cell = self.cellFromNib;
     }
-//	cell.text = [[self objectForRowAtIndexPath:indexPath] description];
+	if ([cell isMemberOfClass:[IndexedDataSourceCell class]]) {
+		[(IndexedDataSourceCell*)cell label].text = [[self objectForRowAtIndexPath:indexPath] description];
+	}
     return cell;
 }
 
@@ -138,7 +146,7 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if ([sectionTitles count]) {
+	if (enableSectionTitles && [sectionTitles count]) {
 		return [sectionTitles objectAtIndex:section];
 	} else {
 		return nil;
