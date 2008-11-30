@@ -9,4 +9,6 @@
 @interface SubclassesDataSource : IndexedDataSource {
 }
 
+- (id)initWithArray:(NSArray*)array;
+
 @end

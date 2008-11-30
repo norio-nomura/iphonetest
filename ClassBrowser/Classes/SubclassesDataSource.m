@@ -10,6 +10,14 @@
 @implementation SubclassesDataSource
 
 
+- (id)initWithArray:(NSArray*)array {
+	if (self = [super initWithArray:array]) {
+		self.nibIdentifier = NSStringFromClass([SubclassesDataSource class]);
+	}
+	return self;
+}
+
+
 #pragma mark UITableViewDataSource Protocol
 
 

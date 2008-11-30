@@ -47,10 +47,11 @@
 		6C8274FB0ED2A64200B5CEEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8274E90ED2A64200B5CEEB /* UIKit.framework */; };
 		6CA317280ECD611700B4CDEC /* ClassBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */; };
 		6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */; };
-		6CE943B50EE228D700B0F058 /* IndexedDataSourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE943B10EE228D700B0F058 /* IndexedDataSourceCell.m */; };
-		6CE943B60EE228D700B0F058 /* IndexedDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE943B20EE228D700B0F058 /* IndexedDataSource.xib */; };
 		6CE943B70EE228D700B0F058 /* IndexedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE943B40EE228D700B0F058 /* IndexedDataSource.m */; };
 		6CE943D60EE22BA800B0F058 /* SubclassesDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE943D50EE22BA800B0F058 /* SubclassesDataSource.xib */; };
+		6CE9448C0EE2463000B0F058 /* LoadCellFromNibDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE944890EE2463000B0F058 /* LoadCellFromNibDataSource.m */; };
+		6CE9448D0EE2463000B0F058 /* LoadCellFromNibDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE9448A0EE2463000B0F058 /* LoadCellFromNibDataSource.xib */; };
+		6CE944990EE2471D00B0F058 /* CellFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE944980EE2471D00B0F058 /* CellFromNib.m */; };
 		6CF26F7F0EDA5B2A00AB6DBC /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */; };
 /* End PBXBuildFile section */
 
@@ -108,11 +109,13 @@
 		6CBED43A0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassesWithImageSectionsDataSource.h; sourceTree = "<group>"; };
 		6CBED43B0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassesWithImageSectionsDataSource.m; sourceTree = "<group>"; };
 		6CE943B00EE228D700B0F058 /* IndexedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexedDataSource.h; path = ../Library/DataSources/IndexedDataSource.h; sourceTree = SOURCE_ROOT; };
-		6CE943B10EE228D700B0F058 /* IndexedDataSourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexedDataSourceCell.m; path = ../Library/DataSources/IndexedDataSourceCell.m; sourceTree = SOURCE_ROOT; };
-		6CE943B20EE228D700B0F058 /* IndexedDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = IndexedDataSource.xib; path = ../Library/DataSources/IndexedDataSource.xib; sourceTree = SOURCE_ROOT; };
-		6CE943B30EE228D700B0F058 /* IndexedDataSourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexedDataSourceCell.h; path = ../Library/DataSources/IndexedDataSourceCell.h; sourceTree = SOURCE_ROOT; };
 		6CE943B40EE228D700B0F058 /* IndexedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexedDataSource.m; path = ../Library/DataSources/IndexedDataSource.m; sourceTree = SOURCE_ROOT; };
 		6CE943D50EE22BA800B0F058 /* SubclassesDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubclassesDataSource.xib; sourceTree = "<group>"; };
+		6CE944880EE2463000B0F058 /* LoadCellFromNibDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadCellFromNibDataSource.h; sourceTree = "<group>"; };
+		6CE944890EE2463000B0F058 /* LoadCellFromNibDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadCellFromNibDataSource.m; sourceTree = "<group>"; };
+		6CE9448A0EE2463000B0F058 /* LoadCellFromNibDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadCellFromNibDataSource.xib; sourceTree = "<group>"; };
+		6CE944970EE2471D00B0F058 /* CellFromNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellFromNib.h; sourceTree = "<group>"; };
+		6CE944980EE2471D00B0F058 /* CellFromNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellFromNib.m; sourceTree = "<group>"; };
 		6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,7 +183,7 @@
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				6CE944200EE2343700B0F058 /* Library */,
+				6CE944200EE2343700B0F058 /* DataSources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -255,17 +258,19 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		6CE944200EE2343700B0F058 /* Library */ = {
+		6CE944200EE2343700B0F058 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				6CE944970EE2471D00B0F058 /* CellFromNib.h */,
+				6CE944980EE2471D00B0F058 /* CellFromNib.m */,
 				6CE943B00EE228D700B0F058 /* IndexedDataSource.h */,
 				6CE943B40EE228D700B0F058 /* IndexedDataSource.m */,
-				6CE943B30EE228D700B0F058 /* IndexedDataSourceCell.h */,
-				6CE943B10EE228D700B0F058 /* IndexedDataSourceCell.m */,
-				6CE943B20EE228D700B0F058 /* IndexedDataSource.xib */,
+				6CE944880EE2463000B0F058 /* LoadCellFromNibDataSource.h */,
+				6CE944890EE2463000B0F058 /* LoadCellFromNibDataSource.m */,
+				6CE9448A0EE2463000B0F058 /* LoadCellFromNibDataSource.xib */,
 			);
-			name = Library;
-			path = Classes;
+			name = DataSources;
+			path = ../Library/DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,8 +331,8 @@
 				6C801E730EDA4D08009A03B0 /* btnOptional.png in Resources */,
 				6C801E740EDA4D08009A03B0 /* btnRequired.png in Resources */,
 				6CF26F7F0EDA5B2A00AB6DBC /* Entitlements.plist in Resources */,
-				6CE943B60EE228D700B0F058 /* IndexedDataSource.xib in Resources */,
 				6CE943D60EE22BA800B0F058 /* SubclassesDataSource.xib in Resources */,
+				6CE9448D0EE2463000B0F058 /* LoadCellFromNibDataSource.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,8 +352,9 @@
 				6C8272C60ED2894400B5CEEB /* SubclassesCell.m in Sources */,
 				6CBED43C0ED3E15700A27EB7 /* SubclassesWithImageSectionsDataSource.m in Sources */,
 				6C801DF20EDA348D009A03B0 /* ProtocolBrowserViewController.m in Sources */,
-				6CE943B50EE228D700B0F058 /* IndexedDataSourceCell.m in Sources */,
 				6CE943B70EE228D700B0F058 /* IndexedDataSource.m in Sources */,
+				6CE9448C0EE2463000B0F058 /* LoadCellFromNibDataSource.m in Sources */,
+				6CE944990EE2471D00B0F058 /* CellFromNib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

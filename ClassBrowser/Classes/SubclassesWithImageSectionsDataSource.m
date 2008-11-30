@@ -35,7 +35,6 @@
 
 - (id)initWithArray:(NSArray*)array {
 	if (self = [super initWithArray:array usingSelector:@selector(imageFromClassName)]) {
-		self.nibIdentifier = NSStringFromClass([self superclass]);
 		self.enableIndex = NO;
 	}
 	return self;
