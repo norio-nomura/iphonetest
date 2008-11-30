@@ -155,10 +155,6 @@
 				6C4C1A7E0ECFF52F00BF12F1 /* ClassSearchViewController.m */,
 				6C64DE790ECBFE3D003A3DF2 /* ClassTree.h */,
 				6C64DE7A0ECBFE3D003A3DF2 /* ClassTree.m */,
-				6CE943B00EE228D700B0F058 /* IndexedDataSource.h */,
-				6CE943B40EE228D700B0F058 /* IndexedDataSource.m */,
-				6CE943B30EE228D700B0F058 /* IndexedDataSourceCell.h */,
-				6CE943B10EE228D700B0F058 /* IndexedDataSourceCell.m */,
 				6C801DF00EDA348D009A03B0 /* ProtocolBrowserViewController.h */,
 				6C801DF10EDA348D009A03B0 /* ProtocolBrowserViewController.m */,
 				6C8272C40ED2894400B5CEEB /* SubclassesCell.h */,
@@ -184,6 +180,7 @@
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				6CE944200EE2343700B0F058 /* Library */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -207,7 +204,6 @@
 				6CA317270ECD611700B4CDEC /* ClassBrowserViewController.xib */,
 				6C4C1A790ECFF43D00BF12F1 /* ClassSearchViewController.xib */,
 				6CF26F7E0EDA5B2A00AB6DBC /* Entitlements.plist */,
-				6CE943B20EE228D700B0F058 /* IndexedDataSource.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				6C7DBF060ECE548D0089E3E5 /* InfoPlist.strings */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -257,6 +253,19 @@
 				6C46B2540ED976BE00777058 /* iTunesArtwork */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		6CE944200EE2343700B0F058 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				6CE943B00EE228D700B0F058 /* IndexedDataSource.h */,
+				6CE943B40EE228D700B0F058 /* IndexedDataSource.m */,
+				6CE943B30EE228D700B0F058 /* IndexedDataSourceCell.h */,
+				6CE943B10EE228D700B0F058 /* IndexedDataSourceCell.m */,
+				6CE943B20EE228D700B0F058 /* IndexedDataSource.xib */,
+			);
+			name = Library;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

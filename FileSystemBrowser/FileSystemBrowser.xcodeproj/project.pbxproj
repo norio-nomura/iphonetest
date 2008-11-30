@@ -81,10 +81,6 @@
 				1D3623250D0F684500981E51 /* FileSystemBrowserAppDelegate.m */,
 				28C286DF0D94DF7D0034E888 /* FileSystemViewController.h */,
 				28C286E00D94DF7D0034E888 /* FileSystemViewController.m */,
-				6CE943A60EE2288700B0F058 /* IndexedDataSource.h */,
-				6CE943A70EE2288700B0F058 /* IndexedDataSourceCell.m */,
-				6CE943A80EE2288700B0F058 /* IndexedDataSourceCell.h */,
-				6CE943A90EE2288700B0F058 /* IndexedDataSource.m */,
 				6CDFD67E0EE12C5400BAF67A /* PropertyListViewController.h */,
 				6CDFD67F0EE12C5400BAF67A /* PropertyListViewController.m */,
 			);
@@ -104,6 +100,7 @@
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				6CE944230EE2346700B0F058 /* Library */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -126,7 +123,6 @@
 				6CFD32C10EDFF4F2000F8EAB /* ContentsOfDirectoryDataSource.xib */,
 				6CFD33370EE02165000F8EAB /* Entitlements.plist */,
 				2899E55F0DE3E45000AC0155 /* FileSystemViewController.xib */,
-				6CE943AC0EE2289900B0F058 /* IndexedDataSource.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				6CFD331F0EE019BF000F8EAB /* InfoPlist.strings */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -142,6 +138,19 @@
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CE944230EE2346700B0F058 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				6CE943A60EE2288700B0F058 /* IndexedDataSource.h */,
+				6CE943A90EE2288700B0F058 /* IndexedDataSource.m */,
+				6CE943A80EE2288700B0F058 /* IndexedDataSourceCell.h */,
+				6CE943A70EE2288700B0F058 /* IndexedDataSourceCell.m */,
+				6CE943AC0EE2289900B0F058 /* IndexedDataSource.xib */,
+			);
+			name = Library;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
