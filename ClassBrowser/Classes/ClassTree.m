@@ -124,6 +124,7 @@ static ClassTree *sharedClassTreeInstance = nil;
 			}
 		}
 	}
+	[searchPaths release];
 }
 
 
