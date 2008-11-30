@@ -3,7 +3,6 @@
 //
 
 #import "IndexedDataSource.h"
-#import "IndexedDataSourceCell.h"
 
 @implementation NSObject(indexedDictionary)
 
@@ -55,8 +54,6 @@
 
 @synthesize sectionTitles;
 @synthesize rows;
-@synthesize cellFromNib;
-@synthesize nibIdentifier;
 @synthesize enableIndex;
 @synthesize enableSectionTitles;
 
@@ -76,7 +73,6 @@
 		self.sectionTitles = sortedArray;
 		[sortedArray release];
 		
-		self.nibIdentifier = NSStringFromClass([self class]);
 		self.enableIndex = YES;
 		self.enableSectionTitles = YES;
 	}
@@ -87,7 +83,6 @@
 - (void)dealloc {
 	[sectionTitles release];
 	[rows release];
-	[nibIdentifier release];
     [super dealloc];
 }
 
@@ -124,13 +119,9 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.nibIdentifier];
-    if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:self.nibIdentifier owner:self options:nil];
-		cell = self.cellFromNib;
-    }
-	if ([cell isMemberOfClass:[IndexedDataSourceCell class]]) {
-		[(IndexedDataSourceCell*)cell label].text = [[self objectForRowAtIndexPath:indexPath] description];
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+	if (cell) {
+		cell.text = [[self objectForRowAtIndexPath:indexPath] description];
 	}
     return cell;
 }

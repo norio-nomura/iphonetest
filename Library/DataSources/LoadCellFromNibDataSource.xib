@@ -156,9 +156,9 @@
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>IndexedDataSource</string>
+					<string>LoadCellFromNibDataSource</string>
 					<string>UIResponder</string>
-					<string>IndexedDataSourceCell</string>
+					<string>CellFromNib</string>
 					<string>{{408, 747}, {320, 44}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -190,19 +190,7 @@
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
-					<string key="className">IndexedDataSource</string>
-					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">cellFromNib</string>
-						<string key="NS.object.0">UITableViewCell</string>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="951337568">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/IndexedDataSource.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">IndexedDataSourceCell</string>
+					<string key="className">CellFromNib</string>
 					<string key="superclassName">UITableViewCell</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">label</string>
@@ -210,17 +198,32 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/IndexedDataSourceCell.h</string>
+						<string key="minorKey">../Library/DataSources/CellFromNib.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">LoadCellFromNibDataSource</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">cellFromNib</string>
+						<string key="NS.object.0">UITableViewCell</string>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">../Library/DataSources/LoadCellFromNibDataSource.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NSObject</string>
-					<reference key="sourceIdentifier" ref="951337568"/>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">../Library/DataSources/IndexedDataSource.h</string>
+					</object>
 				</object>
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
-		<string key="IBDocument.LastKnownRelativeProjectPath">FileSystemBrowser.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../../FileSystemBrowser/FileSystemBrowser.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 	</data>
 </archive>

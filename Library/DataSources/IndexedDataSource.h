@@ -3,6 +3,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoadCellFromNibDataSource.h"
 
 @interface NSObject(indexedDictionary)
 - (NSString*)capitalChar;
@@ -13,21 +14,17 @@
 - (id)initIndexedDictionaryWithArray:(NSArray*)array usingSelector:(SEL)aSel;
 @end
 
-@interface IndexedDataSource : NSObject<UITableViewDataSource> {
+@interface IndexedDataSource : LoadCellFromNibDataSource {
 	NSArray *sectionTitles;
 	NSDictionary *rows;
-	UITableViewCell *cellFromNib;
-	NSString *nibIdentifier;
 	BOOL enableIndex;
 	BOOL enableSectionTitles;
-	@private
+@private
 	SEL selectorForIndex;
 }
 
 @property (nonatomic,retain) NSArray *sectionTitles;
 @property (nonatomic,retain) NSDictionary *rows;
-@property (nonatomic,assign) IBOutlet UITableViewCell *cellFromNib;
-@property (nonatomic,retain) NSString *nibIdentifier;
 @property (nonatomic) BOOL enableIndex;
 @property (nonatomic) BOOL enableSectionTitles;
 
