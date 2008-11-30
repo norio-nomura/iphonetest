@@ -7,7 +7,6 @@
 #import <sys/stat.h>
 #import "ContentsOfDirectoryDataSource.h"
 #import "ContentsOfDirectoryCell.h"
-#import "IndexedDataSourceCell.h"
 
 @implementation ContentsOfDirectoryDataSource
 
@@ -27,6 +26,7 @@
 		NSLog(@"%@",[error localizedDescription]);
 	}
 	if (self = [super initWithArray:contents usingSelector:@selector(firstChar)]) {
+		self.nibIdentifier = NSStringFromClass([self class]);
 		self.path = aPath;
 		self.enableIndex = NO;
 		self.enableSectionTitles = NO;

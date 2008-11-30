@@ -16,9 +16,11 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* FileSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* FileSystemViewController.m */; };
 		6CDFD6800EE12C5400BAF67A /* PropertyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFD67F0EE12C5400BAF67A /* PropertyListViewController.m */; };
-		6CE943AA0EE2288700B0F058 /* IndexedDataSourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE943A70EE2288700B0F058 /* IndexedDataSourceCell.m */; };
 		6CE943AB0EE2288700B0F058 /* IndexedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE943A90EE2288700B0F058 /* IndexedDataSource.m */; };
-		6CE943AD0EE2289900B0F058 /* IndexedDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE943AC0EE2289900B0F058 /* IndexedDataSource.xib */; };
+		6CE9442B0EE23CED00B0F058 /* PropertyListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9442A0EE23CED00B0F058 /* PropertyListDataSource.m */; };
+		6CE944840EE243DB00B0F058 /* LoadCellFromNibDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE944830EE243DB00B0F058 /* LoadCellFromNibDataSource.m */; };
+		6CE944920EE2464900B0F058 /* LoadCellFromNibDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CE944900EE2464900B0F058 /* LoadCellFromNibDataSource.xib */; };
+		6CE9449C0EE2472C00B0F058 /* CellFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9449B0EE2472C00B0F058 /* CellFromNib.m */; };
 		6CFD31CA0EDFC49B000F8EAB /* ContentsOfDirectoryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFD31C90EDFC49B000F8EAB /* ContentsOfDirectoryDataSource.m */; };
 		6CFD32C20EDFF4F2000F8EAB /* ContentsOfDirectoryDataSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD32C10EDFF4F2000F8EAB /* ContentsOfDirectoryDataSource.xib */; };
 		6CFD32C60EDFF958000F8EAB /* ContentsOfDirectoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFD32C50EDFF958000F8EAB /* ContentsOfDirectoryCell.m */; };
@@ -42,10 +44,14 @@
 		6CDFD67E0EE12C5400BAF67A /* PropertyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyListViewController.h; sourceTree = "<group>"; };
 		6CDFD67F0EE12C5400BAF67A /* PropertyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyListViewController.m; sourceTree = "<group>"; };
 		6CE943A60EE2288700B0F058 /* IndexedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexedDataSource.h; path = ../Library/DataSources/IndexedDataSource.h; sourceTree = SOURCE_ROOT; };
-		6CE943A70EE2288700B0F058 /* IndexedDataSourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexedDataSourceCell.m; path = ../Library/DataSources/IndexedDataSourceCell.m; sourceTree = SOURCE_ROOT; };
-		6CE943A80EE2288700B0F058 /* IndexedDataSourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexedDataSourceCell.h; path = ../Library/DataSources/IndexedDataSourceCell.h; sourceTree = SOURCE_ROOT; };
 		6CE943A90EE2288700B0F058 /* IndexedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexedDataSource.m; path = ../Library/DataSources/IndexedDataSource.m; sourceTree = SOURCE_ROOT; };
-		6CE943AC0EE2289900B0F058 /* IndexedDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = IndexedDataSource.xib; path = ../Library/DataSources/IndexedDataSource.xib; sourceTree = SOURCE_ROOT; };
+		6CE944290EE23CED00B0F058 /* PropertyListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyListDataSource.h; sourceTree = "<group>"; };
+		6CE9442A0EE23CED00B0F058 /* PropertyListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyListDataSource.m; sourceTree = "<group>"; };
+		6CE944820EE243DB00B0F058 /* LoadCellFromNibDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadCellFromNibDataSource.h; sourceTree = "<group>"; };
+		6CE944830EE243DB00B0F058 /* LoadCellFromNibDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadCellFromNibDataSource.m; sourceTree = "<group>"; };
+		6CE944900EE2464900B0F058 /* LoadCellFromNibDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadCellFromNibDataSource.xib; sourceTree = "<group>"; };
+		6CE9449A0EE2472C00B0F058 /* CellFromNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellFromNib.h; sourceTree = "<group>"; };
+		6CE9449B0EE2472C00B0F058 /* CellFromNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellFromNib.m; sourceTree = "<group>"; };
 		6CFD31C80EDFC49B000F8EAB /* ContentsOfDirectoryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentsOfDirectoryDataSource.h; sourceTree = "<group>"; };
 		6CFD31C90EDFC49B000F8EAB /* ContentsOfDirectoryDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentsOfDirectoryDataSource.m; sourceTree = "<group>"; };
 		6CFD32C10EDFF4F2000F8EAB /* ContentsOfDirectoryDataSource.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentsOfDirectoryDataSource.xib; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 				1D3623250D0F684500981E51 /* FileSystemBrowserAppDelegate.m */,
 				28C286DF0D94DF7D0034E888 /* FileSystemViewController.h */,
 				28C286E00D94DF7D0034E888 /* FileSystemViewController.m */,
+				6CE944290EE23CED00B0F058 /* PropertyListDataSource.h */,
+				6CE9442A0EE23CED00B0F058 /* PropertyListDataSource.m */,
 				6CDFD67E0EE12C5400BAF67A /* PropertyListViewController.h */,
 				6CDFD67F0EE12C5400BAF67A /* PropertyListViewController.m */,
 			);
@@ -100,7 +108,7 @@
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				6CE944230EE2346700B0F058 /* Library */,
+				6CE944230EE2346700B0F058 /* DataSources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -140,17 +148,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6CE944230EE2346700B0F058 /* Library */ = {
+		6CE944230EE2346700B0F058 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				6CE9449A0EE2472C00B0F058 /* CellFromNib.h */,
+				6CE9449B0EE2472C00B0F058 /* CellFromNib.m */,
 				6CE943A60EE2288700B0F058 /* IndexedDataSource.h */,
 				6CE943A90EE2288700B0F058 /* IndexedDataSource.m */,
-				6CE943A80EE2288700B0F058 /* IndexedDataSourceCell.h */,
-				6CE943A70EE2288700B0F058 /* IndexedDataSourceCell.m */,
-				6CE943AC0EE2289900B0F058 /* IndexedDataSource.xib */,
+				6CE944820EE243DB00B0F058 /* LoadCellFromNibDataSource.h */,
+				6CE944830EE243DB00B0F058 /* LoadCellFromNibDataSource.m */,
+				6CE944900EE2464900B0F058 /* LoadCellFromNibDataSource.xib */,
 			);
-			name = Library;
-			path = Classes;
+			name = DataSources;
+			path = ../Library/DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +217,7 @@
 				6CFD32C20EDFF4F2000F8EAB /* ContentsOfDirectoryDataSource.xib in Resources */,
 				6CFD33200EE019BF000F8EAB /* InfoPlist.strings in Resources */,
 				6CFD33380EE02165000F8EAB /* Entitlements.plist in Resources */,
-				6CE943AD0EE2289900B0F058 /* IndexedDataSource.xib in Resources */,
+				6CE944920EE2464900B0F058 /* LoadCellFromNibDataSource.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +234,10 @@
 				6CFD31CA0EDFC49B000F8EAB /* ContentsOfDirectoryDataSource.m in Sources */,
 				6CFD32C60EDFF958000F8EAB /* ContentsOfDirectoryCell.m in Sources */,
 				6CDFD6800EE12C5400BAF67A /* PropertyListViewController.m in Sources */,
-				6CE943AA0EE2288700B0F058 /* IndexedDataSourceCell.m in Sources */,
 				6CE943AB0EE2288700B0F058 /* IndexedDataSource.m in Sources */,
+				6CE9442B0EE23CED00B0F058 /* PropertyListDataSource.m in Sources */,
+				6CE944840EE243DB00B0F058 /* LoadCellFromNibDataSource.m in Sources */,
+				6CE9449C0EE2472C00B0F058 /* CellFromNib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
