@@ -1,12 +1,12 @@
 //
-//  FileSystemViewController.h
+//  ContentsOfDirectoryViewController.h
 //  FileSystemBrowser
 //
 
 #import <UIKit/UIKit.h>
 #import "ContentsOfDirectoryDataSource.h"
 
-@interface FileSystemViewController : UIViewController<UITableViewDelegate> {
+@interface ContentsOfDirectoryViewController : UIViewController<UITableViewDelegate> {
 	UITableView *tableView;
 	NSString* path;
 	ContentsOfDirectoryDataSource* contentsOfDirectory;

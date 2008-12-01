@@ -1,12 +1,12 @@
 //
-//  FileSystemViewController.m
+//  ContentsOfDirectoryViewController.m
 //  FileSystemBrowser
 //
 
-#import "FileSystemViewController.h"
+#import "ContentsOfDirectoryViewController.h"
 #import "FileSystemBrowserAppDelegate.h"
 
-@implementation FileSystemViewController
+@implementation ContentsOfDirectoryViewController
 
 @synthesize tableView;
 @synthesize path;

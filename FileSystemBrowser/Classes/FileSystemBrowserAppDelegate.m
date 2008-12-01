@@ -4,7 +4,7 @@
 //
 
 #import "FileSystemBrowserAppDelegate.h"
-#import "FileSystemViewController.h"
+#import "ContentsOfDirectoryViewController.h"
 #import "PropertyListViewController.h"
 
 
@@ -29,7 +29,7 @@
 - (void)pushViewControllerWithPath:(NSString*)path {
 	NSDictionary *attributes = [[NSFileManager defaultManager] fileAttributesAtPath:path traverseLink:YES];
 	if ([[attributes objectForKey:NSFileType] isEqual:NSFileTypeDirectory]) {
-		FileSystemViewController *viewController = [[FileSystemViewController alloc] initWithNibName:NSStringFromClass([FileSystemViewController class]) bundle:nil];
+		ContentsOfDirectoryViewController *viewController = [[ContentsOfDirectoryViewController alloc] initWithNibName:NSStringFromClass([ContentsOfDirectoryViewController class]) bundle:nil];
 		viewController.path = path;
 		[navigationController pushViewController:viewController animated:YES];
 		[viewController release];

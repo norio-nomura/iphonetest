@@ -12,6 +12,6 @@
 
 @property (nonatomic,copy) NSString *path;
 
-- (id)initWithPath:(NSString*)path;
+- (id)initWithPath:(NSString*)aPath;
 
 @end
