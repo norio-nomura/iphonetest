@@ -34,6 +34,7 @@
 		6C8ADFC80EDE6FB00025F522 /* EmojiKeyboardEnabler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiKeyboardEnabler.h; sourceTree = "<group>"; };
 		6C8ADFC90EDE6FB00025F522 /* EmojiKeyboardEnabler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiKeyboardEnabler.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D18489C0EE1BCD7004B9FFE /* SharedInstanceMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedInstanceMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 				1D3623250D0F684500981E51 /* EnableEmojiKeyboardInAppAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* EnableEmojiKeyboardInAppViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* EnableEmojiKeyboardInAppViewController.m */,
+				8D18489C0EE1BCD7004B9FFE /* SharedInstanceMacro.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
