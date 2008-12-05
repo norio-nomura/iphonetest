@@ -12,6 +12,11 @@
 @synthesize cameraController;
 
 
+- (IBAction)capturePhoto:(id)sender {
+	[cameraController capturePhoto];
+}
+
+
 - (void)dealloc {
     [window release];
 	[cameraController release];
@@ -19,12 +24,7 @@
 }
 
 
-#pragma mark PLCameraControllerDelegattttttt
-
-
-- (IBAction)capturePhoto:(id)sender {
-	[cameraController capturePhoto];
-}
+#pragma mark PLCameraControllerDelegate
 
 
 -(void)cameraController:(id)sender tookPicture:(UIImage*)picture withPreview:(UIImage*)preview jpegData:(NSData*)jpeg imageProperties:(NSDictionary *)exif {
