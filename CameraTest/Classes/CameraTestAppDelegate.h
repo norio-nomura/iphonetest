@@ -4,21 +4,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <QuartzCore/CALayer.h>
-#import "PLCameraController.h"
-#import "CoreSurface.h"
 
 @interface CameraTestAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-	PLCameraController *cameraController;
+	id cameraController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) PLCameraController *cameraController;
-
+@property (nonatomic, retain) id cameraController;
 
 - (IBAction)capturePhoto:(id)sender;
-- (IBAction)tookPicture:(id)sender;
+- (IBAction)capturePreviewWithInstalledHook:(id)sender;
+- (IBAction)capturePreviewsFromCoreSurfaces:(id)sender;
 
 @end
 

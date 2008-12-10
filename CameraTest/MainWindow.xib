@@ -59,6 +59,10 @@
 								<int key="IBUISystemItemIdentifier">15</int>
 								<reference key="IBUIToolbar" ref="548616950"/>
 							</object>
+							<object class="IBUIBarButtonItem" id="246544703">
+								<int key="IBUISystemItemIdentifier">15</int>
+								<reference key="IBUIToolbar" ref="548616950"/>
+							</object>
 							<object class="IBUIBarButtonItem" id="869327052">
 								<int key="IBUISystemItemIdentifier">5</int>
 								<reference key="IBUIToolbar" ref="548616950"/>
@@ -120,11 +124,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">tookPicture:</string>
+						<string key="label">capturePreviewsFromCoreSurfaces:</string>
 						<reference key="source" ref="399160202"/>
 						<reference key="destination" ref="664661524"/>
 					</object>
-					<int key="connectionID">35</int>
+					<int key="connectionID">40</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">capturePreviewWithInstalledHook:</string>
+						<reference key="source" ref="246544703"/>
+						<reference key="destination" ref="664661524"/>
+					</object>
+					<int key="connectionID">41</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -186,6 +198,7 @@
 							<reference ref="545549830"/>
 							<reference ref="869327052"/>
 							<reference ref="399160202"/>
+							<reference ref="246544703"/>
 						</object>
 						<reference key="parent" ref="380026005"/>
 					</object>
@@ -210,6 +223,11 @@
 						<reference key="object" ref="399160202"/>
 						<reference key="parent" ref="548616950"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">36</int>
+						<reference key="object" ref="246544703"/>
+						<reference key="parent" ref="548616950"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -231,6 +249,7 @@
 					<string>31.IBPluginDependency</string>
 					<string>32.IBPluginDependency</string>
 					<string>34.IBPluginDependency</string>
+					<string>36.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -252,6 +271,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>CameraTestAppDelegate</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -279,7 +299,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">35</int>
+			<int key="maxID">41</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -292,10 +312,12 @@
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>capturePhoto:</string>
-							<string>tookPicture:</string>
+							<string>capturePreviewWithInstalledHook:</string>
+							<string>capturePreviewsFromCoreSurfaces:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>

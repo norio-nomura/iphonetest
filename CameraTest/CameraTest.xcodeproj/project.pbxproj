@@ -15,8 +15,6 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		6C7C99DB0EEB8A170055CE20 /* CoreSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C99DA0EEB8A170055CE20 /* CoreSurface.framework */; };
 		6C7C99DF0EEB8A3E0055CE20 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C99DE0EEB8A3E0055CE20 /* QuartzCore.framework */; };
-		6C7C9A690EEB98A00055CE20 /* PhotoLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C9A680EEB98A00055CE20 /* PhotoLibrary.framework */; };
-		6C7C9B1B0EEBECD00055CE20 /* Camera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C9B1A0EEBECD00055CE20 /* Camera.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +30,6 @@
 		6C7C999E0EEB82C30055CE20 /* CoreSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSurface.h; sourceTree = "<group>"; };
 		6C7C99DA0EEB8A170055CE20 /* CoreSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSurface.framework; path = System/Library/PrivateFrameworks/CoreSurface.framework; sourceTree = SDKROOT; };
 		6C7C99DE0EEB8A3E0055CE20 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		6C7C9A620EEB98130055CE20 /* PLCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCameraController.h; sourceTree = "<group>"; };
-		6C7C9A680EEB98A00055CE20 /* PhotoLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotoLibrary.framework; path = System/Library/PrivateFrameworks/PhotoLibrary.framework; sourceTree = SDKROOT; };
-		6C7C9B1A0EEBECD00055CE20 /* Camera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Camera.framework; path = System/Library/PrivateFrameworks/Camera.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,8 +43,6 @@
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				6C7C99DB0EEB8A170055CE20 /* CoreSurface.framework in Frameworks */,
 				6C7C99DF0EEB8A3E0055CE20 /* QuartzCore.framework in Frameworks */,
-				6C7C9A690EEB98A00055CE20 /* PhotoLibrary.framework in Frameworks */,
-				6C7C9B1B0EEBECD00055CE20 /* Camera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +55,6 @@
 				6C7C999E0EEB82C30055CE20 /* CoreSurface.h */,
 				1D3623240D0F684500981E51 /* CameraTestAppDelegate.h */,
 				1D3623250D0F684500981E51 /* CameraTestAppDelegate.m */,
-				6C7C9A620EEB98130055CE20 /* PLCameraController.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -110,7 +102,6 @@
 			children = (
 				6C7C9A6B0EEB98AA0055CE20 /* PrivateFrameworks */,
 				6C7C99DE0EEB8A3E0055CE20 /* QuartzCore.framework */,
-				6C7C99DA0EEB8A170055CE20 /* CoreSurface.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
@@ -121,8 +112,7 @@
 		6C7C9A6B0EEB98AA0055CE20 /* PrivateFrameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6C7C9B1A0EEBECD00055CE20 /* Camera.framework */,
-				6C7C9A680EEB98A00055CE20 /* PhotoLibrary.framework */,
+				6C7C99DA0EEB8A170055CE20 /* CoreSurface.framework */,
 			);
 			name = PrivateFrameworks;
 			sourceTree = "<group>";
