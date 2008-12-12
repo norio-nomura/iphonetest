@@ -13,7 +13,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		6C7C99DB0EEB8A170055CE20 /* CoreSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C99DA0EEB8A170055CE20 /* CoreSurface.framework */; };
+		6C323CEA0EF1F734007F941B /* Surface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C323CE90EF1F734007F941B /* Surface.m */; };
+		6C323D6F0EF219A8007F941B /* SurfaceAccelerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C323D6E0EF219A8007F941B /* SurfaceAccelerator.m */; };
 		6C7C99DF0EEB8A3E0055CE20 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C99DE0EEB8A3E0055CE20 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +28,10 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* CameraTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraTest_Prefix.pch; sourceTree = "<group>"; };
-		6C7C999E0EEB82C30055CE20 /* CoreSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSurface.h; sourceTree = "<group>"; };
-		6C7C99DA0EEB8A170055CE20 /* CoreSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSurface.framework; path = System/Library/PrivateFrameworks/CoreSurface.framework; sourceTree = SDKROOT; };
+		6C323CE80EF1F734007F941B /* Surface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Surface.h; sourceTree = "<group>"; };
+		6C323CE90EF1F734007F941B /* Surface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Surface.m; sourceTree = "<group>"; };
+		6C323D6D0EF219A8007F941B /* SurfaceAccelerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurfaceAccelerator.h; sourceTree = "<group>"; };
+		6C323D6E0EF219A8007F941B /* SurfaceAccelerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurfaceAccelerator.m; sourceTree = "<group>"; };
 		6C7C99DE0EEB8A3E0055CE20 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,7 +44,6 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
-				6C7C99DB0EEB8A170055CE20 /* CoreSurface.framework in Frameworks */,
 				6C7C99DF0EEB8A3E0055CE20 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,9 +54,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6C7C999E0EEB82C30055CE20 /* CoreSurface.h */,
 				1D3623240D0F684500981E51 /* CameraTestAppDelegate.h */,
 				1D3623250D0F684500981E51 /* CameraTestAppDelegate.m */,
+				6C323CE80EF1F734007F941B /* Surface.h */,
+				6C323CE90EF1F734007F941B /* Surface.m */,
+				6C323D6D0EF219A8007F941B /* SurfaceAccelerator.h */,
+				6C323D6E0EF219A8007F941B /* SurfaceAccelerator.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -112,7 +117,6 @@
 		6C7C9A6B0EEB98AA0055CE20 /* PrivateFrameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6C7C99DA0EEB8A170055CE20 /* CoreSurface.framework */,
 			);
 			name = PrivateFrameworks;
 			sourceTree = "<group>";
@@ -189,6 +193,8 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* CameraTestAppDelegate.m in Sources */,
+				6C323CEA0EF1F734007F941B /* Surface.m in Sources */,
+				6C323D6F0EF219A8007F941B /* SurfaceAccelerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

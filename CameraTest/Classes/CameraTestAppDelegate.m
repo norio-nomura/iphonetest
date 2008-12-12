@@ -5,7 +5,7 @@
 
 #import <objc/runtime.h>
 #import "CameraTestAppDelegate.h"
-#import "CoreSurface.h"
+#import "Surface.h"
 
 OBJC_EXPORT unsigned int CGBitmapGetFastestAlignment();
 OBJC_EXPORT void * CGBitmapAllocateData(unsigned int);
@@ -16,26 +16,28 @@ typedef void (*FUNC_camera_callback)(void *struct_CameraDevice,int,CoreSurfaceBu
 static FUNC_camera_callback original_camera_callback = NULL;
 static void *readblePixels = NULL;
 
-static void __camera_callbackHook(void *cameraDevice,int a,CoreSurfaceBufferRef surface,int b) {
-	if (surface) {
-		CoreSurfaceBufferLock(surface, 3);
-		unsigned int height = CoreSurfaceBufferGetHeight(surface);
-		unsigned int width = CoreSurfaceBufferGetWidth(surface);
+static void __camera_callbackHook(void *cameraDevice,int a,CoreSurfaceBufferRef coreSurfaceBuffer,int b) {
+	if (coreSurfaceBuffer) {
+		Surface *surface = [[Surface alloc]initWithCoreSurfaceBuffer:coreSurfaceBuffer];
+		[surface lock];
+		unsigned int height = surface.height;
+		unsigned int width = surface.width;
 		unsigned int alignment = CGBitmapGetFastestAlignment();
 		unsigned int alignmentedBytesPerRow = (width * 4 / alignment + 1) * alignment;
 		if (!readblePixels) {
 			readblePixels = CGBitmapAllocateData(alignmentedBytesPerRow * height);
 		}
-		unsigned int bytesPerRow = CoreSurfaceBufferGetBytesPerRow(surface);
-		uint8_t* pixels = CoreSurfaceBufferGetBaseAddress(surface);
-		CoreSurfaceBufferLock(surface, 3);
+		unsigned int bytesPerRow = surface.bytesPerRow;
+		void *pixels = surface.baseAddress;
 		for (unsigned int j = 0; j < height; j++) {
 			memcpy(readblePixels + alignmentedBytesPerRow * j, pixels + bytesPerRow * j, bytesPerRow);
 		}
-		CoreSurfaceBufferUnlock(surface);
+		[surface unlock];
+		[surface release];
 	}
-	(*original_camera_callback)(cameraDevice,a,surface,b);
+	(*original_camera_callback)(cameraDevice,a,coreSurfaceBuffer,b);
 }
+
 
 
 @implementation CameraTestAppDelegate
@@ -67,18 +69,19 @@ static void __camera_callbackHook(void *cameraDevice,int a,CoreSurfaceBufferRef 
 	object_getInstanceVariable(cameraController,"_camera",(void**)&p);
 	if (!p) return;
 	
-	CoreSurfaceBufferRef surface = NULL;
+	CoreSurfaceBufferRef coreSurfaceBuffer = NULL;
 	unsigned int width;
 	unsigned int height;
 	unsigned int bytesPerRow;
-	surface = *(CoreSurfaceBufferRef*)(p+88);
-	if (surface) {
-		CoreSurfaceBufferLock(surface, 3);
-		width = CoreSurfaceBufferGetWidth(surface);
-		height = CoreSurfaceBufferGetHeight(surface);
-		bytesPerRow = CoreSurfaceBufferGetBytesPerRow(surface);
-		CoreSurfaceBufferUnlock(surface);
-		
+	coreSurfaceBuffer = *(CoreSurfaceBufferRef*)(p+88);
+	if (coreSurfaceBuffer) {
+		Surface *surface = [[Surface alloc]initWithCoreSurfaceBuffer:coreSurfaceBuffer];
+		[surface lock];
+		width = surface.width;
+		height = surface.height;
+		bytesPerRow = surface.bytesPerRow;
+		[surface unlock];
+		[surface release];
 		if (readblePixels) {
 			unsigned int alignment = CGBitmapGetFastestAlignment();
 			unsigned int alignmentedBytesPerRow = (width * 4 / alignment + 1) * alignment;
@@ -121,20 +124,21 @@ static void __camera_callbackHook(void *cameraDevice,int a,CoreSurfaceBufferRef 
 	if (!p) return;
 	
 	for (int i = 0; i < 6; i++) {
-		CoreSurfaceBufferRef surface = *(CoreSurfaceBufferRef*)(p+88+i*4);
+		CoreSurfaceBufferRef coreSurfaceBuffer = *(CoreSurfaceBufferRef*)(p+88+i*4);
+		Surface *surface = [[Surface alloc]initWithCoreSurfaceBuffer:coreSurfaceBuffer];
 		
-		CoreSurfaceBufferLock(surface, 3);
-		unsigned int height = CoreSurfaceBufferGetHeight(surface);
-		unsigned int width = CoreSurfaceBufferGetWidth(surface);
-		unsigned int bytesPerRow = CoreSurfaceBufferGetBytesPerRow(surface);
-		void *pixels = CoreSurfaceBufferGetBaseAddress(surface);
+		[surface lock];
+		unsigned int height = surface.height;
+		unsigned int width = surface.width;
+		unsigned int bytesPerRow = surface.bytesPerRow;
+		void *pixels = surface.baseAddress;
 		unsigned int alignment = CGBitmapGetFastestAlignment();
 		unsigned int alignmentedBytesPerRow = (width * 4 / alignment + 1) * alignment;
 		void *readblePixels = CGBitmapAllocateData(alignmentedBytesPerRow * height);
 		for (unsigned int j = 0; j < height; j++) {
 			memcpy(readblePixels + alignmentedBytesPerRow * j, pixels + bytesPerRow * j, bytesPerRow);
 		}
-		CoreSurfaceBufferUnlock(surface);
+		[surface unlock];
 		
 		CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
 		CGDataProviderRef dataProviderRef = CGDataProviderCreateWithData(NULL, readblePixels, alignmentedBytesPerRow * height, NULL);
@@ -205,9 +209,11 @@ static void __camera_callbackHook(void *cameraDevice,int a,CoreSurfaceBufferRef 
 	[cameraController setDelegate:self];
 	UIView *previewView = [cameraController previewView];
 	[cameraController startPreview];
+	[Surface dynamicLoad];
 	[self install_camera_callbackHook];
 	[window addSubview:previewView];
     [window makeKeyAndVisible];
+	NSLog(@"NSNumber:%@",[NSNumber numberWithInt:'yuvs']);
 }
 
 
