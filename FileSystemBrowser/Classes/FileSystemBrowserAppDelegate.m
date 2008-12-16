@@ -6,6 +6,7 @@
 #import "FileSystemBrowserAppDelegate.h"
 #import "ContentsOfDirectoryViewController.h"
 #import "PropertyListViewController.h"
+#import "MachOFileSymbolsViewController.h"
 
 
 @implementation FileSystemBrowserAppDelegate
@@ -39,7 +40,18 @@
 			viewController.path = path;
 			[navigationController pushViewController:viewController animated:YES];
 			[viewController release];
+		} else {
+			NSArray *symbols = MachOFileSymbolsCreate(path);
+			if (symbols) {
+				MachOFileSymbolsViewController *viewController = [[MachOFileSymbolsViewController alloc] initWithNibName:NSStringFromClass([MachOFileSymbolsViewController class]) bundle:nil];
+				viewController.path = path;
+				viewController.symbols = symbols;
+				[symbols release];
+				[navigationController pushViewController:viewController animated:YES];
+				[viewController release];
+			}
 		}
+
 	} else {
 		for (id key in [attributes allKeys]) {
 			NSLog(@"%@:%@",key,[attributes objectForKey:key]);
