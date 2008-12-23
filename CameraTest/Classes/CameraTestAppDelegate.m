@@ -126,7 +126,7 @@ static int __camera_callbackHook2(CameraDeviceRef cameraDevice,int a,CoreSurface
 	if (!original_camera_callback) {
 		FUNC_camera_callback *funcP = (FUNC_camera_callback*)p;
 		original_camera_callback = *(funcP+37);
-		(funcP+37)[0] = __camera_callbackHook2;
+		(funcP+37)[0] = __camera_callbackHook;
 	}
 }
 
