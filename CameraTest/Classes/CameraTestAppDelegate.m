@@ -98,10 +98,10 @@ static int __camera_callbackHook2(CameraDeviceRef cameraDevice,int a,CoreSurface
 //									[NSNumber numberWithInt:4],[SurfaceAccelerator kCoreSurfaceAcceleratorSymmetricTransformKey],
 //									nil];
 	NSMutableDictionary *captureOptions = [NSMutableDictionary dictionaryWithCapacity:0];
-	result = [surfaceAccelerator captureSurface:nextSurface.coreSurfaceBuffer 
-										  width:K_CORESURFACE_WIDTH 
-										 height:K_CORESURFACE_HEIGHT 
-								 withDictionary:captureOptions 
+	result = [surfaceAccelerator captureSurface:nextSurface.coreSurfaceBuffer
+										  width:K_CORESURFACE_WIDTH
+										 height:K_CORESURFACE_HEIGHT
+								 withDictionary:captureOptions
 								   withCallback:0x33a8fda8];
 	return result;
 }
@@ -122,7 +122,7 @@ static int __camera_callbackHook2(CameraDeviceRef cameraDevice,int a,CoreSurface
 	char *p = NULL;
 	object_getInstanceVariable(cameraController,"_camera",(void**)&p);
 	if (!p) return;
-	
+
 	if (!original_camera_callback) {
 		FUNC_camera_callback *funcP = (FUNC_camera_callback*)p;
 		original_camera_callback = *(funcP+37);
@@ -135,7 +135,7 @@ static int __camera_callbackHook2(CameraDeviceRef cameraDevice,int a,CoreSurface
 	char *p = NULL;
 	object_getInstanceVariable(cameraController,"_camera",(void**)&p);
 	if (!p) return;
-	
+
 	CoreSurfaceBufferRef coreSurfaceBuffer = NULL;
 	unsigned int width;
 	unsigned int height;
@@ -169,14 +169,14 @@ static int __camera_callbackHook2(CameraDeviceRef cameraDevice,int a,CoreSurface
 												kCGRenderingIntentDefault	// CGColorRenderingIntent intent
 												);
 			UIImage *image = [UIImage imageWithCGImage:imageRef];
-			
+
 			NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 			NSString *documentsDirectory = [paths objectAtIndex:0];
 			NSString *pathToDefault = [documentsDirectory stringByAppendingPathComponent:@"HookPreview.png"];
-			
+
 			NSData *data = UIImagePNGRepresentation(image);
 			[data writeToFile:pathToDefault atomically:NO];
-			
+
 			CGImageRelease(imageRef);
 			CGDataProviderRelease(dataProviderRef);
 			CGColorSpaceRelease(colorSpace);
@@ -189,11 +189,11 @@ static int __camera_callbackHook2(CameraDeviceRef cameraDevice,int a,CoreSurface
 	char *p = NULL;
 	object_getInstanceVariable(cameraController,"_camera",(void**)&p);
 	if (!p) return;
-	
+
 	for (int i = 0; i < 6; i++) {
 		CoreSurfaceBufferRef coreSurfaceBuffer = *(CoreSurfaceBufferRef*)(p+88+i*4);
 		Surface *surface = [[Surface alloc]initWithCoreSurfaceBuffer:coreSurfaceBuffer];
-		
+
 		[surface lock];
 		unsigned int height = surface.height;
 		unsigned int width = surface.width;
@@ -206,7 +206,7 @@ static int __camera_callbackHook2(CameraDeviceRef cameraDevice,int a,CoreSurface
 			memcpy(readblePixels + alignmentedBytesPerRow * j, pixels + bytesPerRow * j, bytesPerRow);
 		}
 		[surface unlock];
-		
+
 		CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
 		CGDataProviderRef dataProviderRef = CGDataProviderCreateWithData(NULL, readblePixels, alignmentedBytesPerRow * height, NULL);
 		CGImageRef imageRef = CGImageCreate(width,						// size_t width,
@@ -222,15 +222,15 @@ static int __camera_callbackHook2(CameraDeviceRef cameraDevice,int a,CoreSurface
 											kCGRenderingIntentDefault	// CGColorRenderingIntent intent
 											);
 		UIImage *image = [UIImage imageWithCGImage:imageRef];
-		
+
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 		NSString *documentsDirectory = [paths objectAtIndex:0];
 		NSString *fileName = [NSString stringWithFormat:@"coreSurface-%d.png",i];
 		NSString *pathToDefault = [documentsDirectory stringByAppendingPathComponent:fileName];
-		
+
 		NSData *data = UIImagePNGRepresentation(image);
 		[data writeToFile:pathToDefault atomically:NO];
-		
+
 		CGImageRelease(imageRef);
 		CGDataProviderRelease(dataProviderRef);
 		CGColorSpaceRelease(colorSpace);
@@ -253,11 +253,11 @@ static int __camera_callbackHook2(CameraDeviceRef cameraDevice,int a,CoreSurface
 	NSLog(@"you can get UIImage here. rotate is needed.");
 	NSLog(@"picture.size:%f,%f",picture.size.width,picture.size.height);
 	NSLog(@"preview.size:%f,%f",preview.size.width,preview.size.height);
-	
+
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	NSString *pathToDefault = [documentsDirectory stringByAppendingPathComponent:@"Default.png"];
-	
+
 	NSData *data = UIImagePNGRepresentation(preview);
 	[data writeToFile:pathToDefault atomically:NO];
 }

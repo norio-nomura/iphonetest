@@ -15,7 +15,7 @@
     [super viewDidLoad];
 	touchesStartPoints = [[NSMutableDictionary alloc]initWithCapacity:5];
 	installTouchesHookForUIWebView();
-	
+
 	UIWebView* myWebView = (UIWebView*)self.view;
 	myWebView.scalesPageToFit = YES;
 	myWebView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);

@@ -47,7 +47,7 @@ static void *(*__CoreSurfaceBufferGetBaseAddress)(CoreSurfaceBufferRef surface) 
 			__kCoreSurfaceBufferPixelFormat = dlsym(dl, "kCoreSurfaceBufferPixelFormat");
 			__kCoreSurfaceBufferAllocSize = dlsym(dl, "kCoreSurfaceBufferAllocSize");
 			__kCoreSurfaceBufferClientAddress = dlsym(dl, "kCoreSurfaceBufferClientAddress");
-			
+
 			__CoreSurfaceBufferCreate = dlsym(dl, "CoreSurfaceBufferCreate");
 			__CoreSurfaceBufferGetAllocSize = dlsym(dl, "CoreSurfaceBufferGetAllocSize");
 			__CoreSurfaceBufferGetBytesPerRow = dlsym(dl, "CoreSurfaceBufferGetBytesPerRow");
@@ -56,7 +56,7 @@ static void *(*__CoreSurfaceBufferGetBaseAddress)(CoreSurfaceBufferRef surface) 
 			__CoreSurfaceBufferGetID = dlsym(dl, "CoreSurfaceBufferGetID");
 			__CoreSurfaceBufferGetPlaneCount = dlsym(dl, "CoreSurfaceBufferGetPlaneCount");
 			__CoreSurfaceBufferGetWidth = dlsym(dl, "CoreSurfaceBufferGetWidth");
-			
+
 			__CoreSurfaceBufferLock = dlsym(dl,"CoreSurfaceBufferLock");
 			__CoreSurfaceBufferUnlock = dlsym(dl,"CoreSurfaceBufferUnlock");
 			__CoreSurfaceBufferGetBaseAddress = dlsym(dl,"CoreSurfaceBufferGetBaseAddress");
