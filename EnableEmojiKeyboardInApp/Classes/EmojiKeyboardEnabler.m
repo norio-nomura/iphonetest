@@ -8,7 +8,7 @@
 
 #define kEmojiInputMode @"emoji"
 
-static EmojiKeyboardEnabler *shardInstance = nil; 
+static EmojiKeyboardEnabler *shardInstance = nil;
 static NSString *triggerInputMode = nil;
 static BOOL emojiEnable = NO;
 static BOOL addedEmojiToPreference = NO;
@@ -65,7 +65,7 @@ static BOOL addedEmojiToPreference = NO;
 			addedEmojiToPreference = NO;
 		}
 	}
-	
+
 	return array;
 }
 
@@ -86,7 +86,7 @@ SHARD_INSTANCE_IMPL
 									   class_getInstanceMethod(class, @selector(__setInputMode:)));
 		method_exchangeImplementations(class_getInstanceMethod(class, @selector(inputModePreference)),
 									   class_getInstanceMethod(class, @selector(__inputModePreference)));
-	}		
+	}
 }
 
 - (id)init {
@@ -100,7 +100,7 @@ SHARD_INSTANCE_IMPL
 
 - (void)setEnable:(BOOL)yesOrNo {
 	emojiEnable = yesOrNo;
-	
+
 	// for reload inputModePreference
 	BOOL v = [[NSUserDefaults standardUserDefaults] boolForKey:@"hoge"];
 	[[NSUserDefaults standardUserDefaults] setBool:!v forKey:@"hoge"];

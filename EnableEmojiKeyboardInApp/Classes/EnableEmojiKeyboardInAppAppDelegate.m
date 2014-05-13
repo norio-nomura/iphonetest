@@ -14,9 +14,9 @@
 @synthesize viewController;
 
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
+- (void)applicationDidFinishLaunching:(UIApplication *)application {
 	[[EmojiKeyboardEnabler shardInstance] setEnable:YES];
-    // Override point for customization after app launch    
+    // Override point for customization after app launch
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
 }

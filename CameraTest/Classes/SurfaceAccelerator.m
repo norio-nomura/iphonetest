@@ -36,11 +36,11 @@ static int (*__CoreSurfaceAcceleratorTransferSurface)(CoreSurfaceAcceleratorRef 
 		void *dl = dlopen("/System/Library/PrivateFrameworks/CoreSurface.framework/CoreSurface",RTLD_LAZY);
 		if (dl) {
 			__kCoreSurfaceAcceleratorSymmetricTransformKey = dlsym(dl,"kCoreSurfaceAcceleratorSymmetricTransformKey");
-			
+
 			__CoreSurfaceAcceleratorAbortCaptures = dlsym(dl,"CoreSurfaceAcceleratorAbortCaptures");
 			__CoreSurfaceAcceleratorCaptureSurface = dlsym(dl,"CoreSurfaceAcceleratorCaptureSurface");
 			__CoreSurfaceAcceleratorTransferSurface = dlsym(dl,"CoreSurfaceAcceleratorTransferSurface");
-			
+
 			dlclose(dl);
 			isDynamicLoaded = YES;
 		}
